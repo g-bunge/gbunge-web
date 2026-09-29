@@ -2,6 +2,7 @@ import Reveal from '../components/ui/Reveal.jsx'
 import SectionHeading from '../components/ui/SectionHeading.jsx'
 import Button from '../components/ui/Button.jsx'
 import useLang from '../i18n/LanguageContext.js'
+import { url } from '../lib/url.js'
 
 const split = 'grid items-center tablet:grid-cols-1 tablet:gap-y-10 tablet:p-[60px_var(--spacing-gutter)]'
 const media = 'aspect-545/532 overflow-hidden'
@@ -16,7 +17,7 @@ export default function About() {
     <>
       <section id="about" className={`${split} grid-cols-[37.85vw_1fr] gap-x-[6.6vw] px-gutter pt-7.75`}>
         <Reveal className={media} variant="left">
-          <img className="size-full object-cover" src="/images/who.jpg" alt={t.about.whoAlt} />
+          <img className="size-full object-cover" src={url('/images/who.jpg')} alt={t.about.whoAlt} />
         </Reveal>
         <Reveal className={text} delay={150}>
           <SectionHeading className="mb-6.5" eyebrow="WHO WE ARE" title={['Sorry for driving too fast,', "We're new here."]} />
@@ -36,7 +37,7 @@ export default function About() {
           <Button href="/past-cars">Past Cars</Button>
         </Reveal>
         <Reveal className={`${media} tablet:-order-1`} variant="right">
-          <img className="size-full object-cover" src="/images/heritage.jpg" alt={t.about.heritageAlt} />
+          <img className="size-full object-cover" src={url('/images/heritage.jpg')} alt={t.about.heritageAlt} />
         </Reveal>
       </section>
     </>

@@ -3,6 +3,7 @@ import PageHero from '../components/ui/PageHero.jsx'
 import { pastCars } from '../data/cars.js'
 import useLang from '../i18n/LanguageContext.js'
 import cx from '../lib/cx.js'
+import { url } from '../lib/url.js'
 
 /** /past-cars page: every car we've raced, newest first. */
 export default function PastCarsPage() {
@@ -42,7 +43,7 @@ export default function PastCarsPage() {
               >
                 <Reveal className={cx('aspect-16/10 overflow-hidden', flipped && 'order-2 tablet:order-none')} variant="left">
                   {car.img ? (
-                    <img className="size-full object-cover transition-[scale] duration-800 ease-out group-hover/car:scale-104" src={car.img} alt={car.name} />
+                    <img className="size-full object-cover transition-[scale] duration-800 ease-out group-hover/car:scale-104" src={url(car.img)} alt={car.name} />
                   ) : (
                     <div className="relative grid h-full place-items-center bg-placeholder">
                       <span className="font-display text-ghost font-bold tracking-tightest text-stroke-white/18" aria-hidden>

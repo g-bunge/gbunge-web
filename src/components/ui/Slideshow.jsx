@@ -1,5 +1,6 @@
 import useAutoplay from '../../hooks/useAutoplay.js'
 import cx from '../../lib/cx.js'
+import { url } from '../../lib/url.js'
 
 /**
  * Full-bleed background slideshow: each new image pushes the previous one out to the left.
@@ -14,7 +15,7 @@ export default function Slideshow({ images, interval = 4000, className = '' }) {
         let state = 'invisible'
         if (i === index) state = prev === null ? '' : 'animate-slide-in'
         else if (i === prev) state = 'animate-slide-out'
-        return <div key={src} className={cx('absolute inset-0 bg-cover bg-center bg-no-repeat', state)} style={{ backgroundImage: `url(${src})` }} />
+        return <div key={src} className={cx('absolute inset-0 bg-cover bg-center bg-no-repeat', state)} style={{ backgroundImage: `url(${url(src)})` }} />
       })}
     </div>
   )

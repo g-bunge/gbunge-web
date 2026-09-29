@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import useAutoplay from '../../hooks/useAutoplay.js'
 import cx from '../../lib/cx.js'
+import { url } from '../../lib/url.js'
 
 const arrow =
   'absolute top-1/2 -mt-3.25 size-6.5 rounded-full bg-white/35 text-20 leading-6 text-fg-on-light opacity-0 ' +
@@ -19,7 +20,7 @@ export default function Carousel({ slides, interval = 4500, className = '', chil
       <div className="flex h-full transition-transform duration-800 ease-out" style={{ transform: `translateX(-${index * 100}%)` }}>
         {slides.map((s, i) => (
           <div className="h-full flex-[0_0_100%]" key={i} aria-hidden={i !== index}>
-            <img className="size-full object-cover" src={s.src} alt={s.alt} />
+            <img className="size-full object-cover" src={url(s.src)} alt={s.alt} />
           </div>
         ))}
       </div>

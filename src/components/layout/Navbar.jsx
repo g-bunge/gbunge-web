@@ -2,6 +2,7 @@ import LangToggle from '../ui/LangToggle.jsx'
 import useScrollY from '../../hooks/useScrollY.js'
 import useLang from '../../i18n/LanguageContext.js'
 import cx from '../../lib/cx.js'
+import { currentPath, url } from '../../lib/url.js'
 import { STORIES_ENABLED } from '../../data/site.js'
 
 const links = [
@@ -19,7 +20,7 @@ const links = [
 export default function Navbar({ alwaysVisible = false }) {
   const scrollY = useScrollY()
   const visible = alwaysVisible || scrollY > window.innerHeight * 0.8
-  const path = window.location.pathname.replace(/\/+$/, '')
+  const path = currentPath()
   const { t } = useLang()
 
   return (
@@ -34,8 +35,8 @@ export default function Navbar({ alwaysVisible = false }) {
       aria-hidden={!visible}
       inert={!visible}
     >
-      <a href={alwaysVisible ? '/' : '#top'} aria-label="Home">
-        <img className="h-7 w-auto" src="/images/logo-footer.png" alt="G-BungE" />
+      <a href={alwaysVisible ? url('/') : '#top'} aria-label="Home">
+        <img className="h-7 w-auto" src={url('/images/logo-footer.png')} alt="G-BungE" />
       </a>
       <ul className="ml-auto flex gap-9 mobile:hidden">
         {links.map(({ id, href }) => (
@@ -47,7 +48,7 @@ export default function Navbar({ alwaysVisible = false }) {
                 'after:absolute after:inset-x-0 after:-bottom-1.5 after:h-0.5 after:origin-left after:scale-x-0 after:bg-brand-gradient after:transition-transform after:duration-350 after:ease-out',
                 'hover:after:scale-x-100 aria-[current=page]:after:scale-x-100',
               )}
-              href={href}
+              href={url(href)}
               aria-current={path === href || path.startsWith(`${href}/`) ? 'page' : undefined}
             >
               {t.nav[id]}

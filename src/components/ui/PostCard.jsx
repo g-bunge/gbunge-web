@@ -1,18 +1,19 @@
 import { categories, formatDate, teamName } from '../../data/posts.js'
 import cx from '../../lib/cx.js'
+import { url } from '../../lib/url.js'
 
 /** Cover, category · team · date, title and excerpt: links to the post. `featured` lays it out wide. */
 export default function PostCard({ post, lang, featured = false, label }) {
   return (
     <a
       className={cx('group/post h-full', featured ? 'grid grid-cols-[7fr_5fr] items-center gap-12 tablet:grid-cols-1 tablet:gap-0' : 'flex flex-col')}
-      href={`/stories/${post.slug}`}
+      href={url(`/stories/${post.slug}`)}
     >
       <span className="relative block aspect-16/10 overflow-hidden bg-placeholder">
         {post.cover && (
           <img
             className="size-full object-cover brightness-90 [transition:scale_0.7s_var(--ease-out),filter_0.7s] group-hover/post:scale-105 group-hover/post:brightness-110"
-            src={post.cover}
+            src={url(post.cover)}
             alt=""
           />
         )}

@@ -5,6 +5,7 @@ import Button from '../components/ui/Button.jsx'
 import { authorName, categories, findPost, formatDate, posts, teamName } from '../data/posts.js'
 import useLang from '../i18n/LanguageContext.js'
 import cx from '../lib/cx.js'
+import { url } from '../lib/url.js'
 
 const page = 'px-gutter pt-37.5 pb-30 mobile:pt-27.5'
 const rule = 'border-t border-line'
@@ -21,7 +22,7 @@ export default function PostPage({ slug }) {
     return (
       <main id="top" className={cx(page, 'flex min-h-[60vh] flex-col items-start gap-8')}>
         <h1 className="t-title">{copy.notFound}</h1>
-        <Button href="/stories">{copy.back}</Button>
+        <Button href={url('/stories')}>{copy.back}</Button>
       </main>
     )
   }
@@ -40,7 +41,7 @@ export default function PostPage({ slug }) {
   return (
     <main id="top" className={page}>
       <header className="mx-auto max-w-205">
-        <a className="mb-10 inline-block font-ui text-14 font-medium text-fg-muted transition-colors duration-300 hover:text-fg" href="/stories">
+        <a className="mb-10 inline-block font-ui text-14 font-medium text-fg-muted transition-colors duration-300 hover:text-fg" href={url('/stories')}>
           ← {copy.back}
         </a>
         <p className="flex gap-3.5 font-ui text-14 text-fg-muted">
@@ -60,7 +61,7 @@ export default function PostPage({ slug }) {
 
       {post.cover ? (
         <figure className="mx-auto my-16 aspect-video max-w-280 overflow-hidden mobile:-mx-gutter mobile:my-10">
-          <img className="size-full object-cover" src={post.cover} alt="" />
+          <img className="size-full object-cover" src={url(post.cover)} alt="" />
         </figure>
       ) : (
         <div className={cx(rule, 'mx-auto my-14 max-w-205')} />
@@ -70,7 +71,7 @@ export default function PostPage({ slug }) {
 
       <nav className={cx(rule, 'mx-auto mt-24 grid max-w-205 grid-cols-2 gap-4 pt-10 mobile:grid-cols-1')} aria-label={copy.more}>
         {older ? (
-          <a className={pagerLink} href={`/stories/${older.slug}`}>
+          <a className={pagerLink} href={url(`/stories/${older.slug}`)}>
             <span className={pagerLabel}>← {copy.prev}</span>
             {older.title[lang]}
           </a>
@@ -78,7 +79,7 @@ export default function PostPage({ slug }) {
           <span />
         )}
         {newer && (
-          <a className={cx(pagerLink, 'text-right')} href={`/stories/${newer.slug}`}>
+          <a className={cx(pagerLink, 'text-right')} href={url(`/stories/${newer.slug}`)}>
             <span className={pagerLabel}>{copy.next} →</span>
             {newer.title[lang]}
           </a>

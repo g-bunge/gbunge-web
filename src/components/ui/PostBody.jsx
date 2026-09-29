@@ -1,5 +1,6 @@
 import { Fragment } from 'react'
 import cx from '../../lib/cx.js'
+import { url } from '../../lib/url.js'
 
 /*
  * Renders a post body: an array of blocks, as written by scripts/fetch-posts.mjs.
@@ -69,7 +70,7 @@ function Block({ block }) {
     case 'img':
       return (
         <figure className="my-12!">
-          <img className="w-full" src={block.src} alt={block.caption.map((r) => r.text).join('')} loading="lazy" />
+          <img className="w-full" src={url(block.src)} alt={block.caption.map((r) => r.text).join('')} loading="lazy" />
           {block.caption.length > 0 && (
             <figcaption className="mt-3 text-center font-ui text-13 text-fg-muted">
               <Rich runs={block.caption} />

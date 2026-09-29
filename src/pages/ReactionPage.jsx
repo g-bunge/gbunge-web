@@ -3,6 +3,7 @@ import Button from '../components/ui/Button.jsx'
 import useLang from '../i18n/LanguageContext.js'
 import { listenKeys, rand, readBest, saveBest } from '../lib/game.js'
 import cx from '../lib/cx.js'
+import { url } from '../lib/url.js'
 
 /*
  * /reaction: hidden reaction-time test, reached by clicking the home Team cards
@@ -106,7 +107,7 @@ export default function ReactionPage() {
   return (
     <main className="flex min-h-dvh flex-col items-center justify-center gap-5 bg-bg px-4 py-6 font-ui select-none">
       <div className="flex w-[min(640px,100%)] items-center justify-between text-13 text-fg-muted">
-        <a className="transition-colors duration-250 hover:text-fg" href="/">
+        <a className="transition-colors duration-250 hover:text-fg" href={url('/')}>
           ← {copy.back}
         </a>
         <span>

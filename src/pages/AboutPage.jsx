@@ -7,6 +7,7 @@ import { teams } from '../data/team.js'
 import { memberCount } from '../data/members.js'
 import useLang from '../i18n/LanguageContext.js'
 import cx from '../lib/cx.js'
+import { url } from '../lib/url.js'
 
 /* src and the object-position that keeps each photo's subject in frame */
 const galleryImages = [
@@ -79,7 +80,7 @@ export default function AboutPage() {
             >
               <img
                 className="size-full object-cover brightness-120 saturate-90 [transition:scale_0.8s_var(--ease-out),filter_0.8s] group-hover/photo:scale-105 group-hover/photo:brightness-140"
-                src={galleryImages[i][0]}
+                src={url(galleryImages[i][0])}
                 style={{ objectPosition: galleryImages[i][1] }}
                 alt={item.alt}
               />
@@ -148,7 +149,7 @@ export default function AboutPage() {
           as="section"
           className="group/cta relative mb-30 flex min-h-110 items-center overflow-hidden after:absolute after:inset-0 after:bg-[linear-gradient(90deg,rgb(0_0_0/0.7),transparent_70%)] tablet:mb-20 mobile:min-h-95"
         >
-          <img className="absolute inset-0 size-full object-cover object-[50%_78%] brightness-45 transition-[scale] duration-1000 ease-out group-hover/cta:scale-103" src="/images/team-award-2026.jpg" alt="" />
+          <img className="absolute inset-0 size-full object-cover object-[50%_78%] brightness-45 transition-[scale] duration-1000 ease-out group-hover/cta:scale-103" src={url('/images/team-award-2026.jpg')} alt="" />
           {/* copy lines up with the page gutter; text column stays as wide as before */}
           <div className="relative z-1 box-content max-w-98 px-gutter py-16 mobile:py-10">
             <p className="t-eyebrow mb-3.5">26/27 TEAM</p>

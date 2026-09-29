@@ -9,6 +9,7 @@ import { supporterGroups } from '../data/supporters.js'
 import { memberCount } from '../data/members.js'
 import useLang from '../i18n/LanguageContext.js'
 import cx from '../lib/cx.js'
+import { url } from '../lib/url.js'
 import { SPONSOR_EMAIL } from '../data/site.js'
 
 /* label | content rows at the bottom of OUR EDGE */
@@ -36,7 +37,7 @@ export default function SponsorsPage() {
               >
                 <div className="grid aspect-video place-items-center bg-surface p-[12%]">
                   {partner.logo ? (
-                    <img className="size-full object-contain brightness-0 invert opacity-85 transition-opacity duration-300 group-hover/partner:opacity-100" src={partner.logo} alt={partner.name} />
+                    <img className="size-full object-contain brightness-0 invert opacity-85 transition-opacity duration-300 group-hover/partner:opacity-100" src={url(partner.logo)} alt={partner.name} />
                   ) : (
                     <span className="font-display text-32 font-bold tracking-tight opacity-85 transition-opacity duration-300 group-hover/partner:opacity-100">{partner.name}</span>
                   )}
@@ -65,7 +66,7 @@ export default function SponsorsPage() {
 
           <Reveal as="figure" className="relative mt-12 aspect-3/1 overflow-hidden tablet:aspect-2/1 mobile:aspect-auto mobile:overflow-visible">
             {/* on phones the photo sits above the text instead of under it */}
-            <img className="absolute inset-0 size-full object-cover object-[50%_72%] mobile:relative mobile:aspect-4/3 mobile:h-auto" src="/images/team-award-2026.jpg" alt={copy.edge.feature.alt} />
+            <img className="absolute inset-0 size-full object-cover object-[50%_72%] mobile:relative mobile:aspect-4/3 mobile:h-auto" src={url('/images/team-award-2026.jpg')} alt={copy.edge.feature.alt} />
             <figcaption className="relative flex h-full flex-col justify-end bg-[linear-gradient(90deg,rgb(0_0_0/0.88),rgb(0_0_0/0.5)_50%,rgb(0_0_0/0.1))] p-12 mobile:bg-none mobile:px-0 mobile:pt-6 mobile:pb-2">
               <span className="font-ui text-12 font-semibold tracking-widest text-brand-end uppercase">{copy.edge.feature.kicker}</span>
               <span className="mt-4 max-w-150 font-display text-highlight leading-[1.2] font-semibold break-keep">{copy.edge.feature.title}</span>

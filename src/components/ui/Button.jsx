@@ -1,4 +1,5 @@
 import cx from '../../lib/cx.js'
+import { url } from '../../lib/url.js'
 
 /* hover fill that sweeps in from the left (the ::before) */
 const filled =
@@ -24,7 +25,7 @@ export default function Button({ variant = 'primary', href, className = '', chil
   const cls = cx(variants[variant], className)
   if (href) {
     return (
-      <a className={cls} href={href} {...rest}>
+      <a className={cls} href={url(href)} {...rest}>
         {children}
       </a>
     )

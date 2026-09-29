@@ -7,6 +7,7 @@ import { teams } from '../data/team.js'
 import { advisors, memberGroups } from '../data/members.js'
 import useLang from '../i18n/LanguageContext.js'
 import cx from '../lib/cx.js'
+import { url } from '../lib/url.js'
 import { ROSTER_ENABLED } from '../data/site.js'
 
 const groupSize = Object.fromEntries(memberGroups.map((g) => [g.id, g.members.length]))
@@ -50,7 +51,7 @@ export default function TeamPage() {
                     ) : (
                       <img
                         className="size-full object-cover brightness-85 [transition:scale_0.6s_var(--ease-out),filter_0.6s] group-hover/sub:scale-106 group-hover/sub:brightness-100"
-                        src={`/images/team-${team.img}.jpg`}
+                        src={url(`/images/team-${team.img}.jpg`)}
                         alt=""
                       />
                     )}
@@ -77,7 +78,7 @@ export default function TeamPage() {
               <Reveal key={advisor.name.en} className="grid grid-cols-[220px_1fr] items-center gap-12 border-y border-line py-12 mobile:grid-cols-1 mobile:gap-8 mobile:py-10">
                 {/* grey gradient stands in until a photo is added */}
                 <div className="aspect-3/4 overflow-hidden bg-[linear-gradient(#8a8a8a,#595959)] mobile:w-40">
-                  {advisor.photo && <img className="size-full object-cover" src={advisor.photo} alt={advisor.name[lang]} />}
+                  {advisor.photo && <img className="size-full object-cover" src={url(advisor.photo)} alt={advisor.name[lang]} />}
                 </div>
                 <div>
                   <p className="t-eyebrow mb-3 tracking-label">{copy.advisor.toUpperCase()}</p>
@@ -149,7 +150,7 @@ function MemberCard({ member, groupId, lang, copy, isOpen, onToggle }) {
       )}
     >
       {member.photo && (
-        <img className="absolute inset-0 size-full object-cover transition-[scale] duration-600 ease-out group-hover/member:scale-104" src={member.photo} alt="" />
+        <img className="absolute inset-0 size-full object-cover transition-[scale] duration-600 ease-out group-hover/member:scale-104" src={url(member.photo)} alt="" />
       )}
       <button
         type="button"

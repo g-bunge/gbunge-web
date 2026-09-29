@@ -5,6 +5,7 @@ import useScrollY from '../hooks/useScrollY.js'
 import useLang from '../i18n/LanguageContext.js'
 import { heroImages } from '../data/hero.js'
 import cx from '../lib/cx.js'
+import { url } from '../lib/url.js'
 
 export default function Hero() {
   const scrollY = useScrollY()
@@ -26,7 +27,7 @@ export default function Hero() {
 
       <div className="relative z-1 flex -translate-y-3.5 flex-col items-center" style={{ opacity: Math.max(0, 1 - scrollY / 600) }}>
         <h1>
-          <img className="w-[min(478px,78vw)] animate-hero-in" src="/images/logo-hero.png" alt="G-BungE | GIST" />
+          <img className="w-[min(478px,78vw)] animate-hero-in" src={url('/images/logo-hero.png')} alt="G-BungE | GIST" />
         </h1>
         {/* the negative right margin cancels the trailing letter-space so the line stays centred */}
         <p

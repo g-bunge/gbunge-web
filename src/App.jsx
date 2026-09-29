@@ -15,10 +15,11 @@ import SponsorsPage from './pages/SponsorsPage.jsx'
 import RacePage from './pages/RacePage.jsx'
 import ReactionPage from './pages/ReactionPage.jsx'
 import { STORIES_ENABLED } from './data/site.js'
+import { currentPath } from './lib/url.js'
 
 /* Plain path routing: links are ordinary <a href>, so each page is a full load. */
 const pages = { '/about': AboutPage, '/team': TeamPage, '/past-cars': PastCarsPage, '/sponsors': SponsorsPage, ...(STORIES_ENABLED && { '/stories': StoriesPage }) }
-const path = window.location.pathname.replace(/\/+$/, '')
+const path = currentPath()
 const postSlug = STORIES_ENABLED ? path.match(/^\/stories\/([\w-]+)$/)?.[1] : undefined
 const Page = pages[path]
 

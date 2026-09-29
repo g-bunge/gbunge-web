@@ -7,6 +7,7 @@ import { ChevronDown } from '../components/ui/Icons.jsx'
 import { teams } from '../data/team.js'
 import useLang from '../i18n/LanguageContext.js'
 import cx from '../lib/cx.js'
+import { url } from '../lib/url.js'
 
 /* easter egg: clicking these cards in this order opens the /reaction minigame */
 const REACTION_CODE = ['aerodynamics', 'c-baja', 'powertrain']
@@ -24,7 +25,7 @@ export default function Team() {
     if (team.shock && !isOpen && ++shockClicks.current % 3 === 0) setShock({ id: shockClicks.current, rect: e.currentTarget.getBoundingClientRect() })
     // easter egg: the last few clicks spell out REACTION_CODE
     recentClicks.current = [...recentClicks.current, team.img].slice(-REACTION_CODE.length)
-    if (recentClicks.current.join() === REACTION_CODE.join()) window.location.assign('/reaction')
+    if (recentClicks.current.join() === REACTION_CODE.join()) window.location.assign(url('/reaction'))
   }
 
   return (
@@ -54,7 +55,7 @@ export default function Team() {
                 {team.photo === false ? (
                   <span className="block size-full bg-placeholder" />
                 ) : (
-                  <img className="size-full object-cover brightness-75 transition-[filter] duration-500 group-hover/card:brightness-100" src={`/images/team-${team.img}.jpg`} alt="" />
+                  <img className="size-full object-cover brightness-75 transition-[filter] duration-500 group-hover/card:brightness-100" src={url(`/images/team-${team.img}.jpg`)} alt="" />
                 )}
                 <span
                   className={cx(

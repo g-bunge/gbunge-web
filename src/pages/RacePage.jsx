@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import Button from '../components/ui/Button.jsx'
 import useLang from '../i18n/LanguageContext.js'
 import { clamp, fitCanvas, isPressing, listenKeys, rand, readBest, saveBest } from '../lib/game.js'
+import { url } from '../lib/url.js'
 
 /*
  * /race: hidden autocross minigame, reached from the footer copyright line.
@@ -303,7 +304,7 @@ export default function RacePage() {
   return (
     <main className="flex min-h-dvh flex-col items-center justify-center gap-5 bg-bg px-4 py-6 font-ui select-none">
       <div className="flex w-[min(360px,calc((100dvh-140px)*9/16))] items-center justify-between text-13 text-fg-muted">
-        <a className="transition-colors duration-250 hover:text-fg" href="/">
+        <a className="transition-colors duration-250 hover:text-fg" href={url('/')}>
           ← {copy.back}
         </a>
         <span>

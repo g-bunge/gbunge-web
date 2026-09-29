@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import cx from '../../lib/cx.js'
+import { url } from '../../lib/url.js'
 
 /**
  * Endless horizontal ticker. Items are duplicated once so the loop is seamless.
@@ -39,7 +40,7 @@ function Logo({ item, clone, itemWidth }) {
   return (
     <img
       className="h-auto brightness-0 invert opacity-45 [transition:opacity_0.3s,scale_0.3s_var(--ease-out)] hover:scale-108 hover:opacity-100"
-      src={item.src}
+      src={url(item.src)}
       alt={clone ? '' : item.alt}
       aria-hidden={clone}
       style={{ width }}
