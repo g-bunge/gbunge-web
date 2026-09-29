@@ -1,0 +1,194 @@
+@import 'tailwindcss';
+@import './theme.css';
+
+/* ---------- base ---------- */
+
+@layer base {
+  html {
+    /* Tailwind's preflight sets 1.5; the design is built on the browser default */
+    line-height: normal;
+    scroll-behavior: smooth;
+    /* keep anchored sections clear of the fixed navbar */
+    scroll-padding-top: var(--spacing-nav);
+  }
+
+  body {
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* preflight makes every svg a block; the design expects inline icons unless a class says otherwise */
+  svg {
+    display: inline;
+    vertical-align: baseline;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* ---------- shared text styles (components layer, so utilities can override them) ---------- */
+
+@layer components {
+  /* small gradient label above a title */
+  .t-eyebrow {
+    width: fit-content;
+    font-size: var(--text-eyebrow);
+    font-weight: 600;
+    letter-spacing: var(--tracking-snug);
+    background: linear-gradient(90deg, var(--color-brand), var(--color-brand-end));
+    background-clip: text;
+    color: transparent;
+  }
+
+  .t-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: var(--text-title);
+    line-height: var(--text-title--line-height);
+    letter-spacing: var(--tracking-tight);
+  }
+
+  .t-body {
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    color: var(--color-fg-body);
+  }
+
+  /* fades in when scrolled into view: see components/ui/Reveal.jsx */
+  .reveal {
+    opacity: 0;
+    transition:
+      opacity 0.9s var(--ease-out),
+      transform 0.9s var(--ease-out);
+  }
+
+  .reveal--up {
+    transform: translateY(40px);
+  }
+
+  .reveal--left {
+    transform: translateX(-60px);
+  }
+
+  .reveal--right {
+    transform: translateX(60px);
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+/* ---------- gradient utilities ---------- */
+
+@utility bg-brand-gradient {
+  background-image: linear-gradient(90deg, var(--color-brand), var(--color-brand-end));
+}
+
+@utility bg-brand-gradient-hover {
+  background-image: linear-gradient(90deg, var(--color-brand-hover), var(--color-brand-hover-end));
+}
+
+/* gradient-filled text */
+@utility text-brand-gradient {
+  background-image: linear-gradient(90deg, var(--color-brand), var(--color-brand-end));
+  background-clip: text;
+  color: transparent;
+}
+
+/* stands in for a missing photo */
+@utility bg-placeholder {
+  background-image: linear-gradient(160deg, var(--color-surface-hover), var(--color-raised));
+}
+
+/* outlined text: `text-stroke-white/35` */
+@utility text-stroke-* {
+  color: transparent;
+  -webkit-text-stroke: 1px --value(--color-*);
+  -webkit-text-stroke: 1px --alpha(--value(--color-*) / calc(--modifier(integer) * 1%));
+}
+
+/* ---------- easter egg: every third opening of the High Voltage card sends current around it ---------- */
+
+.shock-arc {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  animation: shock-dim 0.4s steps(1) both;
+}
+
+.shock-arc svg {
+  width: 100%;
+  height: 100%;
+  animation: shock-arc 0.4s ease-out both;
+}
+
+.shock-arc-glow {
+  stroke: rgb(255 200 50 / 0.35);
+  stroke-width: 3;
+  filter: blur(2.5px);
+}
+
+.shock-arc-core {
+  stroke: rgb(255 240 180 / 0.85);
+  stroke-width: 1;
+}
+
+/* the room's lights dip as the current hits */
+@keyframes shock-dim {
+  0% {
+    background: rgb(0 0 0 / 0.1);
+  }
+  12% {
+    background: transparent;
+  }
+  22% {
+    background: rgb(0 0 0 / 0.06);
+  }
+  32%,
+  100% {
+    background: transparent;
+  }
+}
+
+@keyframes shock-arc {
+  0% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 0.25;
+  }
+  20% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+  }
+}
