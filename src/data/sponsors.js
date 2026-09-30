@@ -8,15 +8,6 @@
  */
 export const partners = [
   {
-    name: 'JTEKT',
-    logo: '/images/sponsors/jtekt.png',
-    url: 'https://www.jtekt.co.jp/e/',
-    desc: {
-      ko: '베어링과 스티어링 시스템을 만드는 일본 기업입니다. G-BungE에 베어링(6908 2RS, 6007 2RS)을 지원합니다.',
-      en: 'A Japanese maker of bearings and steering systems. JTEKT supplies our bearings (6908 2RS, 6007 2RS).',
-    },
-  },
-  {
     name: 'SOSLAB',
     logo: '/images/sponsors/soslab.svg',
     url: 'https://www.soslab.co',
