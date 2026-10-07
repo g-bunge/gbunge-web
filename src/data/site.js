@@ -8,7 +8,7 @@ export const INSTAGRAM = 'https://www.instagram.com/gbunge_/'
  * The blog (/stories) is closed for now. false hides its menu links and the home page section,
  * and /stories URLs fall back to the home page. Set to true to reopen it.
  */
-export const STORIES_ENABLED = false
+export const STORIES_ENABLED = true
 
 /*
  * The faculty advisor and member roster on /team are hidden for now. false leaves only the sub-teams,

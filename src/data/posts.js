@@ -4,7 +4,7 @@ import notionPosts from './notion-posts.json'
 /*
  * Blog posts for /stories, newest first. Each post lives at /stories/<slug>.
  *
- * They come from Notion: scripts/fetch-posts.mjs writes notion-posts.json before every dev/build
+ * They can come from Notion: `npm run posts` (scripts/fetch-posts.mjs) writes notion-posts.json; it is no longer part of dev/build
  * (setup is described at the top of that script). Until it has any, the placeholders below show.
  *   category: the Notion 카테고리; known ones get their English label from `knownCategories`
  *   team    : a group id from members.js (e.g. 'aerodynamics') or a team name as written; hidden while null

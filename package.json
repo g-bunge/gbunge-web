@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "npm run posts && vite",
-    "build": "npm run posts && vite build",
+    "dev": "vite",
+    "build": "vite build",
     "posts": "node --env-file-if-exists=.env.local scripts/fetch-posts.mjs",
     "lint": "oxlint",
     "preview": "vite preview"
