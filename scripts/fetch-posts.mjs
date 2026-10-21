@@ -1,12 +1,12 @@
 /*
  * Pulls the blog from Notion into src/data/notion-posts.json, downloading every image into
- * public/notion/ (Notion's own image links expire after an hour). Runs before `dev` and `build`.
+ * public/notion/ (Notion's own image links expire after an hour). Runs before `dev` and `build`, or alone as `npm run posts`.
  *
  * Needs, in .env.local (locally) or the host's environment variables (see .env.example):
  *   NOTION_TOKEN       : an internal integration's secret, with both databases shared to it
  *   NOTION_BLOG_KO_DB  : id of "blog (KOR)"
  *   NOTION_BLOG_EN_DB  : id of "blog (ENG)" (optional; posts fall back to Korean without it)
- * Without a token it leaves the current file alone, so the site keeps building with what it has.
+ * Without a token, or when Notion fails, it leaves the current posts and images alone, so the site keeps building with what it has.
  *
  * Only pages whose Status is "Published" are included. Property names are in PROPS below -
  * change them there if the databases' columns are renamed.
@@ -18,6 +18,8 @@ import { fileURLToPath } from 'node:url'
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const OUT_JSON = path.join(ROOT, 'src/data/notion-posts.json')
 const IMG_DIR = path.join(ROOT, 'public/notion')
+/* images go here first and replace IMG_DIR only once every post is fetched */
+const STAGE_DIR = `${IMG_DIR}.tmp`
 
 const PROPS = {
   title: '제목',
@@ -95,7 +97,7 @@ async function saveImage(file, name) {
   const ext = path.extname(new URL(url).pathname) || '.jpg'
   const res = await fetch(url)
   if (!res.ok) throw new Error(`image ${name}: ${res.status}`)
-  await fs.writeFile(path.join(IMG_DIR, name + ext), Buffer.from(await res.arrayBuffer()))
+  await fs.writeFile(path.join(STAGE_DIR, name + ext), Buffer.from(await res.arrayBuffer()))
   return `/notion/${name}${ext}`
 }
 
@@ -204,8 +206,8 @@ async function main() {
     }
   }
 
-  await fs.rm(IMG_DIR, { recursive: true, force: true })
-  await fs.mkdir(IMG_DIR, { recursive: true })
+  await fs.rm(STAGE_DIR, { recursive: true, force: true })
+  await fs.mkdir(STAGE_DIR, { recursive: true })
 
   const posts = []
   for (const page of ko) {
@@ -229,11 +231,14 @@ async function main() {
     })
   }
 
+  await fs.rm(IMG_DIR, { recursive: true, force: true })
+  await fs.rename(STAGE_DIR, IMG_DIR)
   await fs.writeFile(OUT_JSON, `${JSON.stringify(posts, null, 2)}\n`)
   console.log(`[notion] ${posts.length} published posts written to src/data/notion-posts.json`)
 }
 
-main().catch((err) => {
-  console.error(`[notion] ${err.message}`)
-  process.exit(1)
+/* a failed fetch must not fail the build: warn and keep the last posts */
+main().catch(async (err) => {
+  console.warn(`[notion] ${err.message}: keeping the current posts.`)
+  await fs.rm(STAGE_DIR, { recursive: true, force: true })
 })

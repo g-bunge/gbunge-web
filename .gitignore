@@ -11,6 +11,7 @@ node_modules
 dist
 # images the Notion script downloads at build time
 public/notion
+public/notion.tmp
 dist-ssr
 *.local
 

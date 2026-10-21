@@ -1,4 +1,5 @@
-# Builds the site with Vite and publishes dist/ to GitHub Pages on every push to main.
+# Builds the site with Vite and publishes dist/ to GitHub Pages on every push to main,
+# and once a day so new Notion blog posts go up without a push.
 # Needs Settings → Pages → Build and deployment → Source: "GitHub Actions".
 name: Deploy to GitHub Pages
 
@@ -6,6 +7,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # daily rebuild to pick up Notion posts: 19:00 UTC = 04:00 KST
+  schedule:
+    - cron: '0 19 * * *'
 
 permissions:
   contents: read
