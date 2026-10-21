@@ -3,6 +3,8 @@ export const EMAIL = 'contact@gbunge.com'
 /* where every sponsorship inquiry goes: the contact buttons, the address on /sponsors and the inquiry form */
 export const SPONSOR_EMAIL = 'kimjoori@gm.gist.ac.kr'
 export const INSTAGRAM = 'https://www.instagram.com/gbunge_/'
+/* Behold JSON feed of that account: the home page carousel shows its latest posts (falls back to data/stories.js) */
+export const INSTAGRAM_FEED = 'https://feeds.behold.so/IVDwBYwCYYyMTL0LKQh6'
 
 /*
  * The blog (/stories) is closed for now. false hides its menu links and the home page section,

@@ -4,13 +4,16 @@ import Button from '../components/ui/Button.jsx'
 import Carousel from '../components/ui/Carousel.jsx'
 import { ArrowUpRight, InstagramIcon } from '../components/ui/Icons.jsx'
 import { storySlides } from '../data/stories.js'
+import useInstagramFeed from '../hooks/useInstagramFeed.js'
 import { posts } from '../data/posts.js'
 import useLang from '../i18n/LanguageContext.js'
 import { INSTAGRAM } from '../data/site.js'
 
 export default function Stories() {
   const { lang } = useLang()
-  const slides = storySlides.map((s) => ({ ...s, alt: s.alt[lang] }))
+  const feed = useInstagramFeed()
+  // the latest Instagram posts; the photos in data/stories.js while the feed loads or if it fails
+  const slides = feed ?? storySlides.map((s) => ({ ...s, alt: s.alt[lang] }))
 
   return (
     <section id="stories" className="px-10 pt-22 pb-20 tablet:px-gutter tablet:py-20">
@@ -18,9 +21,10 @@ export default function Stories() {
         <SectionHeading eyebrow="SNS&Blog" title="Our Stories" align="center" />
       </Reveal>
 
-      <div className="mx-auto mt-14.5 grid max-w-309 grid-cols-[380fr_396fr_396fr] grid-rows-[238px_238px] gap-8 tablet:grid-cols-2 tablet:grid-rows-none tablet:gap-4 mobile:grid-cols-1">
-        <Reveal className="row-span-2 overflow-hidden tablet:col-span-2 tablet:row-auto tablet:aspect-461/518 tablet:max-h-[70vh] mobile:col-auto" variant="left">
-          <Carousel slides={slides}>
+      <div className="mx-auto mt-14.5 grid max-w-309 grid-cols-[380fr_396fr_396fr] grid-rows-2 gap-8 tablet:grid-cols-2 tablet:grid-rows-none tablet:gap-4 mobile:grid-cols-1">
+        {/* 4:5, Instagram's portrait post ratio; the two rows of post cards share its height */}
+        <Reveal className="row-span-2 aspect-4/5 overflow-hidden tablet:col-span-2 tablet:row-auto tablet:max-h-[70vh] tablet:justify-self-center mobile:col-auto" variant="left">
+          <Carousel key={feed ? 'instagram' : 'fallback'} slides={slides}>
             <a
               className="absolute top-4.5 right-4.5 size-7 text-fg drop-shadow-[0_1px_4px_rgb(0_0_0/0.4)] transition-[scale] duration-300 ease-out hover:scale-115"
               href={INSTAGRAM}
