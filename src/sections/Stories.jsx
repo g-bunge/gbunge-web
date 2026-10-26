@@ -19,10 +19,7 @@ export default function Stories() {
       {/* hashtag title, then a thin line dropping to a ringed Instagram button */}
       <Reveal className="flex flex-col items-center text-center">
         <p className="t-eyebrow mb-3">SNS&Blog</p>
-        <h2 className="t-title flex items-center gap-3.5">
-          <InstagramIcon className="size-7 text-brand" />
-          <span className="underline decoration-brand decoration-3 underline-offset-10">#Our Stories</span>
-        </h2>
+        <h2 className="t-title underline decoration-brand decoration-3 underline-offset-10">#Our Stories</h2>
         <span className="mt-7 h-12 w-px bg-white/25" aria-hidden />
         <a
           className="grid size-15 place-items-center rounded-full border border-white/25 text-fg ring-10 ring-white/4 transition-colors duration-300 hover:border-brand hover:text-brand"
