@@ -26,9 +26,9 @@
 
 | 토큰 | 값 | 클래스 예 | 용도 |
 |---|---|---|---|
-| `brand` | `#d94333` | `bg-brand` `border-brand` | 메인 브랜드 색, 포커스 테두리 |
-| `brand-end` | `#db5551` | `text-brand-end` | 브랜드 그라디언트 끝색, 강조 텍스트(카테고리, 링크) |
-| `brand-hover` / `brand-hover-end` | `#e5503f` / `#e76a64` | - | 버튼 호버 그라디언트 (직접 쓰지 말고 `bg-brand-gradient-hover`) |
+| `brand` | `#e1232b` | `bg-brand` `border-brand` | 메인 브랜드 색, 포커스 테두리 |
+| `brand-end` | `#f0393f` | `text-brand-end` | 브랜드 그라디언트 끝색, 강조 텍스트(카테고리, 링크) |
+| `brand-hover` / `brand-hover-end` | `#ee2f37` / `#ff4d52` | - | 버튼 호버 그라디언트 (직접 쓰지 말고 `bg-brand-gradient-hover`) |
 
 ### 배경 (어두운 순)
 
