@@ -160,7 +160,7 @@ async function toBody(pageId, slug) {
       if (value.rich_text.length) body.push({ type: 'p', text: rich(value.rich_text) })
     } else if (type === 'heading_1' || type === 'heading_2') {
       body.push({ type: 'h2', text: rich(value.rich_text) })
-    } else if (type === 'heading_3') {
+    } else if (type === 'heading_3' || type === 'heading_4') {
       body.push({ type: 'h3', text: rich(value.rich_text) })
     } else if (type === 'bulleted_list_item' || type === 'numbered_list_item') {
       const list = type === 'bulleted_list_item' ? 'ul' : 'ol'
@@ -214,9 +214,15 @@ async function main() {
     const slug = (prop(page, PROPS.slug) || page.id.replaceAll('-', '')).trim()
     const enPage = en.get(page.id)
     const bodyKo = await toBody(page.id, slug)
-    const bodyEn = enPage ? await toBody(enPage.id, `${slug}-en`) : bodyKo
+    const enBody = enPage ? await toBody(enPage.id, `${slug}-en`) : []
+    // an English page that isn't written yet (empty, or a placeholder title like "-") falls back to the Korean, part by part
+    const enTitle = enPage && prop(enPage, PROPS.title)?.trim()
+    const titleEn = enTitle && /[\p{L}\p{N}]/u.test(enTitle) ? enTitle : prop(page, PROPS.title)
+    const bodyEn = enBody.length ? enBody : bodyKo
     const teamRaw = prop(page, PROPS.team)
     const excerptKo = prop(page, PROPS.excerpt) || firstParagraph(bodyKo)
+    const excerptEn = (enBody.length && ((enPage && prop(enPage, PROPS.excerpt)) || firstParagraph(enBody))) || excerptKo
+    const cover = await saveImage(page.cover, `${slug}-cover`)
 
     posts.push({
       slug,
@@ -224,9 +230,11 @@ async function main() {
       team: teamRaw && (TEAMS[teamRaw.toLowerCase()] ?? teamRaw),
       author: prop(page, PROPS.author),
       date: prop(page, PROPS.date),
-      cover: await saveImage(page.cover, `${slug}-cover`),
-      title: { ko: prop(page, PROPS.title), en: (enPage && prop(enPage, PROPS.title)) || prop(page, PROPS.title) },
-      excerpt: { ko: excerptKo, en: (enPage && (prop(enPage, PROPS.excerpt) || firstParagraph(bodyEn))) || excerptKo },
+      cover,
+      // the card's picture: the cover, or else the first photo in the post (not repeated as a cover on the post page)
+      thumb: cover ?? bodyKo.find((b) => b.type === 'img')?.src ?? null,
+      title: { ko: prop(page, PROPS.title), en: titleEn },
+      excerpt: { ko: excerptKo, en: excerptEn },
       body: { ko: bodyKo, en: bodyEn },
     })
   }

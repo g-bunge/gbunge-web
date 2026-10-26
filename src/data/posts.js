@@ -10,7 +10,8 @@ import notionPosts from './notion-posts.json'
  *   team    : a group id from members.js (e.g. 'aerodynamics') or a team name as written; hidden while null
  *   author  : a person id from members.js, or a name as written in Notion; hidden while null
  *   date    : 'YYYY-MM-DD'; hidden while null
- *   cover   : landscape image, ~16:10; a grey block shows while null
+ *   cover   : landscape image, ~16:10, shown on the card and atop the post; a grey block shows while null
+ *   thumb   : the card's picture when there's no cover (the post's first photo, from Notion); optional
  *   body    : { ko: blocks, en: blocks }; see components/ui/PostBody.jsx
  */
 const knownCategories = {

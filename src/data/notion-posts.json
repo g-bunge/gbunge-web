@@ -1,38 +1,19 @@
 [
   {
-    "slug": "4008200a5f9880a48190cd6f13cede8f",
-    "category": "엔지니어링",
-    "team": "manufacturing",
-    "author": null,
-    "date": "2026-10-22",
-    "cover": null,
-    "title": {
-      "ko": "ㅏㅏㅏㅏㅏㅏ",
-      "en": "aaaaa"
-    },
-    "excerpt": {
-      "ko": "",
-      "en": ""
-    },
-    "body": {
-      "ko": [],
-      "en": []
-    }
-  },
-  {
     "slug": "4008200a5f98809d8222d6c1fc428318",
-    "category": "작업일지",
-    "team": "aerodynamics",
+    "category": "이야기",
+    "team": "Etc",
     "author": "김예원",
     "date": "2026-10-21",
     "cover": null,
+    "thumb": "/notion/4008200a5f98809d8222d6c1fc428318-1.jpg",
     "title": {
-      "ko": "테스트용",
-      "en": "Test"
+      "ko": "지붕이 웹페이지 개발기",
+      "en": "A Website Built to Outlast Its Developer"
     },
     "excerpt": {
-      "ko": "테스트용",
-      "en": "test"
+      "ko": "안녕하세요, 26학번 김예원입니다. 좋은 기회가 생겨 지붕이 웹페이지를 개발하게 됐습니다.",
+      "en": "Hi, I’m Yewon Kim, Team lead of aerodynamics. I got a opportunity to build the GbungE website."
     },
     "body": {
       "ko": [
@@ -40,7 +21,222 @@
           "type": "p",
           "text": [
             {
-              "text": "테스트용"
+              "text": "안녕하세요, 26학번 김예원입니다. 좋은 기회가 생겨 지붕이 웹페이지를 개발하게 됐습니다."
+            }
+          ]
+        },
+        {
+          "type": "img",
+          "src": "/notion/4008200a5f98809d8222d6c1fc428318-1.jpg",
+          "caption": []
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": " 많은 관심 부탁드립니다. 아래는 개발기입니다."
+            }
+          ]
+        },
+        {
+          "type": "h3",
+          "text": [
+            {
+              "text": "지속 가능한 사이트"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "이 사이트를 만들며 세운 기준은 하나였습니다. 얼마나 멋지고 끝내주느냐가 아니라, 제가 떠난 뒤에도 이 사이트가 유지될 수 있는가.\n\n학생 팀의 웹사이트는 대개 만든 사람이 졸업하면 함께 멈춥니다. 아무도 코드를 열어보지 않고, 몇 년 전 게시글이 첫 화면을 지킵니다. 그걸 썩 좋게 생각하지는 않습니다. 개발자 본인이 없어도 편하게 이용할 수 있는 사이트를 만들고 싶었습니다."
+            }
+          ]
+        },
+        {
+          "type": "h3",
+          "text": [
+            {
+              "text": "어떻게 개발됐는가"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "스택은 React와 Tailwind입니다. 제게 가장 익숙한 프레임워크들이기도 하고, 대부분의 시스템은 별도 문서에 정의되어있긴 하지만 Tailwind는 가시성 위해서는 필수적이라 생각했습니다. 인스타그램 게시글은 Behold로, 블로그 글은 Notion API로 불러옵니다. 그리고 가장 중요한 원칙으로, 이 사이트는 백엔드 없는 정적 웹사이트입니다. \n\n백엔드가 생기는 순간 보안을 생각해야 하고, 서버를 관리할 사람이 필요해집니다. AI에게 보안을 맡기기는 썩 유쾌하지는 않은 일입니다. 팀원 목록과 소개글처럼 자주 바뀌지 않는 정보는 과감히 하드코딩했습니다. 호스팅은 GitHub Pages입니다. 번거로움을 줄이기 위함이고, 문제가 생기면 Cloudflare로 옮길 생각입니다."
+            }
+          ]
+        },
+        {
+          "type": "h3",
+          "text": [
+            {
+              "text": "개발자가 아니어도 쓸 수 있는 블로그"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "정적 사이트의 약점은 콘텐츠 업데이트입니다. 글 하나 올리려고 코드를 고쳐야 한다면 아무도 글을 쓰지 않습니다."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "그래서 "
+            },
+            {
+              "text": "인포팀 블로그",
+              "href": "https://blog.gistory.me/"
+            },
+            {
+              "text": "에서 아이디어를 얻었습니다. 부원은 Notion 데이터베이스에 글을 쓰고 상태를 Published로 바꾸기만 하면 됩니다. 그러면 매일 새벽 4시, 사이트에 반영됩니다. Git도, 터미널도 몰라도 됩니다. 일반 부원이 편하게 쓸 수 있어야 사이트가 살아 있을 수 있으니까요. "
+            }
+          ]
+        },
+        {
+          "type": "img",
+          "src": "/notion/4008200a5f98809d8222d6c1fc428318-2.png",
+          "caption": [
+            {
+              "text": "실제 노션 페이지"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "물론 유지보수를 할, 컴퓨터에 대한 아주 기초적인 지식이 있는 한 명 정도는 팀에 있어야 하고, 그 정도는 있을 것이라는 희망을 가져봅니다. (없다면 구글 사이트를 사용하는 것도 방법입니다.)"
+            }
+          ]
+        },
+        {
+          "type": "h3",
+          "text": [
+            {
+              "text": "생각할 여지를 남기지 않는 디자인"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "디자인은 실험보다 정석을 택했습니다. 깔끔하고 익숙한 구조, 방문자가 길을 잃지 않는 형태입니다. 보는 사람에게 생각할 여지를 딱히 남기고 싶지 않았습니다."
+            }
+          ]
+        },
+        {
+          "type": "img",
+          "src": "/notion/4008200a5f98809d8222d6c1fc428318-3.png",
+          "caption": [
+            {
+              "text": "figma 속 무수한 수정의 흔적들"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "다만 디자인은 특히 아쉬움이 많이 남습니다. 에어로 팀의 작업이 덜 바빠진다면 다시 손대고 싶은 부분입니다."
+            }
+          ]
+        },
+        {
+          "type": "h3",
+          "text": [
+            {
+              "text": "Vibe-coded"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "이번 작업에서 저는 디자인 시스템을 정의했고, 개발은 Claude에게 맡긴 뒤 검수만 했습니다. 클린 코드나 아키텍처에는 큰 관심이 없었습니다. 다만 Vite 환경변수에 API 키를 그대로 박아 클라이언트에 노출시키는 식의 일만은 곤란하니, 그런 부분만 체크했습니다.\n\n말하기도 입 아프지만, AI가 정말 많이 좋아졌더라고요. 이제 중요한 건 코드를 얼마나 잘 치느냐가 아니라 무엇을 만들지, 그리고 무엇을 만들지 않을지를 정하는 일이라는 걸 체감했습니다."
+            }
+          ]
+        },
+        {
+          "type": "h3",
+          "text": [
+            {
+              "text": "이스터에그"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "제가 페이지를 개발할 기회가 생기면 꼭 넣는 게 있는데, 바로 이스터에그입니다. 이를테면 메인 화면에서 HV팀의 배너를 세 번 열었다 닫으면, 전기 이펙트가 튑니다. 이런 숨은 장치가 이 사이트에 네 개 있습니다. 나머지 셋은 직접 찾아보시길 바랍니다."
+            }
+          ]
+        },
+        {
+          "type": "h3",
+          "text": [
+            {
+              "text": "지붕이는 어떤 팀인가"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "브랜딩에 대해서는 사실 깊이 고민하지 못했습니다. 그래서 이제야 묻습니다. 지붕이의 브랜드가 있다면, 그건 무엇일까요?\n\n팀 전체로 보면, 저희는 과학기술원이라는 특수한 연구기관에 속해 있습니다. 전문성과 영재성이 아이덴티티가 될 수 있을 것이고, 그중에서도 가장 인원이 적은 GIST이므로 저희의 정체성은 소수정예일 것입니다.\n\n포뮬러팀은 이번이 첫 참가인 루키팀입니다. 그리고 바하팀은 더 특별합니다. 원래 계획에 없던 팀입니다. 대회장에서 엔진음에 매료된 신입생들이 스스로 모여 꾸린 팀입니다. 누가 시켜서가 아니라 소리에 반해서 시작했다는 것, 매력적인 성격입니다.\n\n어느 쪽이든 공통점은 하나입니다. 고전적인 틀에서 벗어난, 새로운 팀이라는 것입니다. 영문 팀 소개 문단 끝에 다음과 같은 문구를 넣었습니다."
+            }
+          ]
+        },
+        {
+          "type": "quote",
+          "text": [
+            {
+              "text": "Every champion starts as a rookie, so do we.",
+              "italic": true
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "신생팀의 포부를 재밌게 담은 문장이라 맘에 듭니다."
+            }
+          ]
+        },
+        {
+          "type": "h3",
+          "text": [
+            {
+              "text": "남은 과제"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "사이트는 완성됐지만, 끝난 건 아닙니다. 앞으로 풀어야 할 질문은 세 가지입니다.\n\n• 사용성과 유지보수성: 하드코딩된 텍스트 하나를 바꾸는 데도 코드를 열어야 하는 지금의 복잡함을 어떻게 줄일 것인가.\n• 디자인: 정석의 안정감을 지키면서 지붕이다운 개성을 어떻게 더할 것인가.\n• 브랜드: 소수정예, 루키, 엔진음에 반한 신입생들. 이 이야기를 사이트에서 어떻게 보여줄 것인가."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "아쉬움도 많고 아직 부족한 점이 많지만, 좋은 출발점이 되기를 바라고 있습니다. 읽어주셔서 감사합니다."
             }
           ]
         }
@@ -50,7 +246,1227 @@
           "type": "p",
           "text": [
             {
-              "text": "test"
+              "text": "Hi, I’m Yewon Kim, Team lead of aerodynamics. I got a opportunity to build the GbungE website."
+            }
+          ]
+        },
+        {
+          "type": "img",
+          "src": "/notion/4008200a5f98809d8222d6c1fc428318-en-1.jpg",
+          "caption": []
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "Please show it some love. Here’s the development diary."
+            }
+          ]
+        },
+        {
+          "type": "h3",
+          "text": [
+            {
+              "text": "A website built to stick around"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "I started with one question: not “How flashy can this be?” but “Will it still work after I’m gone?”"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "Student team websites often graduate right alongside the person who built them. Nobody opens the code, and a post from years ago keeps holding down the homepage. I’m not exactly a fan of that tradition. I wanted to build a site people could use comfortably even when its developer was no longer around."
+            }
+          ]
+        },
+        {
+          "type": "h3",
+          "text": [
+            {
+              "text": "How it was built"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "The stack is React and Tailwind, both familiar territory for me. Most of the design systems are documented elsewhere, but I think Tailwind is essential for keeping things visible. Instagram posts come through Behold, and blog posts through the Notion API. Most importantly, this is a static website with no backend."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "The moment you add a backend, you also inherit security concerns and the job of keeping a server alive. Handing security over to AI doesn’t exactly fill me with joy. Information that rarely changes, like the team roster and bios, is hardcoded without apology. The site is hosted on GitHub Pages to keep things simple; if trouble shows up, Cloudflare is the escape hatch."
+            }
+          ]
+        },
+        {
+          "type": "h3",
+          "text": [
+            {
+              "text": "A blog even non-developers can use"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "The weak spot of a static site is updating its content. If publishing one post means editing code, nobody’s going to post."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "So I borrowed an idea from the "
+            },
+            {
+              "text": "Infoteam blog",
+              "href": "https://blog.gistory.me/"
+            },
+            {
+              "text": ". Members write in a Notion database and change the status to Published. Every day at 4 a.m., the site picks up the update. No Git, no terminal, no secret handshake. The site can stay alive only if regular members can use it comfortably."
+            }
+          ]
+        },
+        {
+          "type": "img",
+          "src": "/notion/4008200a5f98809d8222d6c1fc428318-en-2.png",
+          "caption": [
+            {
+              "text": "Actual notion page"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "Of course, someone with a very basic understanding of computers still needs to maintain it. I’m choosing to believe we’ll have at least one such person. (If not, Google Sites is always there for you.)"
+            }
+          ]
+        },
+        {
+          "type": "h3",
+          "text": [
+            {
+              "text": "Design that leaves no room to get lost"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "I went with the classics over experimentation: a clean, familiar layout where visitors won’t lose their way. I wasn’t trying to give people much to think about—and I mean that as a compliment."
+            }
+          ]
+        },
+        {
+          "type": "img",
+          "src": "/notion/4008200a5f98809d8222d6c1fc428318-en-3.png",
+          "caption": [
+            {
+              "text": "Figma, with a few thousand edits’ worth of history"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "There’s still plenty I wish I’d done better. If the Aero team ever gets a breather, I’d love to revisit the design."
+            }
+          ]
+        },
+        {
+          "type": "h3",
+          "text": [
+            {
+              "text": "Vibe-coded"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "For this project, I defined the design system, handed the development to Claude, and reviewed the results. I wasn’t especially concerned with pristine code or architecture. I did draw the line at things like putting API keys in Vite environment variables and exposing them to the client."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "I know, but AI has gotten really good. This project made me realize that the important question is no longer how well you can type code, but what you choose to build and what you wisely choose not to."
+            }
+          ]
+        },
+        {
+          "type": "h3",
+          "text": [
+            {
+              "text": "Easter eggs"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "Whenever I get the chance to build a page, I have to hide an Easter egg. For example, open and close the HV team’s banner three times on the homepage an electric effect appears. There are four hidden surprises on this site. I’ll leave the other three for you to find."
+            }
+          ]
+        },
+        {
+          "type": "h3",
+          "text": [
+            {
+              "text": "What kind of team is GbungE?"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "To be honest, I hadn’t thought very deeply about the brand. So I’m only asking now: if GbungE had a brand, what would it be?"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "As a team, we belong to GIST, a rather unusual research institute. Expertise and giftedness could be part of our identity; and as the smallest team at GIST, we might call ourselves a small but mighty crew."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "The Formula team is a rookie team entering its first competition. The Baja team is even more unusual: it wasn’t in the plan at all. A group of freshmen heard the engines at a competition, fell in love with the sound, and started the team themselves. Nobody assigned them the task. They just heard the noise and thought, “We’re in.” That’s a pretty great origin story."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "Either way, we have one thing in common: we’re new teams stepping outside the usual mold. At the end of the English team introduction, I added this line:"
+            }
+          ]
+        },
+        {
+          "type": "quote",
+          "text": [
+            {
+              "text": "Every champion starts as a rookie, so do we.",
+              "italic": true
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "It captures a new team’s ambition with a little wink. I like it."
+            }
+          ]
+        },
+        {
+          "type": "h3",
+          "text": [
+            {
+              "text": "What’s left to do"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "The site is finished, but the work isn’t. There are three questions still waiting for answers:"
+            }
+          ]
+        },
+        {
+          "type": "ul",
+          "items": [
+            [
+              {
+                "text": "Usability and maintainability:",
+                "bold": true
+              },
+              {
+                "text": " How do we make it less of a production to open the code just to change one hardcoded sentence?"
+              }
+            ],
+            [
+              {
+                "text": "Design:",
+                "bold": true
+              },
+              {
+                "text": " How do we add more GbungE personality without losing the reassuring clarity of a classic layout?"
+              }
+            ],
+            [
+              {
+                "text": "Brand:",
+                "bold": true
+              },
+              {
+                "text": " Small but mighty, rookies, freshmen who fell for the sound of an engine. how do we tell that story on the site?"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "There’s plenty I wish I’d done better, and plenty that still needs work. But I hope this is a good place to start. Thanks for reading."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "slug": "3e68200a5f9880c8a1d7c155b002ec07",
+    "category": "이야기",
+    "team": "PM",
+    "author": "동혁",
+    "date": "2026-08-26",
+    "cover": null,
+    "thumb": "/notion/3e68200a5f9880c8a1d7c155b002ec07-1.png",
+    "title": {
+      "ko": "GEF-27 프로젝트를 시작하며. (시스템 엔지니어링 기반 팀 빌딩) ",
+      "en": "Starting the GEF-27 Project: Building a Team Through Systems Engineering"
+    },
+    "excerpt": {
+      "ko": "안녕하세요. GIST G-BungE의 GEF-27 PM 김동혁입니다. 3년전 제 동기 장현웅(22)이랑 E-baja를 설계하면서 포뮬러 규정을 처음 봤을때는 참 막막했습니다. 아크총회로 영광에 처음 간 24년 5월,…",
+      "en": "Hello, I’m Donghyuk Kim, PM for GEF-27 at GIST G-BungE. Three years ago, when I first read the Formula rules while desig…"
+    },
+    "body": {
+      "ko": [
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "안녕하세요. GIST G-BungE의 GEF-27 PM 김동혁입니다. 3년전 제 동기 장현웅(22)이랑 E-baja를 설계하면서 포뮬러 규정을 처음 봤을때는 참 막막했습니다. 아크총회로 영광에 처음 간 24년 5월, 타팀 포뮬러가 트랙에서 그렇게 도는 모습을 보고 언젠가 나도 우리팀을 키워서 꼭 참여해보고 싶다는 생각을 다졌던 것 같습니다. 그렇게 혼자서 꿈을 꾼 기간이 무색하게 벌써 2년이 넘는 시간이 지났습니다. 그 꿈을 성공시키고자 수많은 버전의 예산안을 짜보기도 하고, 자금 조달 방법에 대해서 매일 고민하며, 가장 중요한 같이해줄 파트장 및 파트원을 어떻게 모을지 고민했습니다."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "전역하기 직전부터 학교의 스타트업에 재학하며 실제 기업에서 일하는 방식을 배우고 적용해보고자 많이 고민했습니다. 같이 진행할 후배들과 동기들을 설득하고, 내가 가진 역량이 어느정도인지, 내가 어떤 사람인지 다가가고자 했습니다. 사실, 의식하고 진행했다기보다 지난 BAJA 대회에서 진심으로 참여했던 점들로 보여주고자 했습니다. 어쩌다 보니 군 복무시절부터 준비한 연구내용으로 BSK 기술아이디어 최우수상을 수상한 점이 크게 작용하지 않았을까 생각합니다."
+            }
+          ]
+        },
+        {
+          "type": "img",
+          "src": "/notion/3e68200a5f9880c8a1d7c155b002ec07-1.png",
+          "caption": []
+        },
+        {
+          "type": "hr"
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "'아 어떻게 했으면 하네스 이슈가 안터졌을까?', '왜 이걸 간과했지?', '아 운이 안좋았다.' 대회가 끝난 직후나 팀을 운영하는 중에는 다음과 같은 피드백을 진행하게 됩니다. 그럼 초기팀인 우리는, 경험이 부족하기에 받아들여야하는 것인가요?"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "굉장히 오래 고민해본 결과, 이런 결과론적인 피드백과 푸념은 큰 의미가 없습니다. 1년을 운영해오는 과정에서 오류를 범하지 않도록 시스템을 구성하는 것 자체가 실력이며, 실제 공학도들은 어떻게 시스템을 구성하는지 관심을 가지게 되었습니다."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "제가 실패한 24년과, 일병 6호봉 김경민 팀장이 이끈 25년, 이하람 훈련병이 이끈 26년을 보면서 공통적으로 느낀점은 다음과 같습니다."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "1. 팀장이 주요하게 놓치거나 간과하면 DNF거나 혹은 크거나 작은 문제로 무조건 터진다."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "2. 시스템의 안정성을 높이는 제작과 설계를 진행해야 한다. (불확실성을 줄이도록 프로젝트를 이끌어야한다.)"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "3. 함께해줄 '사람'이 가장 중요하다."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "3번은 오로지 팀장과 그 해의 운에 달렸습니다. 당해년도 대회 결과가 향년의 의지에 상당한 영향을 끼치는 점이 웃픈 것 같습니다.",
+              "strike": true
+            },
+            {
+              "text": " 1,2번이 제일 주요합니다. 아무리 경험이 많은 팀이라도 '대학생'의 '1년 주기 프로젝트'인 이상 한계점이 명확합니다. 그렇기에 시스템이 유지되는 상위권 학교들이 정말 대단하다고 생각이 들었고, 우리가 그 '시스템'을 갖추기 위해서는 어떻게 해야할까 많이 고민했습니다. 그리고 '시스템 엔지니어링'이라는 학문이 꽤나 적용하기 좋아보였고, 간략한 소개와 적용한 과정들을 본 글에 남겨볼까 합니다."
+            }
+          ]
+        },
+        {
+          "type": "hr"
+        },
+        {
+          "type": "h3",
+          "text": [
+            {
+              "text": "시스템 엔지니어링 (System Engineering. S.E)",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "저도 이 학문을 접한지 오래되지 않았습니다. 재직중인 스타트업에서 한국항공우주연구원에서 수조에 해당하는 프로젝트를 굴려보신 박사님들과 세미나를 가지면서 관심을 크게 가지게 되었습니다. 당시 세미나에서 인상깊었던 시스템 엔지니어링에 대한 박사님의 정의는 다음과 같습니다."
+            }
+          ]
+        },
+        {
+          "type": "quote",
+          "text": [
+            {
+              "text": "시스템 엔지니어링은 미지의 대형 프로젝트를 성공시키기 위한 학문이다.",
+              "italic": true
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "전투기 개발, 우주선 개발 등의 때로는 10년이상 걸리는 프로젝트들을 성공시키기 위한 학문이라는 점입니다."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "'어떤 근거로 프로젝트를 착수하고 시작하는지', '수조 이상의 돈을 어떻게 굴리는지', '협업은 어떻게 하는지', '테스트는 어떻게 하는지', '유지보수는 어떻게 하는지', '그 많은 사람들과 팀을 어떻게 관리하는지'를 고민하고 '정답'을 제시하는 학문입니다."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "'정답'을 제시하는 사유는 이 시스템 엔지니어링을 NASA에서 성공시키기 위해 개발한 학문이며, 완벽한 시스템 엔지니어링 기반 움직이는 집단은 NASA 밖에 없습니다. 우리나라 최고 과학연구기관들도 따라하지 못할정도로 방대하고, 대기업들 역시 본인들만의 S.E을 구축하여 운영하고 있습니다."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "그럼에도 이 학문을 적용하는 것은, 적용하는 과정 자체에 의의가 있다는 점입니다. 원칙적으로는 모든 결정과정과 근거를 문서로 남기고, 각 분야의 전문가들이 모든 것을 고려해서 한 방향으로 나아가는 과정입니다. 다만 본질적으로는, 모든 것을 고려해서 최대한 찐빠날 가능성을 줄이는 식의 일처리 방식입니다. 그렇기에 각자 조직이 닿는 한에서 시스템을 구축하고 프로젝트를 성공시키도록 적용하는 과정이 의미있다는 뜻입니다."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "이렇게 프로젝트를 원활히 굴러가는 조직문화를 만들어 굴릴수만 있다면 처음 시도하는 이 프로젝트를 무조건 성공시킬 수 있다고 확신이 들었습니다."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "미지의 프로젝트가 아닌 이미 레퍼런스가 많은 프로젝트이며, 자금 조달과 일정 흐름을 이미 구상이 되었으며, 이를 진행시켜줄 팀장과 팀원들을 모았습니다."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "이제 남은 문제는, 상위 의사결정 조건을 잘못 설정하거나 Review 단계에서 내가 피드백을 놓치거나 경험문제가 병목일 가능성만 남았습니다. 그렇기에 일정 자체를 '버퍼'를 매우 크게 잡고 시작했으며, 처음 시도하는 전기의 경우 26년 7월부터 본격적으로 설계를 시작시켰습니다."
+            }
+          ]
+        },
+        {
+          "type": "hr"
+        },
+        {
+          "type": "h3",
+          "text": [
+            {
+              "text": "S.E 의 적용",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "ol",
+          "items": [
+            [
+              {
+                "text": "DB 기반 항목화",
+                "bold": true
+              }
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "저희 팀에 적용한 시스템 엔지니어링 적용 방법은 다음과 같습니다."
+            }
+          ]
+        },
+        {
+          "type": "img",
+          "src": "/notion/3e68200a5f9880c8a1d7c155b002ec07-2.png",
+          "caption": [
+            {
+              "text": "전체 DB"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "가장 기본인 문서화와 규정집과 Inspection 시트를 기반으로 항목화 진행하였습니다. 이 한개한개의 항목을 놓치지 않도록 가장 처음으로 구상했던 부분입니다. "
+            },
+            {
+              "text": "(아 이거도 2026년 Inspection Sheet로 최신화 하긴 해야하는데;)",
+              "strike": true
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "각 팀장들의 화면에서는 타팀과 연관된 규정까지 아래와 같이 뜨도록 구성하였습니다. 사실 모든 팀장이 모든 규정을 명확히 숙지하고 있는 것이 기본이지만, 초기 팀이기에 최대한 밀도있는 정보를 제공하고자 구상했습니다."
+            }
+          ]
+        },
+        {
+          "type": "img",
+          "src": "/notion/3e68200a5f9880c8a1d7c155b002ec07-3.png",
+          "caption": [
+            {
+              "text": "HV 팀장 규정 뷰 예시"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "2. 팀 전용 매신저 서버 구축",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "기존 스타트업에서 사용했던 Slack과 거의 같은 구조를 지니지만, 서버를 직접 구축해야한다는 단점이 있는 Mattermost라는 플랫폼을 동아리 메신저로 채택하여 업무 효율성을 높였습니다. 이는 의사소통뿐만아니라, 요구조건과 각팀의 진행상황을 동시다발적으로 모니터링할 수 있다는 점에 큰 장점이 있으며 심지어 무료입니다 ㅎㅎ. 앱도 사용이 가능하며, 현재는 주축팀원들은 대부분 해당 플랫폼을 이용하여 일을 진행하고 있습니다."
+            }
+          ]
+        },
+        {
+          "type": "img",
+          "src": "/notion/3e68200a5f9880c8a1d7c155b002ec07-4.png",
+          "caption": []
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "Markdown 문법을 사용하여 AI 활용하기도 좋습니다."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "3. WBS (Work Breakdown Structure) 활용",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "제가 겪어본 다양한 조직들에서 함께 프로젝트를 하며 겪는 문제점은 주로, '얼마나 진행됐는지 경과를 알기 어렵다.', '주간 회의 때 까보니, 1주일간 진행된 것이 없거나 잘못된 방향으로 진행되고 있다.' 는 점이 있었습니다."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "때문에, WBS 중에 Gantt Chart라는 시스템을 활용해서 PM이 각팀의 진행상황을 꾸준히 관리할 수 있으며, 심지어 프로젝트와 연관된 이들이 다같이 한눈에 볼 수 있다는 큰 장점이 있습니다. (일 제대로, 제 때 안하는 사람에겐 큰 단점이긴함..)"
+            }
+          ]
+        },
+        {
+          "type": "img",
+          "src": "/notion/3e68200a5f9880c8a1d7c155b002ec07-5.png",
+          "caption": []
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "4. V Model 방식 프로젝트 구성 (시도 중)",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "img",
+          "src": "/notion/3e68200a5f9880c8a1d7c155b002ec07-6.png",
+          "caption": []
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "해당 V Model은 주로 다음과 같은 흐름으로 고민을 진행하게 됩니다."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "시스템 레벨"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "서브시스템 레벨"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "컴포넌트 레벨"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "섀시쪽을 예시로 쉬운말로 해보자면, 시스템 레벨은 섀시가, 서브시스템 레벨은 업라이트나 롤케이지가, 컴포넌트 레벨은 허브나 디스크 등의 상세 부품까지 내려가는 구분을 말합니다."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "이 V Model의 핵심은 '의사결정 조건'을 명확히하고 상위부터 하위까지 그 의사조건에 따라 진행한다는 점입니다. 그리고, 실 제작물에 대한 검증은 역으로 타고 올라와 시스템 통합까지 이룬다는 점입니다."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "(물론 경우에 따라 의사결정 조건을 변경해도 됩니다. <--- 이게 핵심) 그렇기에 상위 의사결정 조건은 주로 시스템레벨부터 결정하여 타고 내려옵니다. (저희 팀의 경우 주로 최상위 의사결정은 제가 진행했습니다. 이는 예산과 시스템 구상을 같이 진행했기 때문입니다.)"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "또 다른 V model의 핵심은 약어 설명에도 있듯이, \"Review\"라는 점입니다. 저도 그랬지만, 주로 설계가 완성되면 규정 충족여부나 제작 가능여부 등만 빠르게 판단하고 시간에 쫒겨 넘어가지만 이 검증 과정이 매우 중요합니다. 검증에서 하나라도 잡으면 나중에 돈과 시간 둘다 세이브할 수 있기 때문입니다. 현 시점 저희 팀은 대부분 PDR 단계에 진행중이며 상세설계를 시작하였고, LV 팀은 상세설계 완료 후, CDR을 준비하고 있습니다."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "명확히 리뷰회의를 구성하면서 검증하는 시간을 마련하고 있지는 않지만, 검증절차를 꼭 넣으려고 시도하고 있고 점차 익숙해지고 시스템 통합단계가 되면 명확한 리뷰 회의를 구성하고자 합니다."
+            }
+          ]
+        },
+        {
+          "type": "hr"
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "간략히 소개하는 제가 내건 최상위 요구조건들은 다음과 같습니다."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "규정하나 빼놓지 않는. 규정의 존재의의 자체를 이해하는 설계 (굳이 초기 팀인데 검차장에서 증빙하려는 노력을 들이지 말자)"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "서브시스템 레벨 단위로 분리가 가능한 설계 (Drivetrain ASSY를 빼기 위해서 Accumulator 까지 분리가 되면 안된다 등)"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "가벼운 설계 (10인치 타이어로 설계를 시작한 이상, 무게가 곧 횡력 한계를 결정한다.)"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "일정을 최대한 준수하는 합리적인 일 진행 방식. (늦더라도 미리 공지해주고, 서로 상의해서 WBS를 수정하며 일을 진행하는!)"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "이정도가 있고 각 시스템과 서브시스템 단에서의 요구조건은 현재 문서나 개인 DM을 활용해서 요구조건 할당을 진행하고 있습니다. (이거도 문서화 좀더 해보려 노력하겠습니다..)"
+            }
+          ]
+        },
+        {
+          "type": "hr"
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "이 모든 프로세스가 구성되기에는 함께 고민해주고 함께 뛰어줄 팀원과 팀장이 가장 중요합니다. 저는 운이 좋게도 드래곤볼들을 잘 모아서 시작을 한 상태라고 생각합니다. (드래곤볼을 잃어버리지 않고 완주하면 좋겠습니다 ㅎㅎ)"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "10명대였던 동아리가 30명이어도 부족한 상황이 된 지금 시점에서 1년간 잘 완주해보도록 노력해보겠습니다."
+            }
+          ]
+        }
+      ],
+      "en": [
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "Hello, I’m Donghyuk Kim, PM for GEF-27 at GIST G-BungE. Three years ago, when I first read the Formula rules while designing an E-Baja with my classmate Jang Hyunwoong (22), I felt overwhelmed. In May 2024, I went to Yeonggwang for the first time for the ARC general meeting. Watching another team’s Formula car race around the track, I decided that one day I wanted to build our team and take part. More than two years have passed since I first had that dream on my own. To make it happen, I drafted countless budgets, thought every day about funding, and worked out how to bring together team leads and members willing to join me."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "Just before my military discharge, I started working at a startup affiliated with my school. I spent a lot of time thinking about how to learn and apply the way real companies work. I tried to persuade the younger students and classmates who would work with me, and to show them what I could do and what kind of person I was. More than anything, I wanted to show it through the commitment I had brought to the previous Baja competition. I think it may also have helped that research I had started during my military service won the top prize in the BSK Technology Idea category."
+            }
+          ]
+        },
+        {
+          "type": "img",
+          "src": "/notion/3e68200a5f9880c8a1d7c155b002ec07-en-1.png",
+          "caption": []
+        },
+        {
+          "type": "hr"
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "“How could we have prevented the harness issue?” “Why did I miss this?” “We were just unlucky.” These are the kinds of comments we make right after a competition or while running the team. But as a new team with little experience, do we simply have to accept that?"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "After thinking about it for a long time, I concluded that this kind of hindsight and venting does not get us very far. What matters is the ability to build a system that helps prevent mistakes over the course of a year. That got me interested in how engineers build systems."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "Looking at my own failed attempt in 2024, the 2025 team led by team lead Kim Kyungmin, then a private first class in his sixth month of service, and the 2026 team led by Lee Haram, then a recruit, I noticed three things:"
+            }
+          ]
+        },
+        {
+          "type": "ol",
+          "items": [
+            [
+              {
+                "text": "If the team lead overlooks something important, the result is often a DNF or another problem, large or small."
+              }
+            ],
+            [
+              {
+                "text": "We need to design and build for system reliability—in other words, lead the project in a way that reduces uncertainty."
+              }
+            ],
+            [
+              {
+                "text": "The people working alongside us matter most."
+              }
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "The third point depends entirely on the team lead and the luck of that year. It’s funny, in a way, how the competition result can have such a big effect on the next year’s morale.",
+              "strike": true
+            },
+            {
+              "text": " Points one and two matter most. Even experienced teams face clear limits when a project is run by students on a one-year cycle. I’ve always admired the schools that manage to sustain their systems, and wondered how we could build one of our own. Systems engineering seemed like a useful approach, so I’ll briefly introduce it and describe how we’ve applied it."
+            }
+          ]
+        },
+        {
+          "type": "hr"
+        },
+        {
+          "type": "h3",
+          "text": [
+            {
+              "text": "Systems Engineering (SE)"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "I’m still new to this field. I became interested after attending seminars at the startup where I work, led by PhDs who had managed projects worth trillions of won at the Korea Aerospace Research Institute. One definition of systems engineering from those seminars stuck with me:"
+            }
+          ]
+        },
+        {
+          "type": "quote",
+          "text": [
+            {
+              "text": "Systems engineering is the discipline of making unknown, large-scale projects succeed."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "It is used to make projects such as fighter aircraft and spacecraft—sometimes spanning more than ten years—succeed."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "It asks questions like: What evidence justifies starting a project? How should trillions of won be managed? How should people collaborate, test, maintain the system, and manage a team of that size? It provides a way to answer these questions."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "The discipline was developed at NASA to help projects succeed. NASA is the only organization that applies systems engineering in a fully integrated way. Its scope is so broad that even Korea’s leading research institutions have not replicated it, and large companies operate their own versions."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "Still, applying the discipline has value in itself. In principle, every decision and its rationale are documented, and experts across fields consider the whole system and move in the same direction. At its core, it means thinking through as much as we can and reducing the chances of things going wrong. Each organization can build a system suited to its own scale; the effort to apply these practices is what matters."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "I became convinced that if we could build a team culture that kept these processes working, we could make this first attempt succeed."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "This project is not entirely unknown: there are plenty of references, we have a plan for funding and the schedule, and we have brought together team leads and members to carry it out."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "The remaining risks are that we might set the wrong high-level decision criteria, miss something during a review, or become bottlenecked by our lack of experience. So we built in generous schedule buffers. For our first electric vehicle, we planned to begin full-scale design in July 2026."
+            }
+          ]
+        },
+        {
+          "type": "hr"
+        },
+        {
+          "type": "h3",
+          "text": [
+            {
+              "text": "Applying Systems Engineering"
+            }
+          ]
+        },
+        {
+          "type": "ol",
+          "items": [
+            [
+              {
+                "text": "Breaking requirements into database items",
+                "bold": true
+              }
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "Here is how we started applying systems engineering to our team."
+            }
+          ]
+        },
+        {
+          "type": "img",
+          "src": "/notion/3e68200a5f9880c8a1d7c155b002ec07-en-2.png",
+          "caption": [
+            {
+              "text": "All requirements database"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "We began by breaking the rules into individual items, using our documentation, rulebook, and inspection sheets. This was our first step toward making sure none of the items were missed. (I still need to update this with the 2026 Inspection Sheet.)"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "We also set up views so each team lead can see rules that affect other teams, as shown below. Ideally, every team lead would know all the rules, but as a new team we wanted to make the information as accessible as possible."
+            }
+          ]
+        },
+        {
+          "type": "img",
+          "src": "/notion/3e68200a5f9880c8a1d7c155b002ec07-en-3.png",
+          "caption": [
+            {
+              "text": "Example: HV team lead’s rules view"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "2. A team-only messaging server",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "We chose Mattermost as our club messenger. It has a structure much like Slack, which we used at my startup, but requires us to host the server ourselves. It has helped us work more efficiently: beyond communication, it lets us track requirements and each team’s progress at the same time—and it’s free. The app is available too, and most of our core team now uses it for day-to-day work."
+            }
+          ]
+        },
+        {
+          "type": "img",
+          "src": "/notion/3e68200a5f9880c8a1d7c155b002ec07-en-4.png",
+          "caption": []
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "Using Markdown also makes it easier to work with AI."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "3. Using a WBS (Work Breakdown Structure)",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "Across different organizations I’ve worked with, I’ve often seen the same problems: it’s hard to tell how much progress has been made, and a weekly meeting can reveal that nothing has moved—or that work has gone in the wrong direction."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "We use a Gantt chart as part of our WBS. It helps the PM keep track of each team’s progress, and gives everyone involved a clear view of the project. (Not so helpful if you’re the one who hasn’t done your work on time.)"
+            }
+          ]
+        },
+        {
+          "type": "img",
+          "src": "/notion/3e68200a5f9880c8a1d7c155b002ec07-en-5.png",
+          "caption": []
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "4. Structuring the project around the V-model (in progress)",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "img",
+          "src": "/notion/3e68200a5f9880c8a1d7c155b002ec07-en-6.png",
+          "caption": []
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "The V-model guides decisions through these levels:"
+            }
+          ]
+        },
+        {
+          "type": "ul",
+          "items": [
+            [
+              {
+                "text": "System level"
+              }
+            ],
+            [
+              {
+                "text": "Subsystem level"
+              }
+            ],
+            [
+              {
+                "text": "Component level"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "To use the chassis as a simple example: the chassis is the system, the upright or roll cage is a subsystem, and a hub or brake disc is a component."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "The key is to define clear decision criteria and work down from the system level. Then, verify the actual build from the component level back up through system integration."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "The decision criteria can change when needed—that flexibility is important. In our team, I usually set the highest-level criteria because I handle both the budget and the overall system plan."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "Another key part of the V-model is the review. I’ve often rushed through a design by checking only whether it meets the rules and can be built. But verification is crucial: catching even one issue early can save both time and money later. Most of our team is currently at the PDR stage and has started detailed design. The LV team has finished detailed design and is preparing for its CDR."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "We don’t yet set aside dedicated review meetings, but we’re trying to include verification in our process. Once we reach system integration, I’d like us to hold formal review meetings."
+            }
+          ]
+        },
+        {
+          "type": "hr"
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "Here are some of the top-level requirements I set:"
+            }
+          ]
+        },
+        {
+          "type": "ul",
+          "items": [
+            [
+              {
+                "text": "Meet every rule, and understand why it exists.",
+                "bold": true
+              },
+              {
+                "text": " As a new team, we shouldn’t have to spend time proving compliance at inspection."
+              }
+            ],
+            [
+              {
+                "text": "Make the design separable at the subsystem level.",
+                "bold": true
+              },
+              {
+                "text": " For example, removing the drivetrain assembly shouldn’t require us to remove the accumulator too."
+              }
+            ],
+            [
+              {
+                "text": "Keep the design light.",
+                "bold": true
+              },
+              {
+                "text": " Since we started with 10-inch tires, weight directly affects the lateral force limit."
+              }
+            ],
+            [
+              {
+                "text": "Work in a reasonable way that keeps us as close to schedule as possible.",
+                "bold": true
+              },
+              {
+                "text": " If something will be late, let everyone know early; discuss it together and adjust the WBS."
+              }
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "We’re assigning requirements at the system and subsystem levels through documents and direct messages. I’m also trying to document more of this work."
+            }
+          ]
+        },
+        {
+          "type": "hr"
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "All of these processes depend on having team members and team leads who will think and work alongside us. I feel lucky to have gathered all the Dragon Balls to get started. (I hope we can finish without losing any, haha.)"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": [
+            {
+              "text": "Our club has grown from around ten people to thirty, and even thirty doesn’t feel like enough now. I’ll do my best to see us through the year."
             }
           ]
         }
