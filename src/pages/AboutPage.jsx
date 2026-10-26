@@ -127,7 +127,7 @@ export default function AboutPage() {
                   /* dot on a shared rule; the latest one is filled and glows */
                   'relative border-t border-white/16 pt-9',
                   'before:absolute before:-top-1.5 before:left-0 before:size-2.75 before:rounded-full before:border-2 before:border-brand',
-                  i === copy.milestones.length - 1 ? 'before:bg-brand before:shadow-[0_0_0_6px_rgb(217_67_51/0.6)]' : 'before:bg-bg',
+                  i === copy.milestones.length - 1 ? 'before:bg-brand before:shadow-[0_0_0_6px_rgb(225_35_43/0.6)]' : 'before:bg-bg',
                 )}
                 delay={i * 120}
               >

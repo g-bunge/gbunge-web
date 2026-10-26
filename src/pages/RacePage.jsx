@@ -21,7 +21,7 @@ const START_SPEED = 280
 const MAX_SPEED = 720
 const BEST_KEY = 'gbunge-race-best'
 
-const BRAND = '#d94333'
+const BRAND = '#e1232b'
 const CONE = '#ff7a1a'
 
 const lerp = (a, b, k) => a + (b - a) * k
