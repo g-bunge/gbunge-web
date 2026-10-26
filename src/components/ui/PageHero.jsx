@@ -16,7 +16,7 @@ export default function PageHero({ eyebrow, title, lead, img, alt, focus }) {
       <div className="absolute inset-x-gutter bottom-18 z-1 max-w-190 animate-page-hero-rise mobile:bottom-12">
         {/* eyebrow with a short brand rule in front */}
         <p className="t-eyebrow mb-5 flex items-center gap-3 tracking-label before:h-0.5 before:w-8 before:bg-brand-gradient">{eyebrow}</p>
-        <h1 className="font-display text-hero leading-[1.1] font-bold tracking-wide uppercase">
+        <h1 className="font-display text-hero leading-none font-semibold tracking-tighter">
           <Lines lines={title} />
         </h1>
         {lead && <p className="mt-7 max-w-130 text-body text-fg-body break-keep mobile:mt-5">{lead}</p>}

@@ -18,7 +18,7 @@ const social = [
   { label: 'GitHub', href: '#', Icon: GitHubIcon },
 ]
 
-const heading = 'mb-4.5 font-display text-11 font-bold tracking-[0.2em] text-fg-muted uppercase'
+const heading = 'mb-4.5 text-12 font-semibold tracking-[0.16em] text-fg-muted uppercase'
 const link = 'text-15 leading-[1.6] text-fg-body transition-colors duration-250 hover:text-brand-end'
 
 export default function Footer() {

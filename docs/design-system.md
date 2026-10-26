@@ -66,7 +66,7 @@
 
 | 토큰 | 글꼴 | 클래스 | 용도 |
 |---|---|---|---|
-| `display` | Urbanist → Pretendard | `font-display` | 큰 제목, 숫자, 차량 이름, 메뉴, 버튼 |
+| `display` | Urbanist → Pretendard | `font-display` | 큰 제목, 숫자, 차량 이름 |
 | `sans` | Pretendard | `font-sans` (기본값) | 본문 |
 | `ui` | Inter → Pretendard | `font-ui` | 메뉴, 라벨, 메타 정보, 버튼성 텍스트 |
 
@@ -80,8 +80,8 @@
 |---|---|---|---|
 | `text-title` | 41px / 1.16 | 30px | 섹션 제목 |
 | `text-body` | 18px / 29px | 16px / 26px | 본문 문단 |
-| `text-eyebrow` | 12px | - | 제목 위 작은 라벨 |
-| `text-button` | 13px | - | 버튼 |
+| `text-eyebrow` | 15px | - | 제목 위 작은 라벨 |
+| `text-button` | 16px | - | 버튼 |
 
 ### 고정 크기 (px 이름)
 
@@ -166,7 +166,7 @@ Tailwind 기본 `sm:` `md:` `lg:`는 꺼 두었습니다.
 | 클래스 | 모양 |
 |---|---|
 | `t-eyebrow` | 제목 위 작은 그라디언트 라벨 |
-| `t-title` | 섹션 제목 (Urbanist, 대문자, `text-title`) |
+| `t-title` | 섹션 제목 (Urbanist, `text-title`) |
 | `t-body` | 본문 문단 (`text-body`, `text-fg-body`) |
 
 ---
@@ -218,7 +218,7 @@ Tailwind 기본 `sm:` `md:` `lg:`는 꺼 두었습니다.
 
 ## 디테일링 톤
 
-순수 검정 위에 Urbanist 대문자 제목과 빨간 포인트로 정밀한 느낌을 냅니다. 배경 그라디언트나 장식 선은 쓰지 않습니다.
+순수 검정 위에 Urbanist 제목과 빨간 포인트로 정밀한 느낌을 냅니다. 배경 그라디언트나 장식 선은 쓰지 않습니다.
 
 | 요소 | 만드는 법 |
 |---|---|

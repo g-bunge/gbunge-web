@@ -48,8 +48,8 @@
   --text-title--line-height: 1.16;
   --text-body: 18px;
   --text-body--line-height: 29px;
-  --text-eyebrow: 12px;
-  --text-button: 13px;
+  --text-eyebrow: 15px;
+  --text-button: 16px;
 
   /* fixed scale, named by pixel size: `text-13` */
   --text-11: 11px;

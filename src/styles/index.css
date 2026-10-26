@@ -52,21 +52,18 @@
   /* small label above a title */
   .t-eyebrow {
     width: fit-content;
-    font-family: var(--font-ui);
     font-size: var(--text-eyebrow);
     font-weight: 600;
-    letter-spacing: var(--tracking-label);
-    text-transform: uppercase;
+    letter-spacing: var(--tracking-snug);
     color: var(--color-fg-muted);
   }
 
   .t-title {
     font-family: var(--font-display);
-    font-weight: 700;
+    font-weight: 600;
     font-size: var(--text-title);
     line-height: var(--text-title--line-height);
-    letter-spacing: var(--tracking-wide);
-    text-transform: uppercase;
+    letter-spacing: var(--tracking-tight);
   }
 
   .t-body {

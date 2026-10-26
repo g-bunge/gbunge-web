@@ -59,7 +59,7 @@ export default function Team() {
                 )}
                 <span
                   className={cx(
-                    'absolute inset-x-0 z-2 font-display text-13 font-bold tracking-wider uppercase [text-shadow:0_1px_8px_rgb(0_0_0/0.35)] [transition:top_0.6s_var(--ease-out)]',
+                    'absolute inset-x-0 z-2 font-display text-18 font-bold tracking-snug [text-shadow:0_1px_8px_rgb(0_0_0/0.35)] [transition:top_0.6s_var(--ease-out)]',
                     isOpen ? 'top-22.5 mobile:top-auto mobile:bottom-[60%]' : 'top-71.5 mobile:top-auto mobile:bottom-15.5',
                   )}
                 >

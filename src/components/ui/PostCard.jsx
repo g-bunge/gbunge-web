@@ -10,10 +10,10 @@ export default function PostCard({ post, lang, featured = false, label }) {
       href={url(`/stories/${post.slug}`)}
     >
       <span className="relative block aspect-16/10 overflow-hidden bg-placeholder">
-        {post.cover && (
+        {(post.thumb ?? post.cover) && (
           <img
             className="size-full object-cover brightness-90 [transition:scale_0.7s_var(--ease-out),filter_0.7s] group-hover/post:scale-105 group-hover/post:brightness-110"
-            src={url(post.cover)}
+            src={url(post.thumb ?? post.cover)}
             alt=""
           />
         )}
