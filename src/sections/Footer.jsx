@@ -18,7 +18,7 @@ const social = [
   { label: 'GitHub', href: '#', Icon: GitHubIcon },
 ]
 
-const heading = 'mb-4.5 text-12 font-semibold tracking-[0.16em] text-fg-muted uppercase'
+const heading = 'mb-4.5 font-display text-11 font-bold tracking-[0.2em] text-fg-muted uppercase'
 const link = 'text-15 leading-[1.6] text-fg-body transition-colors duration-250 hover:text-brand-end'
 
 export default function Footer() {
@@ -26,7 +26,7 @@ export default function Footer() {
 
   return (
     <footer
-      className="relative bg-bg px-gutter pt-18 pb-8 font-ui mobile:pt-14 before:absolute before:inset-x-gutter before:top-0 before:h-px before:bg-[linear-gradient(90deg,var(--color-brand),rgb(255_255_255/0.08)_40%)]"
+      className="relative bg-bg px-gutter pt-18 pb-8 font-ui mobile:pt-14 before:absolute before:inset-x-gutter before:top-0 before:h-px before:bg-[linear-gradient(90deg,var(--color-brand),rgb(255_255_255/0.08)_40%)] bg-contours bg-[position:100%_100%]"
     >
       {/* the ::before is a thin brand hairline along the top edge */}
       <div className="grid grid-cols-[1.6fr_1fr_1.6fr_auto] gap-12 tablet:grid-cols-2 tablet:gap-[40px_24px] mobile:grid-cols-1 mobile:gap-8">

@@ -26,18 +26,18 @@
 
 | 토큰 | 값 | 클래스 예 | 용도 |
 |---|---|---|---|
-| `brand` | `#d94333` | `bg-brand` `border-brand` | 메인 브랜드 색, 포커스 테두리 |
-| `brand-end` | `#db5551` | `text-brand-end` | 브랜드 그라디언트 끝색, 강조 텍스트(카테고리, 링크) |
-| `brand-hover` / `brand-hover-end` | `#e5503f` / `#e76a64` | - | 버튼 호버 그라디언트 (직접 쓰지 말고 `bg-brand-gradient-hover`) |
+| `brand` | `#e1232b` | `bg-brand` `border-brand` | 메인 브랜드 색, 포커스 테두리 |
+| `brand-end` | `#f0393f` | `text-brand-end` | 브랜드 그라디언트 끝색, 강조 텍스트(카테고리, 링크) |
+| `brand-hover` / `brand-hover-end` | `#ee2f37` / `#ff4d52` | - | 버튼 호버 그라디언트 (직접 쓰지 말고 `bg-brand-gradient-hover`) |
 
 ### 배경 (어두운 순)
 
 | 토큰 | 값 | 용도 |
 |---|---|---|
 | `bg` | `#000000` | 페이지 배경 |
-| `raised` | `#131313` | 한 단계 떠 있는 섹션·카드 (`bg-raised`) |
-| `surface` | `#232323` | 카드, 입력칸 포커스 |
-| `surface-hover` | `#2a2a2a` | 카드 호버 |
+| `raised` | `#0b0b0b` | 한 단계 떠 있는 섹션·카드 (`bg-raised`) |
+| `surface` | `#161616` | 카드, 입력칸 포커스 |
+| `surface-hover` | `#1f1f1f` | 카드 호버 |
 
 ### 텍스트
 
@@ -66,7 +66,7 @@
 
 | 토큰 | 글꼴 | 클래스 | 용도 |
 |---|---|---|---|
-| `display` | Urbanist → Pretendard | `font-display` | 큰 제목, 숫자, 차량 이름 |
+| `display` | Orbitron → Pretendard | `font-display` | 큰 제목, 숫자, 차량 이름, 메뉴, 버튼 |
 | `sans` | Pretendard | `font-sans` (기본값) | 본문 |
 | `ui` | Inter → Pretendard | `font-ui` | 메뉴, 라벨, 메타 정보, 버튼성 텍스트 |
 
@@ -78,10 +78,10 @@
 
 | 클래스 | 데스크톱 | 모바일 | 용도 |
 |---|---|---|---|
-| `text-title` | 41px / 1.16 | 30px | 섹션 제목 |
+| `text-title` | 34px / 1.2 | 24px | 섹션 제목 |
 | `text-body` | 18px / 29px | 16px / 26px | 본문 문단 |
-| `text-eyebrow` | 15px | - | 제목 위 작은 라벨 |
-| `text-button` | 16px | - | 버튼 |
+| `text-eyebrow` | 12px | - | 제목 위 작은 라벨 |
+| `text-button` | 13px | - | 버튼 |
 
 ### 고정 크기 (px 이름)
 
@@ -93,7 +93,7 @@
 
 | 클래스 | 값 | 쓰는 곳 |
 |---|---|---|
-| `text-hero` | 48–96px | 하위 페이지 상단 큰 제목 |
+| `text-hero` | 34–72px | 하위 페이지 상단 큰 제목 |
 | `text-car` | 56–88px | 과거 차량 이름 |
 | `text-stat` | 48–80px | 소개 페이지 숫자 |
 | `text-post-title` | 36–60px | 블로그 글 제목 |
@@ -166,7 +166,7 @@ Tailwind 기본 `sm:` `md:` `lg:`는 꺼 두었습니다.
 | 클래스 | 모양 |
 |---|---|
 | `t-eyebrow` | 제목 위 작은 그라디언트 라벨 |
-| `t-title` | 섹션 제목 (Urbanist, `text-title`) |
+| `t-title` | 섹션 제목 (Orbitron, 대문자, `text-title`) |
 | `t-body` | 본문 문단 (`text-body`, `text-fg-body`) |
 
 ---
@@ -213,3 +213,17 @@ Tailwind 기본 `sm:` `md:` `lg:`는 꺼 두었습니다.
 3. 이 문서의 해당 표에 한 줄 추가합니다.
 
 값만 바꾸면(예: `--color-brand`) 그 토큰을 쓰는 사이트 전체에 한 번에 반영됩니다.
+
+---
+
+## 디테일링 톤
+
+순수 검정 위에 넓은 Orbitron 대문자 제목, 빨간 빛, 옅은 선들로 정밀한 느낌을 냅니다.
+
+| 요소 | 만드는 법 |
+|---|---|
+| 세로 가이드선 | `body::after` (페이지 전체에 고정된 옅은 4열 선) |
+| `bg-contours` | 등고선 무늬 (`public/images/contours.svg`), 위치는 `bg-[position:…]`로 섹션마다 다르게 |
+| `clip-notch` | 오른쪽 위 모서리를 깎은 카드·사진 |
+| 섹션 번호 | `SectionHeading`의 `num="01"`: 제목 왼쪽 위에 작게 |
+| `///` 표시 | 사진에 겹치는 검은 글 패널 머리 (홈 About) |

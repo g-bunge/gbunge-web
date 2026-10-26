@@ -20,6 +20,22 @@
     overflow-x: hidden;
   }
 
+  /* faint column guides running down the whole page, over everything but never in the way */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0 var(--spacing-gutter);
+    z-index: 90;
+    pointer-events: none;
+    background: repeating-linear-gradient(90deg, rgb(255 255 255 / 0.045) 0 1px, transparent 1px calc(25% - 0.25px));
+    border-right: 1px solid rgb(255 255 255 / 0.045);
+  }
+
+  ::selection {
+    background: var(--color-brand);
+    color: var(--color-fg);
+  }
+
   /* preflight makes every svg a block; the design expects inline icons unless a class says otherwise */
   svg {
     display: inline;
@@ -44,23 +60,24 @@
 /* ---------- shared text styles (components layer, so utilities can override them) ---------- */
 
 @layer components {
-  /* small gradient label above a title */
+  /* small label above a title */
   .t-eyebrow {
     width: fit-content;
+    font-family: var(--font-ui);
     font-size: var(--text-eyebrow);
     font-weight: 600;
-    letter-spacing: var(--tracking-snug);
-    background: linear-gradient(90deg, var(--color-brand), var(--color-brand-end));
-    background-clip: text;
-    color: transparent;
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+    color: var(--color-fg-muted);
   }
 
   .t-title {
     font-family: var(--font-display);
-    font-weight: 600;
+    font-weight: 700;
     font-size: var(--text-title);
     line-height: var(--text-title--line-height);
-    letter-spacing: var(--tracking-tight);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
   }
 
   .t-body {
@@ -117,6 +134,18 @@
   background-image: linear-gradient(90deg, var(--color-brand), var(--color-brand-end));
   background-clip: text;
   color: transparent;
+}
+
+/* topographic contour lines, faint, behind a section */
+@utility bg-contours {
+  background-image: url(/images/contours.svg);
+  background-repeat: no-repeat;
+  background-size: min(1100px, 90vw) auto;
+}
+
+/* top-right corner cut off: cards and photo tiles */
+@utility clip-notch {
+  clip-path: polygon(0 0, calc(100% - 26px) 0, 100% 26px, 100% 100%, 0 100%);
 }
 
 /* stands in for a missing photo */

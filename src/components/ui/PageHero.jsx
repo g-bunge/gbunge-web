@@ -9,14 +9,14 @@ export default function PageHero({ eyebrow, title, lead, img, alt, focus }) {
   return (
     <header
       id="top"
-      className="relative h-[clamp(480px,82vh,860px)] overflow-hidden after:absolute after:inset-0 after:bg-[linear-gradient(90deg,rgb(0_0_0/0.55),transparent_65%),linear-gradient(rgb(0_0_0/0.25),transparent_30%,transparent_55%,var(--color-bg))] mobile:h-[78vh]"
+      className="relative h-[clamp(480px,82vh,860px)] overflow-hidden before:absolute before:inset-0 before:z-1 before:bg-[radial-gradient(ellipse_45%_55%_at_0%_100%,rgb(225_35_43/0.35),transparent_70%)] after:absolute after:inset-0 after:bg-[linear-gradient(90deg,rgb(0_0_0/0.55),transparent_65%),linear-gradient(rgb(0_0_0/0.25),transparent_30%,transparent_55%,var(--color-bg))] mobile:h-[78vh]"
     >
       {/* the gradient above darkens the left for the copy and fades the bottom into the page */}
       <img className="size-full animate-page-hero-zoom object-cover" style={{ objectPosition: focus }} src={url(img)} alt={alt} />
       <div className="absolute inset-x-gutter bottom-18 z-1 max-w-190 animate-page-hero-rise mobile:bottom-12">
         {/* eyebrow with a short brand rule in front */}
         <p className="t-eyebrow mb-5 flex items-center gap-3 tracking-label before:h-0.5 before:w-8 before:bg-brand-gradient">{eyebrow}</p>
-        <h1 className="font-display text-hero leading-none font-semibold tracking-tighter">
+        <h1 className="font-display text-hero leading-[1.1] font-bold tracking-wide uppercase">
           <Lines lines={title} />
         </h1>
         {lead && <p className="mt-7 max-w-130 text-body text-fg-body break-keep mobile:mt-5">{lead}</p>}

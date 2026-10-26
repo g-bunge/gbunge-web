@@ -18,10 +18,10 @@ export default function Hero() {
   return (
     <header id="top" className="relative grid h-screen min-h-140 place-items-center overflow-hidden">
       <div
-        className="absolute inset-[-2%_0_0] animate-hero-zoom overflow-hidden bg-bg will-change-transform after:absolute after:inset-0 after:z-1 after:bg-[linear-gradient(transparent_30%,rgb(0_0_0/0.5))]"
+        className="absolute inset-[-2%_0_0] animate-hero-zoom overflow-hidden bg-bg will-change-transform after:absolute after:inset-0 after:z-1 after:bg-[radial-gradient(ellipse_50%_45%_at_15%_85%,rgb(225_35_43/0.32),transparent_70%),linear-gradient(rgb(0_0_0/0.25),transparent_30%,rgb(0_0_0/0.55)_80%,var(--color-bg))]"
         style={{ transform: `translate3d(0, ${scrollY * 0.35}px, 0)` }}
       >
-        {/* the ::after darkens the bottom edge so the next section blends in */}
+        {/* the ::after throws red light in from the bottom left and fades the bottom into the page */}
         <Slideshow images={heroImages} />
       </div>
 
@@ -32,7 +32,7 @@ export default function Hero() {
         {/* the negative right margin cancels the trailing letter-space so the line stays centred */}
         <p
           className={cx(
-            'mt-9 animate-hero-in text-20 font-medium whitespace-nowrap text-white/92 mobile:text-13',
+            'mt-9 animate-hero-in font-display text-16 font-semibold whitespace-nowrap text-white/92 uppercase mobile:text-11',
             lang === 'en' ? '-mr-[0.2em] tracking-[0.2em]' : '-mr-[0.4em] tracking-[0.4em]',
           )}
         >

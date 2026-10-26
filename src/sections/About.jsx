@@ -4,9 +4,12 @@ import Button from '../components/ui/Button.jsx'
 import useLang from '../i18n/LanguageContext.js'
 import { url } from '../lib/url.js'
 
-const split = 'grid items-center tablet:grid-cols-1 tablet:gap-y-10 tablet:p-[60px_var(--spacing-gutter)]'
+const split = 'relative grid items-center tablet:grid-cols-1 tablet:gap-y-10 tablet:p-[60px_var(--spacing-gutter)]'
 const media = 'aspect-545/532 overflow-hidden'
-const text = 'max-w-162.5 tablet:max-w-none'
+/* a black panel that overlaps the photo's edge; the /// mark heads it */
+const text =
+  'relative z-1 max-w-162.5 bg-bg p-12 tablet:max-w-none tablet:p-0 ' +
+  "before:mb-8 before:block before:font-display before:text-13 before:font-bold before:tracking-[0.3em] before:text-fg-muted before:content-['///'] tablet:before:hidden"
 /* paragraphs 29px apart, 52px above the button */
 const body = 't-body mb-7.25 last-of-type:mb-13'
 
@@ -15,20 +18,20 @@ export default function About() {
 
   return (
     <>
-      <section id="about" className={`${split} grid-cols-[37.85vw_1fr] gap-x-[6.6vw] px-gutter pt-7.75`}>
+      <section id="about" className={`${split} grid-cols-[44vw_1fr] bg-contours bg-[position:85%_0] px-gutter pt-24`}>
         <Reveal className={media} variant="left">
           <img className="size-full object-cover" src={url('/images/who.jpg')} alt={t.about.whoAlt} />
         </Reveal>
-        <Reveal className={text} delay={150}>
-          <SectionHeading className="mb-6.5" eyebrow="WHO WE ARE" title={['Sorry for driving too fast,', "We're new here."]} />
+        <Reveal className={`${text} -ml-[6vw] tablet:ml-0`} delay={150}>
+          <SectionHeading className="mb-6.5" num="01" eyebrow="WHO WE ARE" title={['Sorry for driving too fast,', "We're new here."]} />
           <p className={body}>{t.about.who}</p>
           <Button href="/about">About Us</Button>
         </Reveal>
       </section>
 
-      <section className={`${split} grid-cols-[1fr_37.8vw] gap-x-[6.3vw] px-gutter pt-20 pb-10`}>
-        <Reveal className={text} delay={150}>
-          <SectionHeading className="mb-6.5" eyebrow="HERITAGE" title="Less talk, More torque" />
+      <section className={`${split} grid-cols-[1fr_44vw] px-gutter pt-20 pb-24`}>
+        <Reveal className={`${text} -mr-[6vw] tablet:mr-0`} delay={150}>
+          <SectionHeading className="mb-6.5" num="02" eyebrow="HERITAGE" title="Less talk, More torque" />
           {t.about.heritage.map((para, i) => (
             <p key={i} className={body}>
               {para}

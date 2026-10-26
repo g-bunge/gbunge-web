@@ -29,9 +29,9 @@ export default function Team() {
   }
 
   return (
-    <section id="team" className="bg-raised px-6 pt-20.75 pb-20 tablet:px-gutter tablet:pt-18 tablet:pb-14">
+    <section id="team" className="bg-raised bg-contours bg-[position:0%_100%] px-6 pt-20.75 pb-20 tablet:px-gutter tablet:pt-18 tablet:pb-14">
       <Reveal>
-        <SectionHeading eyebrow="26/27 Team" title="Our Team" align="center" />
+        <SectionHeading num="03" eyebrow="26/27 Team" title="Our Team" align="center" />
       </Reveal>
 
       <div className="mx-auto mt-17.5 flex max-w-218 flex-wrap justify-center gap-6 mobile:gap-3">
@@ -45,7 +45,7 @@ export default function Team() {
             >
               <button
                 className={cx(
-                  'group/card relative block size-full overflow-hidden text-center transition-[scale] duration-500 ease-out hover:scale-104',
+                  'group/card relative block size-full overflow-hidden text-center clip-notch transition-[scale] duration-500 ease-out hover:scale-104',
                   'after:absolute after:inset-0 after:transition-opacity after:duration-500 after:ease-out',
                   isOpen ? 'after:bg-black/72 after:opacity-100' : 'after:bg-[linear-gradient(transparent_55%,rgb(0_0_0/0.5))] after:opacity-60',
                 )}
@@ -59,7 +59,7 @@ export default function Team() {
                 )}
                 <span
                   className={cx(
-                    'absolute inset-x-0 z-2 font-display text-18 font-bold tracking-snug [text-shadow:0_1px_8px_rgb(0_0_0/0.35)] [transition:top_0.6s_var(--ease-out)]',
+                    'absolute inset-x-0 z-2 font-display text-13 font-bold tracking-wider uppercase [text-shadow:0_1px_8px_rgb(0_0_0/0.35)] [transition:top_0.6s_var(--ease-out)]',
                     isOpen ? 'top-22.5 mobile:top-auto mobile:bottom-[60%]' : 'top-71.5 mobile:top-auto mobile:bottom-15.5',
                   )}
                 >

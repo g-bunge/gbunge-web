@@ -43,7 +43,7 @@ export default function Navbar({ alwaysVisible = false }) {
           <li key={id}>
             <a
               className={cx(
-                'relative font-ui text-15 font-medium text-fg-body transition-colors duration-300 hover:text-fg aria-[current=page]:text-fg',
+                'relative font-display text-12 font-semibold tracking-wider text-fg-body uppercase transition-colors duration-300 hover:text-fg aria-[current=page]:text-fg',
                 /* brand underline that grows from the left; stays on for the current page */
                 'after:absolute after:inset-x-0 after:-bottom-1.5 after:h-0.5 after:origin-left after:scale-x-0 after:bg-brand-gradient after:transition-transform after:duration-350 after:ease-out',
                 'hover:after:scale-x-100 aria-[current=page]:after:scale-x-100',
