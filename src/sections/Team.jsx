@@ -31,7 +31,7 @@ export default function Team() {
   return (
     <section id="team" className="bg-raised px-6 pt-20.75 pb-20 tablet:px-gutter tablet:pt-18 tablet:pb-14">
       <Reveal>
-        <SectionHeading num="03" eyebrow="26/27 Team" title="Our Team" align="center" />
+        <SectionHeading eyebrow="26/27 Team" title="Our Team" align="center" />
       </Reveal>
 
       <div className="mx-auto mt-17.5 flex max-w-218 flex-wrap justify-center gap-6 mobile:gap-3">

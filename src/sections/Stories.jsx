@@ -58,7 +58,6 @@ export default function Stories() {
             className="relative flex flex-col bg-surface p-6 font-ui clip-notch [transition:opacity_0.9s_var(--ease-out),transform_0.5s_var(--ease-out),translate_0.5s_var(--ease-out),background_0.3s,box-shadow_0.4s] tablet:min-h-55 [&.is-visible]:hover:-translate-y-1.5 [&.is-visible]:hover:bg-surface-hover [&.is-visible]:hover:shadow-lift"
             delay={100 + i * 90}
           >
-            <span className="mb-4 font-display text-11 font-bold tracking-widest text-fg-muted">0{i + 1}</span>
             <h3 className="mb-2.5 font-sans text-20 font-semibold break-keep">{post.title[lang]}</h3>
             <p className="line-clamp-2 text-16 leading-7 text-fg-muted">{post.excerpt[lang]}</p>
             <Button className="mt-auto self-end pt-5" variant="link" href={`/stories/${post.slug}`}>

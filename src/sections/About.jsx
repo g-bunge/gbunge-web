@@ -23,7 +23,7 @@ export default function About() {
           <img className="size-full object-cover" src={url('/images/who.jpg')} alt={t.about.whoAlt} />
         </Reveal>
         <Reveal className={`${text} -ml-[6vw] tablet:ml-0`} delay={150}>
-          <SectionHeading className="mb-6.5" num="01" eyebrow="WHO WE ARE" title={['Sorry for driving too fast,', "We're new here."]} />
+          <SectionHeading className="mb-6.5" eyebrow="WHO WE ARE" title={['Sorry for driving too fast,', "We're new here."]} />
           <p className={body}>{t.about.who}</p>
           <Button href="/about">About Us</Button>
         </Reveal>
@@ -31,7 +31,7 @@ export default function About() {
 
       <section className={`${split} grid-cols-[1fr_44vw] px-gutter pt-20 pb-24`}>
         <Reveal className={`${text} -mr-[6vw] tablet:mr-0`} delay={150}>
-          <SectionHeading className="mb-6.5" num="02" eyebrow="HERITAGE" title="Less talk, More torque" />
+          <SectionHeading className="mb-6.5" eyebrow="HERITAGE" title="Less talk, More torque" />
           {t.about.heritage.map((para, i) => (
             <p key={i} className={body}>
               {para}
