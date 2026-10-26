@@ -26,18 +26,18 @@
 
 | 토큰 | 값 | 클래스 예 | 용도 |
 |---|---|---|---|
-| `brand` | `#e1232b` | `bg-brand` `border-brand` | 메인 브랜드 색, 포커스 테두리 |
-| `brand-end` | `#f0393f` | `text-brand-end` | 브랜드 그라디언트 끝색, 강조 텍스트(카테고리, 링크) |
-| `brand-hover` / `brand-hover-end` | `#ee2f37` / `#ff4d52` | - | 버튼 호버 그라디언트 (직접 쓰지 말고 `bg-brand-gradient-hover`) |
+| `brand` | `#d94333` | `bg-brand` `border-brand` | 메인 브랜드 색, 포커스 테두리 |
+| `brand-end` | `#db5551` | `text-brand-end` | 브랜드 그라디언트 끝색, 강조 텍스트(카테고리, 링크) |
+| `brand-hover` / `brand-hover-end` | `#e5503f` / `#e76a64` | - | 버튼 호버 그라디언트 (직접 쓰지 말고 `bg-brand-gradient-hover`) |
 
 ### 배경 (어두운 순)
 
 | 토큰 | 값 | 용도 |
 |---|---|---|
 | `bg` | `#000000` | 페이지 배경 |
-| `raised` | `#0b0b0b` | 한 단계 떠 있는 섹션·카드 (`bg-raised`) |
-| `surface` | `#161616` | 카드, 입력칸 포커스 |
-| `surface-hover` | `#1f1f1f` | 카드 호버 |
+| `raised` | `#131313` | 한 단계 떠 있는 섹션·카드 (`bg-raised`) |
+| `surface` | `#232323` | 카드, 입력칸 포커스 |
+| `surface-hover` | `#2a2a2a` | 카드 호버 |
 
 ### 텍스트
 

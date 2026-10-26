@@ -10,16 +10,16 @@
   --color-*: initial;
 
   /* brand (orange-red); gradients are in index.css as `bg-brand-gradient` etc. */
-  --color-brand: #e1232b;
-  --color-brand-end: #f0393f;
-  --color-brand-hover: #ee2f37;
-  --color-brand-hover-end: #ff4d52;
+  --color-brand: #d94333;
+  --color-brand-end: #db5551;
+  --color-brand-hover: #e5503f;
+  --color-brand-hover-end: #e76a64;
 
   /* surfaces, darkest to lightest */
   --color-bg: #000000;
-  --color-raised: #0b0b0b;
-  --color-surface: #161616;
-  --color-surface-hover: #1f1f1f;
+  --color-raised: #131313;
+  --color-surface: #232323;
+  --color-surface-hover: #2a2a2a;
 
   /* text */
   --color-fg: #ffffff;

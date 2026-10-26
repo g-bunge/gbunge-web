@@ -20,11 +20,6 @@
     overflow-x: hidden;
   }
 
-  ::selection {
-    background: var(--color-brand);
-    color: var(--color-fg);
-  }
-
   /* preflight makes every svg a block; the design expects inline icons unless a class says otherwise */
   svg {
     display: inline;
@@ -49,13 +44,15 @@
 /* ---------- shared text styles (components layer, so utilities can override them) ---------- */
 
 @layer components {
-  /* small label above a title */
+  /* small gradient label above a title */
   .t-eyebrow {
     width: fit-content;
     font-size: var(--text-eyebrow);
     font-weight: 600;
     letter-spacing: var(--tracking-snug);
-    color: var(--color-fg-muted);
+    background: linear-gradient(90deg, var(--color-brand), var(--color-brand-end));
+    background-clip: text;
+    color: transparent;
   }
 
   .t-title {
