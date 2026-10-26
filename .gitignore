@@ -9,8 +9,8 @@ lerna-debug.log*
 
 node_modules
 dist
-# images the Notion script downloads at build time
-public/notion
+# the Notion script's staging folder (public/notion itself is committed with notion-posts.json,
+# so the posts keep their images even when a build can't reach Notion)
 public/notion.tmp
 dist-ssr
 *.local
