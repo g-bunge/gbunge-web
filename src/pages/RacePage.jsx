@@ -202,7 +202,7 @@ function drawCar(ctx, g) {
 function drawHud(ctx, g) {
   const meters = g.crash ? g.score : Math.floor(g.dist / 10)
   ctx.fillStyle = '#fff'
-  ctx.font = '700 22px Orbitron, sans-serif'
+  ctx.font = '700 22px Urbanist, sans-serif'
   ctx.textAlign = 'left'
   ctx.fillText(`${meters} m`, ROAD_L + 8, 34)
   ctx.fillStyle = 'rgb(255 255 255 / 0.55)'

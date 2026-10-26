@@ -66,7 +66,7 @@
 
 | 토큰 | 글꼴 | 클래스 | 용도 |
 |---|---|---|---|
-| `display` | Orbitron → Pretendard | `font-display` | 큰 제목, 숫자, 차량 이름, 메뉴, 버튼 |
+| `display` | Urbanist → Pretendard | `font-display` | 큰 제목, 숫자, 차량 이름, 메뉴, 버튼 |
 | `sans` | Pretendard | `font-sans` (기본값) | 본문 |
 | `ui` | Inter → Pretendard | `font-ui` | 메뉴, 라벨, 메타 정보, 버튼성 텍스트 |
 
@@ -78,7 +78,7 @@
 
 | 클래스 | 데스크톱 | 모바일 | 용도 |
 |---|---|---|---|
-| `text-title` | 34px / 1.2 | 24px | 섹션 제목 |
+| `text-title` | 41px / 1.16 | 30px | 섹션 제목 |
 | `text-body` | 18px / 29px | 16px / 26px | 본문 문단 |
 | `text-eyebrow` | 12px | - | 제목 위 작은 라벨 |
 | `text-button` | 13px | - | 버튼 |
@@ -93,7 +93,7 @@
 
 | 클래스 | 값 | 쓰는 곳 |
 |---|---|---|
-| `text-hero` | 34–72px | 하위 페이지 상단 큰 제목 |
+| `text-hero` | 48–96px | 하위 페이지 상단 큰 제목 |
 | `text-car` | 56–88px | 과거 차량 이름 |
 | `text-stat` | 48–80px | 소개 페이지 숫자 |
 | `text-post-title` | 36–60px | 블로그 글 제목 |
@@ -166,7 +166,7 @@ Tailwind 기본 `sm:` `md:` `lg:`는 꺼 두었습니다.
 | 클래스 | 모양 |
 |---|---|
 | `t-eyebrow` | 제목 위 작은 그라디언트 라벨 |
-| `t-title` | 섹션 제목 (Orbitron, 대문자, `text-title`) |
+| `t-title` | 섹션 제목 (Urbanist, 대문자, `text-title`) |
 | `t-body` | 본문 문단 (`text-body`, `text-fg-body`) |
 
 ---
@@ -218,7 +218,7 @@ Tailwind 기본 `sm:` `md:` `lg:`는 꺼 두었습니다.
 
 ## 디테일링 톤
 
-순수 검정 위에 넓은 Orbitron 대문자 제목과 빨간 포인트로 정밀한 느낌을 냅니다. 배경 그라디언트나 장식 선은 쓰지 않습니다.
+순수 검정 위에 Urbanist 대문자 제목과 빨간 포인트로 정밀한 느낌을 냅니다. 배경 그라디언트나 장식 선은 쓰지 않습니다.
 
 | 요소 | 만드는 법 |
 |---|---|
