@@ -59,7 +59,7 @@ export default function Stories() {
             delay={100 + i * 90}
           >
             <span className="mb-4 font-display text-11 font-bold tracking-widest text-fg-muted">0{i + 1}</span>
-            <h3 className="mb-2.5 text-20 font-semibold">{post.title[lang]}</h3>
+            <h3 className="mb-2.5 font-sans text-20 font-semibold break-keep">{post.title[lang]}</h3>
             <p className="line-clamp-2 text-16 leading-7 text-fg-muted">{post.excerpt[lang]}</p>
             <Button className="mt-auto self-end pt-5" variant="link" href={`/stories/${post.slug}`}>
               Read more

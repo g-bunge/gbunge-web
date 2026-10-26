@@ -47,7 +47,7 @@ export default function PostPage({ slug }) {
         <p className="flex gap-3.5 font-ui text-14 text-fg-muted">
           <span className="font-semibold text-brand-end">{categories[post.category][lang]}</span>
         </p>
-        <h1 className="mt-4.5 mb-6 font-display text-post-title leading-[1.15] font-semibold tracking-tight break-keep">{post.title[lang]}</h1>
+        <h1 className="mt-4.5 mb-6 font-sans text-post-title leading-[1.15] font-semibold tracking-tight break-keep">{post.title[lang]}</h1>
         <p className="text-20 leading-8 break-keep text-fg-body mobile:text-17 mobile:leading-7">{post.excerpt[lang]}</p>
         <dl className="mt-9 flex flex-wrap gap-[16px_48px] border-t border-surface pt-6 font-ui">
           {info.map(([label, value]) => (
