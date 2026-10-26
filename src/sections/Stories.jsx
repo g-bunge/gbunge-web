@@ -15,7 +15,7 @@ export default function Stories() {
   const slides = feed ?? storySlides.map((s) => ({ ...s, alt: s.alt[lang] }))
 
   return (
-    <section id="stories" className="bg-contours bg-[position:100%_20%] px-10 pt-22 pb-20 tablet:px-gutter tablet:py-20">
+    <section id="stories" className="px-10 pt-22 pb-20 tablet:px-gutter tablet:py-20">
       {/* hashtag title, then a thin line dropping to a ringed Instagram button */}
       <Reveal className="flex flex-col items-center text-center">
         <p className="t-eyebrow mb-3">SNS&Blog</p>

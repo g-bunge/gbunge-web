@@ -157,7 +157,7 @@ export default function SponsorsPage() {
 
         <section
           id="contact"
-          className="mx-gutter mb-30 grid grid-cols-[5fr_7fr] items-start gap-16 border border-brand/30 bg-raised bg-[radial-gradient(ellipse_at_0%_110%,rgb(217_67_51/0.4),transparent_55%)] px-16 py-20 tablet:grid-cols-1 tablet:gap-10 tablet:px-10 tablet:py-14 mobile:mx-0 mobile:mb-20 mobile:px-gutter"
+          className="mx-gutter mb-30 grid grid-cols-[5fr_7fr] items-start gap-16 border border-brand/30 bg-raised px-16 py-20 tablet:grid-cols-1 tablet:gap-10 tablet:px-10 tablet:py-14 mobile:mx-0 mobile:mb-20 mobile:px-gutter"
         >
           <Reveal className="sticky top-30 tablet:static">
             <p className="t-eyebrow mb-4 tracking-label">BECOME OUR SPONSOR</p>

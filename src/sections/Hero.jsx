@@ -18,10 +18,10 @@ export default function Hero() {
   return (
     <header id="top" className="relative grid h-screen min-h-140 place-items-center overflow-hidden">
       <div
-        className="absolute inset-[-2%_0_0] animate-hero-zoom overflow-hidden bg-bg will-change-transform after:absolute after:inset-0 after:z-1 after:bg-[radial-gradient(ellipse_50%_45%_at_15%_85%,rgb(225_35_43/0.32),transparent_70%),linear-gradient(rgb(0_0_0/0.25),transparent_30%,rgb(0_0_0/0.55)_80%,var(--color-bg))]"
+        className="absolute inset-[-2%_0_0] animate-hero-zoom overflow-hidden bg-bg will-change-transform after:absolute after:inset-0 after:z-1 after:bg-[linear-gradient(transparent_30%,rgb(0_0_0/0.5))]"
         style={{ transform: `translate3d(0, ${scrollY * 0.35}px, 0)` }}
       >
-        {/* the ::after throws red light in from the bottom left and fades the bottom into the page */}
+        {/* the ::after darkens the bottom edge so the next section blends in */}
         <Slideshow images={heroImages} />
       </div>
 

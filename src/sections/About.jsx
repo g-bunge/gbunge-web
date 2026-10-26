@@ -18,7 +18,7 @@ export default function About() {
 
   return (
     <>
-      <section id="about" className={`${split} grid-cols-[44vw_1fr] bg-contours bg-[position:85%_0] px-gutter pt-24`}>
+      <section id="about" className={`${split} grid-cols-[44vw_1fr] px-gutter pt-24`}>
         <Reveal className={media} variant="left">
           <img className="size-full object-cover" src={url('/images/who.jpg')} alt={t.about.whoAlt} />
         </Reveal>

@@ -9,7 +9,7 @@ export default function PageHero({ eyebrow, title, lead, img, alt, focus }) {
   return (
     <header
       id="top"
-      className="relative h-[clamp(480px,82vh,860px)] overflow-hidden before:absolute before:inset-0 before:z-1 before:bg-[radial-gradient(ellipse_45%_55%_at_0%_100%,rgb(225_35_43/0.35),transparent_70%)] after:absolute after:inset-0 after:bg-[linear-gradient(90deg,rgb(0_0_0/0.55),transparent_65%),linear-gradient(rgb(0_0_0/0.25),transparent_30%,transparent_55%,var(--color-bg))] mobile:h-[78vh]"
+      className="relative h-[clamp(480px,82vh,860px)] overflow-hidden after:absolute after:inset-0 after:bg-[linear-gradient(90deg,rgb(0_0_0/0.55),transparent_65%),linear-gradient(rgb(0_0_0/0.25),transparent_30%,transparent_55%,var(--color-bg))] mobile:h-[78vh]"
     >
       {/* the gradient above darkens the left for the copy and fades the bottom into the page */}
       <img className="size-full animate-page-hero-zoom object-cover" style={{ objectPosition: focus }} src={url(img)} alt={alt} />
