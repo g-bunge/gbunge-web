@@ -4,6 +4,9 @@ import cx from '../../lib/cx.js'
 import { url } from '../../lib/url.js'
 import { PlayIcon } from './Icons.jsx'
 
+/* a slide image that fails to load leaves the grey placeholder behind it instead of a broken-image icon */
+const hideBroken = (e) => (e.currentTarget.style.visibility = 'hidden')
+
 const arrow =
   'absolute top-1/2 -mt-3.25 size-6.5 rounded-full bg-white/35 text-20 leading-6 text-fg-on-light opacity-0 ' +
   '[transition:background_0.3s,opacity_0.3s,scale_0.3s_var(--ease-out)] group-hover/carousel:opacity-100 hover:scale-112 hover:bg-white/85'
@@ -22,14 +25,23 @@ export default function Carousel({ slides, interval = 4500, className = '', chil
     <div className={cx('group/carousel relative h-full overflow-hidden', className)} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
       <div className="flex h-full transition-transform duration-800 ease-out" style={{ transform: `translateX(-${index * 100}%)` }}>
         {slides.map((s, i) => (
-          <div className="relative h-full flex-[0_0_100%]" key={i} aria-hidden={i !== index}>
-            {s.contain && <img className="absolute inset-0 size-full scale-110 object-cover blur-xl brightness-50" src={url(s.src)} alt="" loading={i ? 'lazy' : undefined} aria-hidden />}
+          <div className="relative h-full flex-[0_0_100%] bg-placeholder" key={i} aria-hidden={i !== index}>
+            {s.contain && (
+              <img
+                className="absolute inset-0 size-full scale-110 object-cover blur-xl brightness-50"
+                src={url(s.src)}
+                alt=""
+                loading={i ? 'lazy' : undefined}
+                onError={hideBroken}
+                aria-hidden
+              />
+            )}
             {s.href ? (
               <a className="relative block size-full" href={s.href} target="_blank" rel="noreferrer" tabIndex={i === index ? 0 : -1}>
-                <img className={cx('size-full', s.contain ? 'object-contain' : 'object-cover')} src={url(s.src)} alt={s.alt} loading={i ? 'lazy' : undefined} />
+                <img className={cx('size-full', s.contain ? 'object-contain' : 'object-cover')} src={url(s.src)} alt={s.alt} loading={i ? 'lazy' : undefined} onError={hideBroken} />
               </a>
             ) : (
-              <img className={cx('relative size-full', s.contain ? 'object-contain' : 'object-cover')} src={url(s.src)} alt={s.alt} />
+              <img className={cx('relative size-full', s.contain ? 'object-contain' : 'object-cover')} src={url(s.src)} alt={s.alt} onError={hideBroken} />
             )}
             {s.video && (
               <span className="pointer-events-none absolute top-1/2 left-1/2 grid size-14 -translate-1/2 place-items-center rounded-full bg-black/45 text-white backdrop-blur-sm" aria-hidden>

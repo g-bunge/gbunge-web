@@ -4,9 +4,13 @@ import { INSTAGRAM_FEED } from '../data/site.js'
 /* the caption's first line (usually the post's title), for the image's alt text */
 const firstLine = (caption) => caption?.split('\n').find((line) => line.trim())?.trim() ?? ''
 
-/** A Behold post → a Carousel slide; videos show a still (thumbnail) with a play badge, never autoplay. */
+/**
+ * A Behold post → a Carousel slide; videos show a still (thumbnail) with a play badge, never autoplay.
+ * Only Behold's own copies are used: Instagram's links (mediaUrl, thumbnailUrl) are signed and expire,
+ * so a post Behold hasn't resized yet is skipped rather than shown and then broken.
+ */
 const toSlide = (post) => {
-  const image = post.sizes?.medium?.mediaUrl ?? (post.mediaType === 'VIDEO' ? post.thumbnailUrl : post.mediaUrl)
+  const image = post.sizes?.medium?.mediaUrl
   // posts come in 4:5, 1:1 or landscape; `contain` shows each whole (captions are often written on the image)
   return image && { src: image, alt: firstLine(post.prunedCaption ?? post.caption) || 'Instagram post', href: post.permalink, video: post.mediaType === 'VIDEO', contain: true }
 }
