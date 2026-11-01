@@ -1,6 +1,7 @@
 import Slideshow from '../components/ui/Slideshow.jsx'
 import { ChevronWide } from '../components/ui/Icons.jsx'
 import LangToggle from '../components/ui/LangToggle.jsx'
+import MobileMenu from '../components/layout/MobileMenu.jsx'
 import useScrollY from '../hooks/useScrollY.js'
 import useLang from '../i18n/LanguageContext.js'
 import { heroImages } from '../data/hero.js'
@@ -40,8 +41,9 @@ export default function Hero() {
         </p>
       </div>
 
-      <div className="absolute top-7 right-gutter z-2">
+      <div className="absolute top-7 right-gutter z-2 flex items-center gap-1">
         <LangToggle />
+        <MobileMenu />
       </div>
 
       <button className="absolute bottom-9 left-1/2 z-1 -ml-5 w-10 animate-hero-scroll text-fg" onClick={scrollToContent} aria-label="Scroll down">

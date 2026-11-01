@@ -1,17 +1,10 @@
 import LangToggle from '../ui/LangToggle.jsx'
+import MobileMenu from './MobileMenu.jsx'
+import { links, isCurrent } from './links.js'
 import useScrollY from '../../hooks/useScrollY.js'
 import useLang from '../../i18n/LanguageContext.js'
 import cx from '../../lib/cx.js'
 import { currentPath, url } from '../../lib/url.js'
-import { STORIES_ENABLED } from '../../data/site.js'
-
-const links = [
-  { id: 'about', href: '/about' },
-  { id: 'team', href: '/team' },
-  { id: 'pastCars', href: '/past-cars' },
-  ...(STORIES_ENABLED ? [{ id: 'stories', href: '/stories' }] : []),
-  { id: 'sponsors', href: '/sponsors' },
-]
 
 /**
  * Top bar that slides in once the hero has mostly scrolled out of view.
@@ -49,7 +42,7 @@ export default function Navbar({ alwaysVisible = false }) {
                 'hover:after:scale-x-100 aria-[current=page]:after:scale-x-100',
               )}
               href={url(href)}
-              aria-current={path === href || path.startsWith(`${href}/`) ? 'page' : undefined}
+              aria-current={isCurrent(path, href) ? 'page' : undefined}
             >
               {t.nav[id]}
             </a>
@@ -57,6 +50,7 @@ export default function Navbar({ alwaysVisible = false }) {
         ))}
       </ul>
       <LangToggle className="-ml-6 mobile:ml-auto" />
+      <MobileMenu className="-ml-10" />
     </nav>
   )
 }

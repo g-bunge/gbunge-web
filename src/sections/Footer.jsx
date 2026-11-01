@@ -1,15 +1,8 @@
 import { ArrowUp, GitHubIcon, InstagramIcon, MailIcon } from '../components/ui/Icons.jsx'
 import useLang from '../i18n/LanguageContext.js'
-import { EMAIL, INSTAGRAM, STORIES_ENABLED } from '../data/site.js'
+import { links } from '../components/layout/links.js'
+import { EMAIL, INSTAGRAM } from '../data/site.js'
 import { url } from '../lib/url.js'
-
-const menu = [
-  { id: 'about', href: '/about' },
-  { id: 'team', href: '/team' },
-  { id: 'pastCars', href: '/past-cars' },
-  ...(STORIES_ENABLED ? [{ id: 'stories', href: '/stories' }] : []),
-  { id: 'sponsors', href: '/sponsors' },
-]
 
 /* TODO: fill in the GitHub org URL. */
 const social = [
@@ -38,7 +31,7 @@ export default function Footer() {
         <nav aria-label="Footer">
           <h3 className={heading}>Menu</h3>
           <ul className="grid gap-2.5">
-            {menu.map(({ id, href }) => (
+            {links.map(({ id, href }) => (
               <li key={id}>
                 <a className={link} href={url(href)}>
                   {t.nav[id]}
