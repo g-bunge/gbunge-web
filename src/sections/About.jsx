@@ -4,7 +4,8 @@ import Button from '../components/ui/Button.jsx'
 import useLang from '../i18n/LanguageContext.js'
 import { url } from '../lib/url.js'
 
-const split = 'relative grid items-center tablet:grid-cols-1 tablet:gap-y-10 tablet:p-[60px_var(--spacing-gutter)]'
+/* overflow-x-clip: a photo sliding in from the side mustn't widen the page on a phone before it lands */
+const split = 'relative grid items-center overflow-x-clip tablet:grid-cols-1 tablet:gap-y-10 tablet:p-[60px_var(--spacing-gutter)]'
 const media = 'aspect-545/532 overflow-hidden'
 /* a black panel that overlaps the photo's edge; the /// mark heads it */
 const text =
@@ -30,7 +31,8 @@ export default function About() {
       </section>
 
       <section className={`${split} grid-cols-[1fr_44vw] px-gutter pt-20 pb-24`}>
-        <Reveal className={`${text} -mr-[6vw] tablet:mr-0`} delay={150}>
+        {/* wider than its column by 8vw so the panel runs over the photo's left edge; the text keeps its place */}
+        <Reveal className={`${text} -mr-[8vw] max-w-none pr-[calc(3rem+8vw)] tablet:mr-0 tablet:pr-0`} delay={150}>
           <SectionHeading className="mb-6.5" eyebrow="HERITAGE" title="Less talk, More torque" />
           {t.about.heritage.map((para, i) => (
             <p key={i} className={body}>
