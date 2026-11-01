@@ -30,9 +30,9 @@ export default function About() {
         </Reveal>
       </section>
 
-      <section className={`${split} grid-cols-[1fr_44vw] px-gutter pt-20 pb-24`}>
-        {/* wider than its column by 8vw so the panel runs over the photo's left edge; the text keeps its place */}
-        <Reveal className={`${text} -mr-[8vw] max-w-none pr-[calc(3rem+8vw)] tablet:mr-0 tablet:pr-0`} delay={150}>
+      <section className={`${split} grid-cols-[1fr_40vw] px-gutter pt-20 pb-24`}>
+        {/* wider than its column by 10vw so the panel runs over the photo's left edge; the text keeps its place */}
+        <Reveal className={`${text} -mr-[10vw] max-w-none py-10 pr-[calc(3rem+10vw)] tablet:mr-0 tablet:py-0 tablet:pr-0`} delay={150}>
           <SectionHeading className="mb-6.5" eyebrow="HERITAGE" title="Less talk, More torque" />
           {t.about.heritage.map((para, i) => (
             <p key={i} className={body}>
