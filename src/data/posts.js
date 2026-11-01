@@ -14,11 +14,14 @@ import notionPosts from './notion-posts.json'
  *   thumb   : the card's picture when there's no cover (the post's first photo, from Notion); optional
  *   body    : { ko: blocks, en: blocks }; see components/ui/PostBody.jsx
  */
+/* every option of the Notion 카테고리 column, by its Korean name, so each gets an English label */
 const knownCategories = {
   design: { ko: '설계', en: 'Design' },
+  engineering: { ko: '엔지니어링', en: 'Engineering' },
   build: { ko: '작업일지', en: 'Build Log' },
   race: { ko: '대회', en: 'Competition' },
-  team: { ko: '팀 소식', en: 'Team' },
+  team: { ko: '팀', en: 'Team' },
+  story: { ko: '이야기', en: 'Story' },
 }
 
 /* Notion gives the Korean category name; map it to its key so it gets the English label too */
