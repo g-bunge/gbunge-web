@@ -185,9 +185,19 @@ const firstParagraph = (body) => {
 
 /* ---------- main ---------- */
 
+/*
+ * Logs a line; in GitHub Actions it also becomes an annotation on the run's summary page,
+ * so a deploy that quietly kept the old posts says why without digging through the logs.
+ */
+function report(level, message) {
+  const log = level === 'warning' ? console.warn : console.log
+  log(`[notion] ${message}`)
+  if (process.env.GITHUB_ACTIONS) console.log(`::${level} title=Notion blog::${message}`)
+}
+
 async function main() {
   if (!NOTION_TOKEN || !NOTION_BLOG_KO_DB) {
-    console.log('[notion] NOTION_TOKEN / NOTION_BLOG_KO_DB not set: keeping the current posts.')
+    report(process.env.GITHUB_ACTIONS ? 'warning' : 'notice', 'NOTION_TOKEN / NOTION_BLOG_KO_DB not set: keeping the current posts.')
     try {
       await fs.access(OUT_JSON)
     } catch {
@@ -242,11 +252,11 @@ async function main() {
   await fs.rm(IMG_DIR, { recursive: true, force: true })
   await fs.rename(STAGE_DIR, IMG_DIR)
   await fs.writeFile(OUT_JSON, `${JSON.stringify(posts, null, 2)}\n`)
-  console.log(`[notion] ${posts.length} published posts written to src/data/notion-posts.json`)
+  report('notice', `${posts.length} published posts written to src/data/notion-posts.json`)
 }
 
 /* a failed fetch must not fail the build: warn and keep the last posts */
 main().catch(async (err) => {
-  console.warn(`[notion] ${err.message}: keeping the current posts.`)
+  report('warning', `${err.message}: keeping the current posts.`)
   await fs.rm(STAGE_DIR, { recursive: true, force: true })
 })
