@@ -9,13 +9,16 @@ import { url } from '../lib/url.js'
 const partnerByName = Object.fromEntries(partners.map((p) => [p.name, p]))
 
 /* each people section: heading on the left, content on the right, under a rule that runs edge to edge */
-const row = 'grid grid-cols-[1fr_2fr] items-start gap-x-[6vw] relative before:absolute before:-inset-x-[100vw] before:top-0 before:h-px before:bg-line py-16 tablet:grid-cols-1 tablet:gap-y-8 tablet:py-12'
+const row = 'grid first:before:hidden grid-cols-[1fr_2fr] items-start gap-x-[6vw] relative before:absolute before:-inset-x-[100vw] before:top-0 before:h-px before:bg-line py-16 tablet:grid-cols-1 tablet:gap-y-8 tablet:py-12'
 const soon = 'text-17 leading-7 break-keep text-fg-muted'
 
 /** /past-cars/<id>: one car, then who was behind it that year: sponsors, faculty advisor and members. */
 export default function CarPage({ car }) {
   const { lang, t } = useLang()
   const copy = t.carsPage
+  // a car raced in 2026 was built over the 2025/26 season
+  const raced = Number(car.year)
+  const season = raced ? { start: raced - 1, label: `${raced - 1}/${String(raced).slice(2)}` } : null
 
   return (
     <main className="overflow-x-clip pt-nav">
@@ -91,7 +94,7 @@ export default function CarPage({ car }) {
       <div className="px-gutter pb-28 mobile:pb-18">
         <section className={row}>
           <Reveal>
-            <SectionHeading title={copy.sponsors.title} />
+            <SectionHeading title={copy.sponsors.title(season)} />
           </Reveal>
           <Reveal delay={120}>
             {car.sponsors.length ? (
@@ -117,7 +120,7 @@ export default function CarPage({ car }) {
 
         <section className={row}>
           <Reveal>
-            <SectionHeading title={copy.advisor.title} />
+            <SectionHeading title={copy.advisor.title(season)} />
           </Reveal>
           <Reveal delay={120}>
             {car.advisor ? (
@@ -133,7 +136,7 @@ export default function CarPage({ car }) {
 
         <section className={row}>
           <Reveal>
-            <SectionHeading title={copy.members.title} />
+            <SectionHeading title={copy.members.title(season)} />
           </Reveal>
           <Reveal delay={120}>
             {car.members.length ? (
