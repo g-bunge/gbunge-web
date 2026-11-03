@@ -33,7 +33,7 @@ export default function PastCarsPage() {
                   <span className="mt-2 font-display text-36 leading-none font-semibold tracking-tight transition-colors duration-300 group-hover/car:text-brand-end">
                     {car.name}
                   </span>
-                  {car.award && <span className="mt-3 font-ui text-13 font-semibold text-fg-body before:content-['🏆_']">{car.award[lang]}</span>}
+                  {car.award && <span className="mt-3 font-ui text-13 font-semibold text-fg-body">{car.award[lang]}</span>}
                   <span className="mt-auto inline-flex items-center gap-1.5 self-end pt-5 font-ui text-14 font-semibold text-brand-end [&>svg]:size-4">
                     {copy.view}
                     <ArrowUpRight />
