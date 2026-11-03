@@ -80,10 +80,10 @@ export const translations = {
       edge: {
         lead: '지붕이의 후원사가 되어야 하는 네 가지 이유입니다.',
         pillars: [
-          { title: '과학기술원이라는 환경', body: 'GIST는 국가 과학기술 인재를 키우기 위해 세워진 과학기술원입니다. 연구실과 장비를 가까이 두고, 해석하고 검증하며 데이터로 차를 설계합니다.' },
-          { title: '처음이지만, 백지는 아닌', body: '포뮬러는 올해가 첫 출전입니다. 하지만 전기 바하 다섯 대를 만들었고, Mk.5로 기술아이디어상을 받았습니다. 성장 곡선의 가장 가파른 지점에 함께하세요.' },
-          { title: '눈에 띄는 자리에 로고를', body: '차량 바디와 팀 유니폼, 대회 피트·부스, 웹사이트와 인스타그램, 홍보물까지. 후원사의 로고는 우리가 가는 모든 곳에 함께합니다.' },
-          { title: '소수 정예', body: '적은 인원이 넓은 책임을 나눠 맡습니다. 한 사람이 설계부터 제작까지 책임지기에 결정은 빠르고, 후원사와의 소통은 짧고 분명합니다.' },
+          { title: '과학기술원의 엔지니어링', body: 'GIST는 국가 과학기술 인재 양성을 위해 설립된 과학기술원입니다. 체계적인 연구 환경과 공학적 역량을 바탕으로 차량을 설계하고 제작합니다.' },
+          { title: '루키팀의 시작을 함께', body: 'Formula Student는 G-BungE의 첫 도전입니다. 하지만 전기 Baja 차량 5대를 제작한 경험과 Mk.5의 기술아이디어상 수상 실적이 있습니다. 검증된 경험을 바탕으로 새로운 도전을 시작합니다.' },
+          { title: '브랜드 노출', body: '차량 바디와 팀 유니폼, 대회 피트·부스, 웹사이트, SNS 및 홍보물에 후원사의 로고를 노출합니다. G-BungE의 활동 전반에 후원사의 브랜드가 함께합니다.' },
+          { title: '소수 정예', body: '적은 인원이 설계부터 제작까지 폭넓게 참여합니다. 빠른 의사결정과 명확한 책임 분담을 바탕으로 후원사와 직접 소통합니다.' },
         ],
       },
       supporters: {
@@ -217,10 +217,10 @@ export const translations = {
       edge: {
         lead: 'Four reasons to sponsor G-BungE.',
         pillars: [
-          { title: 'Built at a science institute', body: "GIST is one of Korea's science and technology institutes. With labs and equipment close at hand, we analyse, validate and design the car on data." },
-          { title: 'Rookies on the rise', body: 'This is our first Formula season. Behind it are five electric Baja cars and a Technical Idea Award for Mk.5. Join us at the steepest part of the curve.' },
-          { title: 'Your logo, wherever we go', body: "On the car's bodywork, team uniforms, pit and booth, our website, Instagram and print materials: your logo goes everywhere we do." },
-          { title: 'Small and hand-picked', body: 'Few people, wide ownership. Each of us sees a part through from design to build, so decisions are fast and talking with sponsors stays short and clear.' },
+          { title: 'Engineering at a science institute', body: 'GIST is a science and technology institute founded to train the nation\'s scientists and engineers. We design and build the car on its research environment and our engineering skills.' },
+          { title: 'Be there from the start', body: 'Formula Student is G-BungE\'s first attempt. Behind it are five electric Baja cars and a Technical Idea Award for Mk.5. We take on the new challenge on proven experience.' },
+          { title: 'Brand exposure', body: 'Your logo goes on the car\'s bodywork, team uniforms, pit and booth, our website, social media and print materials. Your brand comes with us across everything G-BungE does.' },
+          { title: 'Small and hand-picked', body: 'A small team, each taking part from design through to build. With fast decisions and clear responsibilities, we talk with sponsors directly.' },
         ],
       },
       supporters: {
