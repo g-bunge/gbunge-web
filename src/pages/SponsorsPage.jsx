@@ -9,7 +9,6 @@ import { ArrowUpRight, MailIcon } from '../components/ui/Icons.jsx'
 import { partners, supporterGroups } from '../data/sponsors.js'
 import { memberCount } from '../data/members.js'
 import useLang from '../i18n/LanguageContext.js'
-import cx from '../lib/cx.js'
 import { url } from '../lib/url.js'
 import { SPONSOR_EMAIL } from '../data/site.js'
 
@@ -66,36 +65,62 @@ export default function SponsorsPage() {
           onClose={close}
         />
 
-        {/* why us: one big line with the answer in red, four big numbers, then where a sponsor's logo goes */}
-        <section id="edge" className="px-gutter pt-6 pb-28 tablet:pb-18">
-          <Reveal>
-            <p className="t-eyebrow flex items-center gap-3 tracking-label before:h-0.5 before:w-8 before:bg-brand-gradient">WHY G-BUNGE</p>
-            <h2 className="mt-7 font-display text-[clamp(40px,5.4vw,84px)] leading-[1.04] font-semibold tracking-tighter break-keep">
-              {claim}
-              <br />
-              <span className="text-brand-gradient">{answer}</span>
-            </h2>
-          </Reveal>
+        {/* why us: a sideways WHY down the left margin; a two-tone heading with a button; where the logo goes; four stat cards */}
+        <section id="edge" className="grid grid-cols-[9vw_1fr] px-gutter pt-10 pb-28 tablet:grid-cols-1 tablet:pb-18">
+          <p
+            className="-ml-[0.12em] self-start font-display text-[clamp(72px,9vw,150px)] leading-none font-semibold tracking-tight text-white/16 italic [writing-mode:vertical-rl] rotate-180 select-none tablet:hidden"
+            aria-hidden
+          >
+            / WHY
+          </p>
 
-          <ol className="mt-18 grid grid-cols-4 border-y border-line tablet:grid-cols-2 mobile:mt-12">
-            {copy.edge.pillars.map((pillar, i) => (
-              <Reveal
-                as="li"
-                key={pillar.title}
-                className={cx('px-8 py-11 tablet:px-6 mobile:px-4 mobile:py-8', i % 4 !== 0 && 'border-l border-line', i >= 2 && 'tablet:border-t', i % 2 === 0 && 'tablet:border-l-0')}
-                delay={i * 90}
-              >
-                <p className="font-display text-stat leading-none font-semibold tracking-tighter">{pillar.stat.replace('{members}', memberCount)}</p>
-                <p className="mt-5 font-ui text-14 font-semibold text-fg-muted">{pillar.label}</p>
-                <p className="mt-1.5 text-17 font-semibold break-keep">{pillar.title}</p>
-              </Reveal>
-            ))}
-          </ol>
+          <div className="min-w-0">
+            <Reveal className="flex items-end justify-between gap-10 tablet:flex-col tablet:items-start tablet:gap-7">
+              <div>
+                <p className="mb-5 font-ui text-14 tracking-[0.4em] text-fg-muted" aria-hidden>
+                  +++++++
+                </p>
+                <h2 className="font-display text-[clamp(40px,4.6vw,68px)] leading-none font-semibold tracking-tighter">
+                  <span className="text-fg-muted">Why</span> G-BungE
+                </h2>
+                <p className="mt-5 max-w-150 text-20 leading-[1.5] font-medium break-keep text-fg-body mobile:text-17">
+                  {claim} <span className="text-brand-end">{answer}</span>
+                </p>
+              </div>
+              {/* outlined button with the arrow in its own white square */}
+              <a className="group/cta flex shrink-0 items-stretch border border-white/30 transition-colors duration-300 hover:border-fg" href="#contact">
+                <span className="grid w-11 place-items-center bg-fg text-18 text-fg-on-light" aria-hidden>
+                  →
+                </span>
+                <span className="px-5 py-3 font-ui text-15 font-semibold">{copy.supporters.cta}</span>
+              </a>
+            </Reveal>
 
-          <Reveal className="flex flex-wrap items-baseline gap-x-8 gap-y-3 border-b border-line py-7">
-            <h3 className="font-ui text-13 font-semibold tracking-widest text-brand-end uppercase">{copy.exposureTitle}</h3>
-            <p className="text-16 text-fg-body">{copy.exposure.join('  ·  ')}</p>
-          </Reveal>
+            {/* where a sponsor's logo goes, as a strip between hairlines */}
+            <Reveal className="mt-12 flex flex-wrap items-center gap-x-10 gap-y-3 border-y border-line py-5">
+              <span className="font-ui text-13 font-semibold text-fg-muted">{copy.exposureTitle}</span>
+              {copy.exposure.map((place) => (
+                <span key={place} className="font-display text-18 font-semibold tracking-tight text-fg/90">
+                  {place}
+                </span>
+              ))}
+            </Reveal>
+
+            <ol className="mt-8 grid grid-cols-4 gap-4 laptop:grid-cols-2 mobile:grid-cols-1">
+              {copy.edge.pillars.map((pillar, i) => (
+                <Reveal as="li" key={pillar.title} className="flex flex-col border border-line-faint bg-surface" delay={i * 90}>
+                  <div className="flex flex-1 flex-col justify-between gap-10 p-6">
+                    {/* a small badge in the corner, the number large */}
+                    <span className="flex w-fit items-center gap-1.5 self-end bg-black/45 px-2.5 py-1 font-ui text-11 font-semibold text-fg-body before:size-1.5 before:rounded-full before:bg-brand">
+                      {pillar.label}
+                    </span>
+                    <span className="font-display text-56 leading-none font-semibold tracking-tighter mobile:text-44">{pillar.stat.replace('{members}', memberCount)}</span>
+                  </div>
+                  <p className="border-t border-line-faint bg-white/4 px-6 py-4 text-16 font-semibold break-keep">{pillar.title}</p>
+                </Reveal>
+              ))}
+            </ol>
+          </div>
         </section>
 
         {/* credits roll: every individual supporter, grouped, centred like the end of a film */}
