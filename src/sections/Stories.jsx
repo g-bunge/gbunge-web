@@ -35,17 +35,7 @@ export default function Stories() {
       <div className="mx-auto mt-14.5 grid max-w-309 grid-cols-[380fr_396fr_396fr] grid-rows-2 gap-8 tablet:grid-cols-2 tablet:grid-rows-none tablet:gap-4 mobile:grid-cols-1">
         {/* 4:5, Instagram's portrait post ratio; the two rows of post cards share its height */}
         <Reveal className="row-span-2 aspect-4/5 overflow-hidden clip-notch tablet:col-span-2 tablet:row-auto tablet:max-h-[70vh] tablet:justify-self-center mobile:col-auto" variant="left">
-          <Carousel key={feed ? 'instagram' : 'fallback'} slides={slides}>
-            <a
-              className="absolute top-4.5 right-4.5 size-7 text-fg drop-shadow-[0_1px_4px_rgb(0_0_0/0.4)] transition-[scale] duration-300 ease-out hover:scale-115"
-              href={INSTAGRAM}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Instagram"
-            >
-              <InstagramIcon />
-            </a>
-          </Carousel>
+          <Carousel key={feed ? 'instagram' : 'fallback'} slides={slides} />
         </Reveal>
 
         {posts.slice(0, 4).map((post, i) => (
