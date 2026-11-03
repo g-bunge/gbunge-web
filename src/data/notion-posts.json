@@ -1472,5 +1472,47 @@
         }
       ]
     }
+  },
+  {
+    "slug": "40b8200a5f988060a2d3cdf4a6e7f5d6",
+    "category": null,
+    "team": null,
+    "author": "김예원",
+    "date": "2026-08-01",
+    "cover": null,
+    "thumb": null,
+    "title": {
+      "ko": "제목",
+      "en": "title"
+    },
+    "excerpt": {
+      "ko": "",
+      "en": ""
+    },
+    "body": {
+      "ko": [],
+      "en": []
+    }
+  },
+  {
+    "slug": "40b8200a5f9880d989adfc7f69f4742b",
+    "category": null,
+    "team": null,
+    "author": "김예원",
+    "date": "2026-07-01",
+    "cover": null,
+    "thumb": null,
+    "title": {
+      "ko": "제목",
+      "en": "title"
+    },
+    "excerpt": {
+      "ko": "",
+      "en": ""
+    },
+    "body": {
+      "ko": [],
+      "en": []
+    }
   }
 ]
