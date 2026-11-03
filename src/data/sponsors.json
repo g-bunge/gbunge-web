@@ -2,7 +2,7 @@
   "partners": [
     {
       "name": "Synology",
-      "logo": null,
+      "logo": "/images/sponsors/synology.svg",
       "url": "https://www.synology.com",
       "about": {
         "ko": "NAS와 데이터 스토리지 솔루션을 만드는 기업입니다.",
@@ -15,7 +15,7 @@
     },
     {
       "name": "Würth Elektronik",
-      "logo": null,
+      "logo": "/images/sponsors/wurth-elektronik.svg",
       "url": "https://www.we-online.com",
       "about": {
         "ko": "인덕터, 커넥터 등 전자·전기기계 부품을 만드는 독일 기업입니다.",
@@ -41,7 +41,7 @@
     },
     {
       "name": "JLCPCB",
-      "logo": null,
+      "logo": "/images/sponsors/jlcpcb.svg",
       "url": "https://jlcpcb.com",
       "about": {
         "ko": "PCB 제작과 조립 서비스를 제공하는 기업입니다.",
@@ -54,7 +54,7 @@
     },
     {
       "name": "NXP",
-      "logo": null,
+      "logo": "/images/sponsors/nxp.svg",
       "url": "https://www.nxp.com",
       "about": {
         "ko": "차량용 프로세서와 마이크로컨트롤러로 잘 알려진 반도체 기업입니다.",
@@ -67,7 +67,7 @@
     },
     {
       "name": "About:Energy",
-      "logo": null,
+      "logo": "/images/sponsors/about-energy.png",
       "url": "https://www.aboutenergy.io",
       "about": {
         "ko": "배터리 셀을 시험하고 셀 데이터와 모델을 제공하는 영국 기업입니다.",
@@ -89,7 +89,7 @@
     },
     {
       "name": "Wera",
-      "logo": null,
+      "logo": "/images/sponsors/wera.svg",
       "url": "https://www-de.wera.de/en/",
       "about": {
         "ko": "독일의 수공구 브랜드입니다.",
@@ -102,7 +102,7 @@
     },
     {
       "name": "내쇼날시스템",
-      "logo": null,
+      "logo": "/images/sponsors/nswel.png",
       "about": null,
       "support": {
         "ko": "알루미늄 용접기 할인",
@@ -132,7 +132,7 @@
     },
     {
       "name": "ENKEI",
-      "logo": null,
+      "logo": "/images/sponsors/enkei.svg",
       "url": "https://www.enkei.co.jp",
       "about": {
         "ko": "경량 알로이 휠을 만드는 일본 기업입니다.",
@@ -154,7 +154,7 @@
     },
     {
       "name": "Onshape",
-      "logo": null,
+      "logo": "/images/sponsors/onshape.svg",
       "url": "https://www.onshape.com",
       "about": {
         "ko": "클라우드 기반 CAD 플랫폼입니다.",
