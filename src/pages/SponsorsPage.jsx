@@ -1,8 +1,10 @@
+import { useCallback, useState } from 'react'
 import Reveal from '../components/ui/Reveal.jsx'
 import SectionHeading from '../components/ui/SectionHeading.jsx'
 import PageHero from '../components/ui/PageHero.jsx'
 import Button from '../components/ui/Button.jsx'
 import SponsorForm from '../components/ui/SponsorForm.jsx'
+import PartnerPanel from '../components/ui/PartnerPanel.jsx'
 import { ArrowUpRight, MailIcon } from '../components/ui/Icons.jsx'
 import { partners, supporterGroups } from '../data/sponsors.js'
 import { memberCount } from '../data/members.js'
@@ -19,42 +21,46 @@ const rowLabel = 'font-ui text-13 font-semibold tracking-widest text-brand-end u
 export default function SponsorsPage() {
   const { lang, t } = useLang()
   const copy = t.sponsorsPage
+  // the partner whose panel is open; `shownPartner` keeps the last one while the panel slides out
+  const [open, setOpen] = useState(null)
+  const [shownPartner, setShownPartner] = useState(0)
+  if (open !== null && open !== shownPartner) setShownPartner(open)
+  const close = useCallback(() => setOpen(null), [])
 
   return (
     <>
       <PageHero title="Our Sponsors" img="/images/hero-3.jpg" focus="64% 35%" alt={copy.heroAlt} />
 
       <main>
+        {/* every partner's logo on a hairline grid; a click opens their details in the side panel */}
         <section className="px-gutter pt-14 pb-28">
-          <div className="grid grid-cols-3 gap-5 tablet:grid-cols-2 mobile:grid-cols-1">
+          <Reveal as="ul" className="grid grid-cols-4 border-t border-l border-line tablet:grid-cols-3 mobile:grid-cols-2">
             {partners.map((partner, i) => (
-              <Reveal
-                as="article"
-                key={i}
-                className="group/partner flex h-full flex-col border border-line-faint bg-raised [transition:border-color_0.3s,transform_0.5s_var(--ease-out),translate_0.5s_var(--ease-out),opacity_0.9s_var(--ease-out)] [&.is-visible]:hover:-translate-y-1 [&.is-visible]:hover:border-white/18"
-                delay={(i % 3) * 90}
-              >
-                <div className="grid aspect-video place-items-center bg-surface p-[12%]">
+              <li key={partner.name} className="border-r border-b border-line">
+                <button
+                  type="button"
+                  className="group/partner grid aspect-3/2 w-full place-items-center p-[20%] transition-colors duration-300 hover:bg-raised"
+                  onClick={() => setOpen(i)}
+                  aria-haspopup="dialog"
+                >
                   {partner.logo ? (
-                    <img className="size-full object-contain brightness-0 invert opacity-85 transition-opacity duration-300 group-hover/partner:opacity-100" src={url(partner.logo)} alt={partner.name} />
+                    <img
+                      className="size-full object-contain brightness-0 invert opacity-70 transition-opacity duration-300 group-hover/partner:opacity-100"
+                      src={url(partner.logo)}
+                      alt={partner.name}
+                    />
                   ) : (
-                    <span className="font-display text-32 font-bold tracking-tight opacity-85 transition-opacity duration-300 group-hover/partner:opacity-100">{partner.name}</span>
+                    <span className="font-display text-24 font-bold tracking-tight opacity-70 transition-opacity duration-300 group-hover/partner:opacity-100">
+                      {partner.name}
+                    </span>
                   )}
-                </div>
-                <div className="flex flex-1 flex-col items-start px-7 pt-6 pb-7">
-                  <h3 className="mb-2.5 text-20 font-semibold">{partner.name}</h3>
-                  <p className="text-15 leading-6.25 break-keep text-fg-body">{partner.desc[lang]}</p>
-                  {partner.url && (
-                    <Button className="mt-auto pt-5" variant="link" href={partner.url} target="_blank" rel="noreferrer">
-                      {copy.visit}
-                      <ArrowUpRight />
-                    </Button>
-                  )}
-                </div>
-              </Reveal>
+                </button>
+              </li>
             ))}
-          </div>
+          </Reveal>
         </section>
+
+        <PartnerPanel partner={partners[shownPartner]} shown={open !== null} lang={lang} visitLabel={copy.visit} onClose={close} />
 
         {/* why us: the award as the headline proof, four edges as big stats, then label | content rows */}
         <section id="edge" className="px-gutter pb-28 tablet:pb-18">
