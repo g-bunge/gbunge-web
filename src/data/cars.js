@@ -48,6 +48,7 @@ export const pastCars = [
     name: 'Mk.3',
     year: '2024',
     type: 'E-BAJA',
+    img: '/images/mk3.jpg',
     desc: {
       ko: '납축전지 대신 삼성 SDI 셀로 배터리 팩을 직접 만들어 용량을 5.76kWh에서 13.5kWh로 늘리고, 72V 시스템과 수랭식 냉각으로 내구경기 완주를 노린 차량입니다. 프레임은 28.85%, 드라이브트레인은 83.7% 가벼워졌고, CFD로 다듬은 공력 부품과 무선 데이터 로깅을 처음 적용했습니다.',
       en: 'The car where we swapped lead-acid for a battery pack we built ourselves from Samsung SDI cells, taking capacity from 5.76 kWh to 13.5 kWh, and went to 72 V with liquid cooling to finish the endurance race. The frame lost 28.85% of its weight and the drivetrain 83.7%, and it was our first car with CFD-shaped aero parts and wireless data logging.',
