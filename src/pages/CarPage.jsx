@@ -19,54 +19,70 @@ export default function CarPage({ car }) {
 
   return (
     <main className="pt-nav">
-      {/* every car, this one marked: jump between them without going back */}
-      <nav className="mx-gutter mt-12 grid grid-cols-5 border-y border-line mobile:mt-6" aria-label={copy.indexLabel}>
-        {pastCars.map((c) => (
-          <a
-            key={c.id}
-            className="group/car flex items-baseline justify-between gap-3 px-5 py-6 transition-colors duration-300 not-first:border-l not-first:border-line hover:bg-raised aria-[current=page]:bg-raised mobile:flex-col mobile:items-center mobile:gap-1 mobile:px-1 mobile:py-4"
-            href={url(`/past-cars/${c.id}`)}
-            aria-current={c.id === car.id ? 'page' : undefined}
-          >
-            <span className="font-display text-28 font-semibold transition-colors duration-300 group-hover/car:text-brand-end group-aria-[current=page]/car:text-brand-end mobile:text-18">
-              {c.name}
+      <header className="px-gutter pt-14 mobile:pt-8">
+        {/* where you are on the left, every car on the right, on one line over a rule */}
+        <div className="flex items-baseline justify-between gap-6 border-b border-line pb-5 font-ui text-14 mobile:flex-col mobile:gap-3">
+          <p className="text-fg-muted">
+            <a className="transition-colors duration-200 hover:text-fg" href={url('/past-cars')}>
+              {t.nav.pastCars}
+            </a>
+            <span className="mx-2.5" aria-hidden>
+              /
             </span>
-            {c.year && <span className="font-ui text-13 text-fg-muted mobile:text-11">{c.year}</span>}
-          </a>
-        ))}
-      </nav>
+            <span className="text-fg">{car.name}</span>
+          </p>
+          <nav className="flex gap-5" aria-label={copy.indexLabel}>
+            {pastCars.map((c) => (
+              <a
+                key={c.id}
+                className="font-medium text-fg-muted transition-colors duration-200 hover:text-fg aria-[current=page]:text-brand-end"
+                href={url(`/past-cars/${c.id}`)}
+                aria-current={c.id === car.id ? 'page' : undefined}
+              >
+                {c.name}
+              </a>
+            ))}
+          </nav>
+        </div>
 
-      <article className="group/car grid grid-cols-[7fr_5fr] items-center gap-x-[5vw] px-gutter py-20 tablet:grid-cols-1 tablet:gap-y-8 tablet:py-14">
-        <Reveal className="aspect-16/10 overflow-hidden" variant="left">
+        <div className="mt-12 flex items-end justify-between gap-8 mobile:mt-8 mobile:flex-col mobile:items-start mobile:gap-5">
+          <div>
+            <p className="t-eyebrow tracking-widest">{[car.type, car.year].filter(Boolean).join(' · ')}</p>
+            <h1 className="mt-3 font-display text-car leading-[0.9] font-semibold tracking-tighter">{car.name}</h1>
+          </div>
+          {car.award && (
+            <p className="mb-2 shrink-0 bg-brand-gradient px-3.5 py-1.75 font-ui text-13 font-semibold text-fg before:content-['🏆_'] mobile:mb-0">{car.award[lang]}</p>
+          )}
+        </div>
+      </header>
+
+      <div className="mt-10 px-gutter mobile:mt-7">
+        <div className="aspect-21/9 overflow-hidden bg-placeholder mobile:aspect-16/10">
           {car.img ? (
-            <img className="size-full object-cover transition-[scale] duration-800 ease-out group-hover/car:scale-104" src={url(car.img)} alt={car.name} />
+            <img className="size-full animate-page-hero-zoom object-cover object-[50%_60%]" src={url(car.img)} alt={car.name} />
           ) : (
-            <div className="relative grid h-full place-items-center bg-placeholder">
+            <div className="relative grid h-full place-items-center">
               <span className="font-display text-ghost font-bold tracking-tightest text-stroke-white/18" aria-hidden>
                 {car.name}
               </span>
               <p className="absolute bottom-5 left-6 font-ui text-13 text-fg-muted">{copy.photoSoon}</p>
             </div>
           )}
-        </Reveal>
+        </div>
+      </div>
 
-        <Reveal delay={150}>
-          <p className="t-eyebrow tracking-widest">{[car.type, car.year].filter(Boolean).join(' · ')}</p>
-          <h1 className="mt-2.5 mb-5 font-display text-car leading-none font-semibold tracking-tighter">{car.name}</h1>
-          {car.award && (
-            <p className="mb-5 inline-block bg-brand-gradient px-3.5 py-1.75 font-ui text-13 font-semibold text-fg before:content-['🏆_']">{car.award[lang]}</p>
-          )}
-          <p className="t-body break-keep">{car.desc?.[lang] ?? copy.descSoon}</p>
-          <dl className="mt-8 grid grid-cols-2 border-t border-line">
-            {Object.entries(car.specs).map(([key, value]) => (
-              <div key={key} className="border-b border-line py-4">
-                <dt className="mb-1 font-ui text-12 font-semibold tracking-wider text-fg-muted uppercase">{copy.specs[key]}</dt>
-                <dd className="font-display text-20 font-semibold">{value}</dd>
-              </div>
-            ))}
-          </dl>
-        </Reveal>
-      </article>
+      {/* description on the left, the six specs as a 3 × 2 grid on the right */}
+      <Reveal className="grid grid-cols-[5fr_7fr] gap-x-[6vw] px-gutter pt-14 pb-24 tablet:grid-cols-1 tablet:gap-y-10 mobile:pt-10 mobile:pb-16">
+        <p className="t-body break-keep">{car.desc?.[lang] ?? copy.descSoon}</p>
+        <dl className="grid grid-cols-3 border-t border-l border-line mobile:grid-cols-2">
+          {Object.entries(car.specs).map(([key, value]) => (
+            <div key={key} className="border-r border-b border-line px-5 py-5">
+              <dt className="mb-2 font-ui text-12 font-semibold tracking-wider text-fg-muted uppercase">{copy.specs[key]}</dt>
+              <dd className="font-display text-18 leading-snug font-semibold">{value}</dd>
+            </div>
+          ))}
+        </dl>
+      </Reveal>
 
       <div className="px-gutter pb-28 mobile:pb-18">
         <section className={row}>
