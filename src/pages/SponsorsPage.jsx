@@ -7,10 +7,22 @@ import SponsorForm from '../components/ui/SponsorForm.jsx'
 import PartnerPanel from '../components/ui/PartnerPanel.jsx'
 import { ArrowUpRight, MailIcon } from '../components/ui/Icons.jsx'
 import { partners, supporterGroups } from '../data/sponsors.js'
-import { memberCount } from '../data/members.js'
 import useLang from '../i18n/LanguageContext.js'
+import cx from '../lib/cx.js'
 import { url } from '../lib/url.js'
 import { SPONSOR_EMAIL } from '../data/site.js'
+
+/*
+ * Empty cells that complete the partner grid's last row at each column count (5, 3 on tablets, 2 on phones),
+ * as the visibility classes each one needs.
+ */
+const fillers = (() => {
+  const missing = (cols) => (cols - (partners.length % cols)) % cols
+  const [desk, tab, phone] = [missing(5), missing(3), missing(2)]
+  return Array.from({ length: Math.max(desk, tab, phone) }, (_, k) =>
+    cx(k < desk ? 'block' : 'hidden', k < tab ? 'tablet:block' : 'tablet:hidden', k < phone ? 'mobile:block' : 'mobile:hidden'),
+  )
+})()
 
 /** /sponsors: current partners, why to sponsor us, and an inquiry form. */
 export default function SponsorsPage() {
@@ -29,9 +41,13 @@ export default function SponsorsPage() {
       <PageHero title="Our Sponsors" img="/images/hero-3.jpg" focus="64% 35%" alt={copy.heroAlt} />
 
       <main>
-        {/* every partner's logo on a hairline grid; a click opens their details in a window */}
-        <section className="px-gutter pt-14 pb-28">
-          <Reveal as="ul" className="grid grid-cols-4 border-t border-l border-line tablet:grid-cols-3 mobile:grid-cols-2">
+        {/*
+          every partner's logo on a hairline grid running the full width of the screen: no outer frame, the
+          rules go edge to edge (the last column's right rule falls just past the screen), and empty cells
+          fill out a short last row so its rule still reaches the edge. A click opens the details window.
+        */}
+        <section className="overflow-hidden pt-14 pb-28">
+          <Reveal as="ul" className="grid w-[calc(100%+1px)] grid-cols-5 border-t border-line tablet:grid-cols-3 mobile:grid-cols-2">
             {partners.map((partner, i) => (
               <li key={partner.name} className="border-r border-b border-line">
                 <button
@@ -54,6 +70,9 @@ export default function SponsorsPage() {
                 </button>
               </li>
             ))}
+            {fillers.map((show, k) => (
+              <li key={`filler-${k}`} className={cx('border-r border-b border-line', show)} aria-hidden />
+            ))}
           </Reveal>
         </section>
 
@@ -65,62 +84,41 @@ export default function SponsorsPage() {
           onClose={close}
         />
 
-        {/* why us: a sideways WHY down the left margin; a two-tone heading with a button; where the logo goes; four stat cards */}
-        <section id="edge" className="grid grid-cols-[9vw_1fr] px-gutter pt-10 pb-28 tablet:grid-cols-1 tablet:pb-18">
-          <p
-            className="-ml-[0.12em] self-start font-display text-[clamp(72px,9vw,150px)] leading-none font-semibold tracking-tight text-white/16 italic [writing-mode:vertical-rl] rotate-180 select-none tablet:hidden"
-            aria-hidden
-          >
-            / WHY
-          </p>
+        {/* why us: a small label and the claim, four numbered points as cards, then a bar that leads to the inquiry form */}
+        <section id="edge" className="px-gutter pt-6 pb-28 tablet:pb-18">
+          <Reveal>
+            <p className="t-eyebrow tracking-label">WHY G-BUNGE</p>
+            <h2 className="mt-4 font-display text-[clamp(32px,3.4vw,52px)] leading-[1.15] font-semibold tracking-tight break-keep">
+              {claim} <span className="text-brand-gradient">{answer}</span>
+            </h2>
+          </Reveal>
 
-          <div className="min-w-0">
-            <Reveal className="flex items-end justify-between gap-10 tablet:flex-col tablet:items-start tablet:gap-7">
-              <div>
-                <p className="mb-5 font-ui text-14 tracking-[0.4em] text-fg-muted" aria-hidden>
-                  +++++++
-                </p>
-                <h2 className="font-display text-[clamp(40px,4.6vw,68px)] leading-none font-semibold tracking-tighter">
-                  <span className="text-fg-muted">Why</span> G-BungE
-                </h2>
-                <p className="mt-5 max-w-150 text-20 leading-[1.5] font-medium break-keep text-fg-body mobile:text-17">
-                  {claim} <span className="text-brand-end">{answer}</span>
-                </p>
-              </div>
-              {/* outlined button with the arrow in its own white square */}
-              <a className="group/cta flex shrink-0 items-stretch border border-white/30 transition-colors duration-300 hover:border-fg" href="#contact">
-                <span className="grid w-11 place-items-center bg-fg text-18 text-fg-on-light" aria-hidden>
-                  →
-                </span>
-                <span className="px-5 py-3 font-ui text-15 font-semibold">{copy.supporters.cta}</span>
-              </a>
-            </Reveal>
+          <ol className="mt-12 grid grid-cols-4 gap-4 laptop:grid-cols-2 mobile:grid-cols-1">
+            {copy.edge.pillars.map((pillar, i) => (
+              <Reveal as="li" key={pillar.title} className="bg-surface p-7 mobile:p-6" delay={i * 90}>
+                <div className="flex items-start justify-between">
+                  <span className="font-display text-44 leading-none font-semibold tracking-tight">{String(i + 1).padStart(2, '0')}</span>
+                  <ArrowUpRight className="mt-1 size-5 text-fg-muted" />
+                </div>
+                <h3 className="mt-8 text-18 font-semibold break-keep">{pillar.title}</h3>
+                <p className="mt-3 text-15 leading-6.5 break-keep text-fg-muted">{pillar.body}</p>
+              </Reveal>
+            ))}
+          </ol>
 
-            {/* where a sponsor's logo goes, as a strip between hairlines */}
-            <Reveal className="mt-12 flex flex-wrap items-center gap-x-10 gap-y-3 border-y border-line py-5">
-              <span className="font-ui text-13 font-semibold text-fg-muted">{copy.exposureTitle}</span>
-              {copy.exposure.map((place) => (
-                <span key={place} className="font-display text-18 font-semibold tracking-tight text-fg/90">
-                  {place}
-                </span>
-              ))}
-            </Reveal>
-
-            <ol className="mt-8 grid grid-cols-4 gap-4 laptop:grid-cols-2 mobile:grid-cols-1">
-              {copy.edge.pillars.map((pillar, i) => (
-                <Reveal as="li" key={pillar.title} className="flex flex-col border border-line-faint bg-surface" delay={i * 90}>
-                  <div className="flex flex-1 flex-col justify-between gap-10 p-6">
-                    {/* a small badge in the corner, the number large */}
-                    <span className="flex w-fit items-center gap-1.5 self-end bg-black/45 px-2.5 py-1 font-ui text-11 font-semibold text-fg-body before:size-1.5 before:rounded-full before:bg-brand">
-                      {pillar.label}
-                    </span>
-                    <span className="font-display text-56 leading-none font-semibold tracking-tighter mobile:text-44">{pillar.stat.replace('{members}', memberCount)}</span>
-                  </div>
-                  <p className="border-t border-line-faint bg-white/4 px-6 py-4 text-16 font-semibold break-keep">{pillar.title}</p>
-                </Reveal>
-              ))}
-            </ol>
-          </div>
+          {/* a long bar under the cards: the ask, where the logo goes, and the button to the form */}
+          <Reveal className="mt-4 flex items-center gap-6 bg-surface px-7 py-6 tablet:flex-col tablet:items-start mobile:px-6">
+            <MailIcon className="size-6 shrink-0 text-brand-end tablet:hidden" />
+            <div className="flex-1">
+              <p className="text-17 font-semibold">{copy.cta.title}</p>
+              <p className="mt-1 text-15 break-keep text-fg-muted">
+                {copy.exposureTitle}: {copy.exposure.join(' · ')}
+              </p>
+            </div>
+            <Button className="shrink-0" href="#contact">
+              {copy.supporters.cta}
+            </Button>
+          </Reveal>
         </section>
 
         {/* credits roll: every individual supporter, grouped, centred like the end of a film */}

@@ -31,7 +31,7 @@ export default function PartnerPanel({ partner, shown, lang, labels, onClose }) 
       <div className={cx('absolute inset-0 bg-black/70 backdrop-blur-sm transition-opacity duration-300', shown ? 'opacity-100' : 'opacity-0')} onClick={onClose} aria-hidden />
       <div
         className={cx(
-          'relative max-h-full w-full max-w-140 overflow-y-auto border border-line bg-raised shadow-menu',
+          'relative max-h-full w-full max-w-180 overflow-y-auto border border-line bg-raised shadow-menu',
           '[transition:opacity_0.3s,scale_0.35s_var(--ease-out)]',
           shown ? 'scale-100 opacity-100' : 'scale-96 opacity-0',
         )}
@@ -44,14 +44,14 @@ export default function PartnerPanel({ partner, shown, lang, labels, onClose }) 
         </button>
         {partner && (
           <>
-            <div className="grid aspect-2/1 place-items-center border-b border-line bg-surface px-[18%] py-[9%]">
+            <div className="grid aspect-5/2 place-items-center border-b border-line bg-surface px-[22%] py-[8%] mobile:aspect-2/1">
               {partner.logo ? (
                 <img className="size-full object-contain brightness-0 invert" src={url(partner.logo)} alt="" />
               ) : (
                 <span className="font-display text-36 font-bold tracking-tight">{partner.name}</span>
               )}
             </div>
-            <div className="px-10 pt-8 pb-10 mobile:px-6">
+            <div className="px-12 pt-9 pb-11 mobile:px-6">
               <h2 id="partner-panel-name" className="font-display text-32 font-semibold tracking-tight">
                 {partner.name}
               </h2>

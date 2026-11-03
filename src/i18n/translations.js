@@ -80,10 +80,10 @@ export const translations = {
       edge: {
         lead: '처음 나가는 팀의 무기는 경력이 아닙니다. 기술입니다.',
         pillars: [
-          { stat: 'GIST', label: '과학기술원', title: '연구실의 방식 그대로' },
-          { stat: '최우수', label: '기술아이디어 부문', title: '기술로 먼저 증명' },
-          { stat: '{members}', label: '명, 8개 조직', title: '소수 정예' },
-          { stat: '5대', label: '전기 바하 제작', title: '루키, 하지만 백지는 아닌' },
+          { title: '연구실의 방식 그대로', body: '해석하고, 검증하고, 만들고, 다시 측정합니다. 감이 아니라 데이터로 차를 설계합니다.' },
+          { title: '기술로 먼저 증명', body: '첫 수상이 기술부문 최우수상입니다. 우리가 무엇을 잘하는지 대회가 먼저 말해줬습니다.' },
+          { title: '소수 정예', body: '적은 인원, 넓은 책임. 한 사람이 설계부터 제작까지 맡고, 결정은 빠릅니다.' },
+          { title: '루키, 하지만 백지는 아닌', body: '포뮬러는 처음이지만 전기 파워트레인은 5년째입니다. 물려받은 설계 없이 처음부터 새로 그립니다.' },
         ],
       },
       supporters: {
@@ -218,10 +218,10 @@ export const translations = {
       edge: {
         lead: "A first-time team's weapon isn't experience. It's engineering.",
         pillars: [
-          { stat: 'GIST', label: 'Science institute', title: 'Built the lab way' },
-          { stat: 'Top', label: 'Technical idea prize', title: 'Proven on engineering' },
-          { stat: '{members}', label: 'members, 8 groups', title: 'Small and hand-picked' },
-          { stat: '5', label: 'electric Baja cars', title: 'Rookies, not beginners' },
+          { title: 'Built the lab way', body: 'Analyse, validate, build, measure again. We design the car on data, not hunches.' },
+          { title: 'Proven on engineering', body: 'Our first award was the top technical prize. The competition told us what we do best.' },
+          { title: 'Small and hand-picked', body: 'Few people, wide ownership. Each of us takes a part from design to build, and decisions are fast.' },
+          { title: 'Rookies, not beginners', body: "Formula is new to us; electric powertrains aren't. No inherited design: we start from a blank sheet." },
         ],
       },
       supporters: {
