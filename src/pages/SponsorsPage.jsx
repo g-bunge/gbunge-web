@@ -54,10 +54,15 @@ export default function SponsorsPage() {
               <li key={partner.name} className="border-r border-b border-line">
                 <button
                   type="button"
-                  className="grid aspect-3/2 w-full place-items-center p-[20%] transition-colors duration-300 hover:bg-surface focus-visible:bg-surface"
+                  className="group/logo relative grid aspect-3/2 w-full place-items-center p-[20%] transition-colors duration-300 hover:bg-surface focus-visible:bg-surface"
                   onClick={() => setOpen(i)}
                   aria-haspopup="dialog"
                 >
+                  {/* a + in the corner says the logo opens more */}
+                  <span
+                    className="absolute top-4 right-4 size-3 transition-[rotate] duration-400 ease-out group-hover/logo:rotate-90 mobile:top-3 mobile:right-3 before:absolute before:top-1/2 before:left-0 before:-mt-px before:h-0.5 before:w-full before:bg-fg-muted before:transition-colors before:duration-300 group-hover/logo:before:bg-brand-end after:absolute after:top-1/2 after:left-0 after:-mt-px after:h-0.5 after:w-full after:rotate-90 after:bg-fg-muted after:transition-colors after:duration-300 group-hover/logo:after:bg-brand-end"
+                    aria-hidden
+                  />
                   {partner.logo ? (
                     <img
                       className="size-full object-contain brightness-0 invert opacity-85"
