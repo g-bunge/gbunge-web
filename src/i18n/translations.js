@@ -78,7 +78,6 @@ export const translations = {
       exposure: ['차량 바디', '팀 유니폼', '대회 피트·부스', '웹사이트', '인스타그램', '홍보물'],
       exposureTitle: '로고가 들어가는 곳',
       edge: {
-        lead: '처음 나가는 팀의 무기는 경력이 아닙니다. 기술입니다.',
         pillars: [
           { title: '연구실의 방식 그대로', body: '해석하고, 검증하고, 만들고, 다시 측정합니다. 감이 아니라 데이터로 차를 설계합니다.' },
           { title: '기술로 먼저 증명', body: '첫 수상이 기술부문 최우수상입니다. 우리가 무엇을 잘하는지 대회가 먼저 말해줬습니다.' },
@@ -216,7 +215,6 @@ export const translations = {
       exposure: ['Car bodywork', 'Team uniforms', 'Pit & booth', 'Website', 'Instagram', 'Print materials'],
       exposureTitle: 'Where your logo goes',
       edge: {
-        lead: "A first-time team's weapon isn't experience. It's engineering.",
         pillars: [
           { title: 'Built the lab way', body: 'Analyse, validate, build, measure again. We design the car on data, not hunches.' },
           { title: 'Proven on engineering', body: 'Our first award was the top technical prize. The competition told us what we do best.' },

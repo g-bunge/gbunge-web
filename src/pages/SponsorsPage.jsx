@@ -33,8 +33,6 @@ export default function SponsorsPage() {
   const [shownPartner, setShownPartner] = useState(0)
   if (open !== null && open !== shownPartner) setShownPartner(open)
   const close = useCallback(() => setOpen(null), [])
-  // the edge line splits into the claim and its answer, which is set in red: '…경력이 아닙니다.' / '기술입니다.'
-  const [, claim, answer] = copy.edge.lead.match(/^(.*[.?!])\s+(\S.*)$/) ?? [null, copy.edge.lead, '']
 
   return (
     <>
@@ -84,13 +82,10 @@ export default function SponsorsPage() {
           onClose={close}
         />
 
-        {/* why us: a small label and the claim, four numbered points as cards, then a bar that leads to the inquiry form */}
+        {/* why us: the heading, four numbered points as cards, then a bar that leads to the inquiry form */}
         <section id="edge" className="px-gutter pt-6 pb-28 tablet:pb-18">
           <Reveal>
-            <p className="t-eyebrow tracking-label">WHY G-BUNGE</p>
-            <h2 className="mt-4 font-display text-[clamp(32px,3.4vw,52px)] leading-[1.15] font-semibold tracking-tight break-keep">
-              {claim} <span className="text-brand-gradient">{answer}</span>
-            </h2>
+            <SectionHeading eyebrow="OUR EDGE" title="Why G-BungE" />
           </Reveal>
 
           <ol className="mt-12 grid grid-cols-4 gap-4 laptop:grid-cols-2 mobile:grid-cols-1">
