@@ -1,26 +1,47 @@
 import Lines from './Lines.jsx'
-import { url } from '../../lib/url.js'
+import { links, isCurrent } from '../layout/links.js'
+import useLang from '../../i18n/LanguageContext.js'
+import { currentPath, url } from '../../lib/url.js'
 
 /**
- * Full-bleed photo header for sub-pages. `title` may be a string or an array of lines.
- * `focus` is the photo's object-position, for pictures whose subject isn't centred (e.g. '50% 75%').
+ * Photo banner for sub-pages: the title over the photo, the lead on the right of the same row,
+ * and a breadcrumb tab (Home › page) cut into the banner's bottom-left corner.
+ * `title` may be a string or an array of lines. `focus` is the photo's object-position (e.g. '50% 75%').
  */
-export default function PageHero({ eyebrow, title, lead, img, alt, focus }) {
+export default function PageHero({ title, lead, img, alt, focus }) {
+  const { t } = useLang()
+  const page = links.find(({ href }) => isCurrent(currentPath(), href))
+
   return (
     <header
       id="top"
-      className="relative h-[clamp(480px,82vh,860px)] overflow-hidden after:absolute after:inset-0 after:bg-[linear-gradient(90deg,rgb(0_0_0/0.55),transparent_65%),linear-gradient(rgb(0_0_0/0.25),transparent_30%,transparent_55%,var(--color-bg))] mobile:h-[78vh]"
+      className="relative h-[clamp(320px,42vh,440px)] overflow-hidden after:absolute after:inset-0 after:bg-[linear-gradient(90deg,rgb(0_0_0/0.62),rgb(0_0_0/0.35))] mobile:h-[46vh]"
     >
-      {/* the gradient above darkens the left for the copy and fades the bottom into the page */}
+      {/* the ::after darkens the photo, more on the left behind the title */}
       <img className="size-full animate-page-hero-zoom object-cover" style={{ objectPosition: focus }} src={url(img)} alt={alt} />
-      <div className="absolute inset-x-gutter bottom-18 z-1 max-w-190 animate-page-hero-rise mobile:bottom-12">
-        {/* eyebrow with a short brand rule in front */}
-        <p className="t-eyebrow mb-5 flex items-center gap-3 tracking-label before:h-0.5 before:w-8 before:bg-brand-gradient">{eyebrow}</p>
-        <h1 className="font-display text-hero leading-none font-semibold tracking-tighter">
+
+      <div className="absolute inset-x-gutter bottom-24 z-1 flex animate-page-hero-rise items-end justify-between gap-12 tablet:flex-col tablet:items-start tablet:gap-4 mobile:bottom-20">
+        <h1 className="font-display text-hero leading-[0.95] font-semibold tracking-tighter">
           <Lines lines={title} />
         </h1>
-        {lead && <p className="mt-7 max-w-130 text-body text-fg-body break-keep mobile:mt-5">{lead}</p>}
+        {lead && <p className="mb-1 max-w-100 text-16 leading-6.5 text-fg-body break-keep mobile:text-15">{lead}</p>}
       </div>
+
+      {/* breadcrumb on a page-coloured tab whose right edge is cut on a slant */}
+      <nav
+        className="absolute bottom-0 left-0 z-1 flex h-12 items-center gap-2.5 bg-bg pr-14 pl-gutter font-ui text-12 font-semibold tracking-wider uppercase [clip-path:polygon(0_0,calc(100%-32px)_0,100%_100%,0_100%)]"
+        aria-label="Breadcrumb"
+      >
+        <a className="text-fg-body transition-colors duration-200 hover:text-fg" href={url('/')}>
+          Home
+        </a>
+        <span className="text-brand-end" aria-hidden>
+          ›
+        </span>
+        <span className="text-brand-end" aria-current="page">
+          {page ? t.nav[page.id] : <Lines lines={title} />}
+        </span>
+      </nav>
     </header>
   )
 }

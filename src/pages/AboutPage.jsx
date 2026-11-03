@@ -30,7 +30,7 @@ export default function AboutPage() {
 
   return (
     <>
-      <PageHero eyebrow="ABOUT US" title={['Build, break,', 'and rebuild.']} lead={copy.aboutLead} img="/images/mk5-side.jpg" focus="55% 65%" alt={t.about.heritageAlt} />
+      <PageHero title={['Build, break,', 'and rebuild.']} lead={copy.aboutLead} img="/images/mk5-side.jpg" focus="55% 65%" alt={t.about.heritageAlt} />
 
       <main>
         <section className="grid grid-cols-2 gap-x-[6vw] px-gutter pt-22 pb-18 tablet:grid-cols-1 tablet:gap-y-8 tablet:py-14">

@@ -12,7 +12,7 @@ export default function PastCarsPage() {
 
   return (
     <>
-      <PageHero eyebrow="HERITAGE" title="Past Cars" lead={copy.lead} img="/images/mk5-race.jpg" focus="45% 55%" alt={copy.heroAlt} />
+      <PageHero title="Past Cars" lead={copy.lead} img="/images/mk5-race.jpg" focus="45% 55%" alt={copy.heroAlt} />
 
       <main className="px-gutter pt-14 pb-30 mobile:pb-18">
         <ul className="grid grid-cols-3 gap-5 tablet:grid-cols-2 mobile:grid-cols-1">

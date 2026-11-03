@@ -21,7 +21,7 @@ export default function StoriesPage() {
 
   return (
     <>
-      <PageHero eyebrow="SNS & BLOG" title="Our Stories" lead={copy.lead} img="/images/hero-2.jpg" alt={copy.heroAlt} />
+      <PageHero title="Our Stories" lead={copy.lead} img="/images/hero-2.jpg" alt={copy.heroAlt} />
 
       <main className="px-gutter pt-12 pb-30">
         <Reveal className="border-b border-line pb-18 mobile:pb-12">
