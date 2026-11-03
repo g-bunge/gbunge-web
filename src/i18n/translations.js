@@ -76,15 +76,14 @@ export const translations = {
       visit: '웹사이트',
       /* the sentence around a sponsor's support item: [before, after]; the item itself is set in red between them */
       partnerSupport: (josa) => ['지붕이에 ', `${josa} 후원해주셨습니다.`],
-      exposure: ['차량 바디', '팀 유니폼', '대회 피트·부스', '웹사이트', '인스타그램', '홍보물'],
-      exposureTitle: '로고가 들어가는 곳',
+      reachUs: (email) => `${email} 또는 아래 문의 폼으로 연락 주세요.`,
       edge: {
         lead: '지붕이의 후원사가 되어야 하는 네 가지 이유입니다.',
         pillars: [
-          { title: '연구실의 방식 그대로', body: '해석하고, 검증하고, 만들고, 다시 측정합니다. 감이 아니라 데이터로 차를 설계합니다.' },
-          { title: '기술로 먼저 증명', body: '첫 수상이 기술부문 최우수상입니다. 우리가 무엇을 잘하는지 대회가 먼저 말해줬습니다.' },
-          { title: '소수 정예', body: '적은 인원, 넓은 책임. 한 사람이 설계부터 제작까지 맡고, 결정은 빠릅니다.' },
-          { title: '루키, 하지만 백지는 아닌', body: '포뮬러는 처음이지만 전기 파워트레인은 5년째입니다. 물려받은 설계 없이 처음부터 새로 그립니다.' },
+          { title: '과학기술원이라는 환경', body: 'GIST는 국가 과학기술 인재를 키우기 위해 세워진 과학기술원입니다. 연구실과 장비를 가까이 두고, 해석하고 검증하며 데이터로 차를 설계합니다.' },
+          { title: '처음이지만, 백지는 아닌', body: '포뮬러는 올해가 첫 출전입니다. 하지만 전기 바하 다섯 대를 만들었고, Mk.5로 기술아이디어상을 받았습니다. 성장 곡선의 가장 가파른 지점에 함께하세요.' },
+          { title: '눈에 띄는 자리에 로고를', body: '차량 바디와 팀 유니폼, 대회 피트·부스, 웹사이트와 인스타그램, 홍보물까지. 후원사의 로고는 우리가 가는 모든 곳에 함께합니다.' },
+          { title: '소수 정예', body: '적은 인원이 넓은 책임을 나눠 맡습니다. 한 사람이 설계부터 제작까지 책임지기에 결정은 빠르고, 후원사와의 소통은 짧고 분명합니다.' },
         ],
       },
       supporters: {
@@ -214,15 +213,14 @@ export const translations = {
       partnersLead: 'Thank you to every sponsor who has joined us on this journey.',
       visit: 'Website',
       partnerSupport: () => ['They sponsor G-BungE with ', '.'],
-      exposure: ['Car bodywork', 'Team uniforms', 'Pit & booth', 'Website', 'Instagram', 'Print materials'],
-      exposureTitle: 'Where your logo goes',
+      reachUs: (email) => `Write to ${email}, or use the form below.`,
       edge: {
         lead: 'Four reasons to sponsor G-BungE.',
         pillars: [
-          { title: 'Built the lab way', body: 'Analyse, validate, build, measure again. We design the car on data, not hunches.' },
-          { title: 'Proven on engineering', body: 'Our first award was the top technical prize. The competition told us what we do best.' },
-          { title: 'Small and hand-picked', body: 'Few people, wide ownership. Each of us takes a part from design to build, and decisions are fast.' },
-          { title: 'Rookies, not beginners', body: "Formula is new to us; electric powertrains aren't. No inherited design: we start from a blank sheet." },
+          { title: 'Built at a science institute', body: "GIST is one of Korea's science and technology institutes. With labs and equipment close at hand, we analyse, validate and design the car on data." },
+          { title: 'Rookies on the rise', body: 'This is our first Formula season. Behind it are five electric Baja cars and a Technical Idea Award for Mk.5. Join us at the steepest part of the curve.' },
+          { title: 'Your logo, wherever we go', body: "On the car's bodywork, team uniforms, pit and booth, our website, Instagram and print materials: your logo goes everywhere we do." },
+          { title: 'Small and hand-picked', body: 'Few people, wide ownership. Each of us sees a part through from design to build, so decisions are fast and talking with sponsors stays short and clear.' },
         ],
       },
       supporters: {

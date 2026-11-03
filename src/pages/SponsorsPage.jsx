@@ -108,14 +108,12 @@ export default function SponsorsPage() {
             ))}
           </ol>
 
-          {/* a long bar under the cards: the ask, where the logo goes, and the button to the form */}
+          {/* a long bar under the cards: the ask, how to reach us, and the button to the form */}
           <Reveal className="mt-4 flex items-center gap-6 bg-surface px-7 py-6 tablet:flex-col tablet:items-start mobile:px-6">
             <MailIcon className="size-6 shrink-0 text-brand-end tablet:hidden" />
             <div className="flex-1">
               <p className="text-17 font-semibold">{copy.cta.title}</p>
-              <p className="mt-1 text-15 break-keep text-fg-muted">
-                {copy.exposureTitle}: {copy.exposure.join(' · ')}
-              </p>
+              <p className="mt-1 text-15 break-keep text-fg-muted">{copy.reachUs(SPONSOR_EMAIL)}</p>
             </div>
             <Button className="shrink-0" href="#contact">
               {copy.supporters.cta}
