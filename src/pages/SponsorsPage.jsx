@@ -88,8 +88,10 @@ export default function SponsorsPage() {
 
         {/* why us: the heading, four numbered points as cards, then a bar that leads to the inquiry form */}
         <section id="edge" className="px-gutter pt-6 pb-28 tablet:pb-18">
-          <Reveal>
+          {/* the heading with its line on the right of the same row */}
+          <Reveal className="flex items-end justify-between gap-8 mobile:flex-col mobile:items-start mobile:gap-3">
             <SectionHeading title="Why G-BungE" />
+            <p className="mb-1 t-body break-keep text-fg-body mobile:mb-0">{copy.edge.lead}</p>
           </Reveal>
 
           {/* the four points share hairlines, like the sponsor grid above: no fill, no gaps */}
