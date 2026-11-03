@@ -72,7 +72,7 @@ export const translations = {
     },
     sponsorsPage: {
       heroAlt: '후원사 로고가 새겨진 팀 티셔츠 등판',
-      partnersLead: '우리의 여정에 함께해주신 모든 스폰서들에게 감사합니다.',
+      partnersLead: '우리의 여정에 함께해 주시는 모든 스폰서 여러분께 감사드립니다.',
       visit: '웹사이트',
       partnerAbout: '브랜드 소개',
       partnerSupport: 'G-BungE에 지원한 것',
