@@ -1,16 +1,29 @@
 {
   "partners": [
     {
-      "name": "SOSLAB",
-      "logo": "/images/sponsors/soslab.svg",
-      "url": "https://www.soslab.co",
+      "name": "Synology",
+      "logo": null,
+      "url": "https://www.synology.com",
       "about": {
-        "ko": "자율주행과 로봇에 쓰이는 라이다(LiDAR) 센서를 개발하는 기업입니다.",
-        "en": "A developer of LiDAR sensors for autonomous vehicles and robots."
+        "ko": "NAS와 데이터 스토리지 솔루션을 만드는 기업입니다.",
+        "en": "A maker of NAS and data storage systems."
       },
       "support": {
-        "ko": "후원금과 컴퓨팅 자원",
-        "en": "funding and computing resources"
+        "ko": "NAS",
+        "en": "a NAS"
+      }
+    },
+    {
+      "name": "Würth Elektronik",
+      "logo": null,
+      "url": "https://www.we-online.com",
+      "about": {
+        "ko": "인덕터, 커넥터 등 전자·전기기계 부품을 만드는 독일 기업입니다.",
+        "en": "A German manufacturer of electronic and electromechanical components."
+      },
+      "support": {
+        "ko": "전자 소자",
+        "en": "electronic components"
       }
     },
     {
@@ -22,8 +35,134 @@
         "en": "A German electrical safety specialist, best known for insulation monitoring devices."
       },
       "support": {
-        "ko": "ISOMETER IR155-3204",
-        "en": "the ISOMETER IR155-3204"
+        "ko": "절연 감시 장치(IMD)",
+        "en": "an insulation monitoring device (IMD)"
+      }
+    },
+    {
+      "name": "JLCPCB",
+      "logo": null,
+      "url": "https://jlcpcb.com",
+      "about": {
+        "ko": "PCB 제작과 조립 서비스를 제공하는 기업입니다.",
+        "en": "A PCB manufacturing and assembly service."
+      },
+      "support": {
+        "ko": "PCB 제작",
+        "en": "PCB manufacturing"
+      }
+    },
+    {
+      "name": "NXP",
+      "logo": null,
+      "url": "https://www.nxp.com",
+      "about": {
+        "ko": "차량용 프로세서와 마이크로컨트롤러로 잘 알려진 반도체 기업입니다.",
+        "en": "A semiconductor company known for automotive processors and microcontrollers."
+      },
+      "support": {
+        "ko": "VCU 개발에 필요한 보드와 기술 지원",
+        "en": "boards and technical support for our VCU"
+      }
+    },
+    {
+      "name": "About:Energy",
+      "logo": null,
+      "url": "https://www.aboutenergy.io",
+      "about": {
+        "ko": "배터리 셀을 시험하고 셀 데이터와 모델을 제공하는 영국 기업입니다.",
+        "en": "A UK company that tests battery cells and provides cell data and models."
+      },
+      "support": {
+        "ko": "배터리 셀 데이터",
+        "en": "battery cell data"
+      }
+    },
+    {
+      "name": "Koreca",
+      "logo": null,
+      "about": null,
+      "support": {
+        "ko": "절연장갑과 용접장갑",
+        "en": "insulating and welding gloves"
+      }
+    },
+    {
+      "name": "Wera",
+      "logo": null,
+      "url": "https://www-de.wera.de/en/",
+      "about": {
+        "ko": "독일의 수공구 브랜드입니다.",
+        "en": "A German hand-tool maker."
+      },
+      "support": {
+        "ko": "절연 공구",
+        "en": "insulated tools"
+      }
+    },
+    {
+      "name": "내쇼날시스템",
+      "logo": null,
+      "about": null,
+      "support": {
+        "ko": "알루미늄 용접기 할인",
+        "en": "a discount on an aluminium welder"
+      }
+    },
+    {
+      "name": "신콘",
+      "logo": null,
+      "about": {
+        "ko": "레이저 레벨 등 측정 공구를 만드는 국내 기업입니다.",
+        "en": "A Korean maker of laser levels and measuring tools."
+      },
+      "support": {
+        "ko": "레이저 수평계",
+        "en": "a laser level"
+      }
+    },
+    {
+      "name": "서보레",
+      "logo": null,
+      "about": null,
+      "support": {
+        "ko": "용접면",
+        "en": "welding helmets"
+      }
+    },
+    {
+      "name": "ENKEI",
+      "logo": null,
+      "url": "https://www.enkei.co.jp",
+      "about": {
+        "ko": "경량 알로이 휠을 만드는 일본 기업입니다.",
+        "en": "A Japanese maker of lightweight alloy wheels."
+      },
+      "support": {
+        "ko": "휠 할인",
+        "en": "a discount on wheels"
+      }
+    },
+    {
+      "name": "NX",
+      "logo": null,
+      "about": null,
+      "support": {
+        "ko": "인버터 할인",
+        "en": "a discount on our inverter"
+      }
+    },
+    {
+      "name": "Onshape",
+      "logo": null,
+      "url": "https://www.onshape.com",
+      "about": {
+        "ko": "클라우드 기반 CAD 플랫폼입니다.",
+        "en": "A cloud-native CAD platform."
+      },
+      "support": {
+        "ko": "G-BungE 전용 워크스페이스",
+        "en": "a G-BungE workspace"
       }
     },
     {
@@ -34,15 +173,22 @@
         "ko": "브라우저에서 유동(CFD)·구조 해석을 돌릴 수 있는 클라우드 시뮬레이션 플랫폼입니다.",
         "en": "A cloud simulation platform for running CFD and structural analysis right in the browser."
       },
-      "support": null
+      "support": {
+        "ko": "해석 툴",
+        "en": "simulation software"
+      }
     },
     {
-      "name": "KASE",
-      "logo": null,
-      "about": null,
+      "name": "Ansys",
+      "logo": "/images/sponsors/ansys.svg",
+      "url": "https://www.ansys.com",
+      "about": {
+        "ko": "구조, 유동, 전자기 해석까지 아우르는 공학 시뮬레이션 소프트웨어 기업입니다.",
+        "en": "An engineering simulation software company covering structures, fluids and electromagnetics."
+      },
       "support": {
-        "ko": "절연 감시 장치(IMD)",
-        "en": "an insulation monitoring device (IMD)"
+        "ko": "해석 툴",
+        "en": "simulation software"
       }
     },
     {
@@ -53,62 +199,35 @@
         "ko": "반도체와 전자 회로 설계(EDA) 소프트웨어를 만드는 기업입니다.",
         "en": "A maker of electronic design automation (EDA) software for chips and circuit boards."
       },
-      "support": null
+      "support": {
+        "ko": "차량 동역학 툴",
+        "en": "vehicle dynamics software"
+      }
     },
     {
-      "name": "Ansys",
-      "logo": "/images/sponsors/ansys.svg",
-      "url": "https://www.ansys.com",
-      "about": {
-        "ko": "구조, 유동, 전자기 해석까지 아우르는 공학 시뮬레이션 소프트웨어 기업입니다.",
-        "en": "An engineering simulation software company covering structures, fluids and electromagnetics."
-      },
-      "support": null
-    },
-    {
-      "name": "지티알코리아",
+      "name": "GIST 발전재단",
       "logo": null,
-      "about": null,
+      "about": {
+        "ko": "GIST의 교육과 연구를 지원하는 재단입니다.",
+        "en": "The foundation that supports education and research at GIST."
+      },
       "support": {
-        "ko": "SN 6 Bio+",
-        "en": "SN 6 Bio+"
+        "ko": "팀 운영 자금",
+        "en": "team funding"
       }
     },
     {
-      "name": "IWISS",
-      "logo": "/images/sponsors/iwiss.png",
-      "url": "https://www.iwiss.com",
+      "name": "SOSLAB",
+      "logo": "/images/sponsors/soslab.svg",
+      "url": "https://www.soslab.co",
       "about": {
-        "ko": "커넥터와 단자용 압착 공구를 만드는 기업입니다.",
-        "en": "A maker of crimping tools for connectors and terminals."
+        "ko": "자율주행과 로봇에 쓰이는 라이다(LiDAR) 센서를 개발하는 기업입니다.",
+        "en": "A developer of LiDAR sensors for autonomous vehicles and robots."
       },
       "support": {
-        "ko": "압착기",
-        "en": "crimping tools"
+        "ko": "후원금과 컴퓨팅 자원",
+        "en": "funding and computing resources"
       }
-    },
-    {
-      "name": "월드웰",
-      "logo": "/images/sponsors/worldwel.svg",
-      "url": "https://worldwel.com",
-      "about": {
-        "ko": "1991년부터 용접기를 만들어 온 국내 용접기 전문 제조사입니다.",
-        "en": "A Korean welding machine maker since 1991."
-      },
-      "support": {
-        "ko": "용접기",
-        "en": "a welder"
-      }
-    },
-    {
-      "name": "케룸",
-      "logo": "/images/sponsors/caelum.png",
-      "url": "https://xn--jt2bx61b.kr",
-      "about": {
-        "ko": "단체복과 의류 프린팅을 만드는 어패럴 프린팅 전문 기업입니다.",
-        "en": "An apparel printing company making custom team wear."
-      },
-      "support": null
     }
   ],
   "supporters": {
