@@ -5,11 +5,22 @@ import { ArrowUpRight } from './Icons.jsx'
 import cx from '../../lib/cx.js'
 import { url } from '../../lib/url.js'
 
+/*
+ * Whether a phrase ends on a final consonant (받침), to choose 을 or 를 after it. A trailing (…) is skipped,
+ * and digits and Latin letters go by how they're read: '…자원' → true, '용접기' / 'IR155-3204' → false.
+ */
+function endsOnConsonant(phrase) {
+  const last = phrase.replace(/\s*\([^)]*\)\s*$/, '').trim().at(-1) ?? ''
+  if (/[가-힣]/.test(last)) return (last.charCodeAt(0) - 0xac00) % 28 !== 0
+  if (/\d/.test(last)) return '013678'.includes(last)
+  return /[lmnr]/i.test(last)
+}
+
 /**
  * A partner's details in a window centred over the dimmed page: logo, who they are and what they give the team.
  * `partner` stays set while `shown` turns false, so the window can fade out with its content.
  * Closes on the ×, a click outside, or Escape. Portalled to <body> so no transformed parent boxes it in.
- * labels: { visit, about, support }
+ * labels: { visit, support }, where support(josa) gives the sentence around the support item: [before, after]
  */
 export default function PartnerPanel({ partner, shown, lang, labels, onClose }) {
   useEffect(() => {
@@ -55,21 +66,12 @@ export default function PartnerPanel({ partner, shown, lang, labels, onClose }) 
               <h2 id="partner-panel-name" className="font-display text-32 font-semibold tracking-tight">
                 {partner.name}
               </h2>
-              {/* who they are, then what they give us, each under a small label */}
-              <dl className="mt-6 grid gap-6">
-                {partner.about && (
-                  <div>
-                    <dt className="font-ui text-12 font-semibold tracking-widest text-fg-muted uppercase">{labels.about}</dt>
-                    <dd className="mt-2 text-16 leading-7 break-keep text-fg-body">{partner.about[lang]}</dd>
-                  </div>
-                )}
-                {partner.support && (
-                  <div>
-                    <dt className="font-ui text-12 font-semibold tracking-widest text-brand-end uppercase">{labels.support}</dt>
-                    <dd className="mt-2 text-20 font-semibold break-keep">{partner.support[lang]}</dd>
-                  </div>
-                )}
-              </dl>
+              {/* who they are and what they give us, as one paragraph with the support item in red */}
+              <p className="mt-5 text-17 leading-7.5 break-keep text-fg-body">
+                {partner.about?.[lang]}
+                {partner.about && partner.support && ' '}
+                {partner.support && <Support item={partner.support[lang]} sentence={labels.support} />}
+              </p>
               {partner.url && (
                 <Button className="mt-8" href={partner.url} target="_blank" rel="noreferrer">
                   {labels.visit}
@@ -82,5 +84,17 @@ export default function PartnerPanel({ partner, shown, lang, labels, onClose }) 
       </div>
     </div>,
     document.body,
+  )
+}
+
+/** "지붕이에 <item>을 후원해주셨습니다." with the item in red and the right 을/를. */
+function Support({ item, sentence }) {
+  const [before, after] = sentence(endsOnConsonant(item) ? '을' : '를')
+  return (
+    <>
+      {before}
+      <strong className="font-semibold text-brand-end">{item}</strong>
+      {after}
+    </>
   )
 }

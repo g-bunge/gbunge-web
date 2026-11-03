@@ -9,7 +9,8 @@ import data from './sponsors.json'
  *         or null to show the name in type until a logo file is added
  *   url : optional; adds a "Website" link
  *   about  : { "ko": "…", "en": "…" }: who they are, or null
- *   support: { "ko": "…", "en": "…" }: what they give the team (e.g. "Welder", "Funding"), or null
+ *   support: { "ko": "…", "en": "…" }: what they give the team, or null. It's set into a sentence, so write it
+ *            to read there: ko "후원금과 컴퓨팅 자원" (지붕이에 ~을 후원해주셨습니다), en "a welder" (They sponsor G-BungE with ~)
  *
  * supporters: people who support us personally, by group: "ob" (alumni) and "individual".
  *   Each is a list of names as they'd like to be credited; an empty list shows an invitation instead.

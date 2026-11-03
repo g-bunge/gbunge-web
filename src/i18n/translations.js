@@ -74,8 +74,8 @@ export const translations = {
       heroAlt: '후원사 로고가 새겨진 팀 티셔츠 등판',
       partnersLead: '우리의 여정에 함께해 주시는 모든 스폰서 여러분께 감사드립니다.',
       visit: '웹사이트',
-      partnerAbout: '브랜드 소개',
-      partnerSupport: 'G-BungE에 지원한 것',
+      /* the sentence around a sponsor's support item: [before, after]; the item itself is set in red between them */
+      partnerSupport: (josa) => ['지붕이에 ', `${josa} 후원해주셨습니다.`],
       exposure: ['차량 바디', '팀 유니폼', '대회 피트·부스', '웹사이트', '인스타그램', '홍보물'],
       exposureTitle: '로고가 들어가는 곳',
       edge: {
@@ -212,8 +212,7 @@ export const translations = {
       heroAlt: 'Sponsor logos on the back of a team shirt',
       partnersLead: 'Thank you to every sponsor who has joined us on this journey.',
       visit: 'Website',
-      partnerAbout: 'About',
-      partnerSupport: 'What they give G-BungE',
+      partnerSupport: () => ['They sponsor G-BungE with ', '.'],
       exposure: ['Car bodywork', 'Team uniforms', 'Pit & booth', 'Website', 'Instagram', 'Print materials'],
       exposureTitle: 'Where your logo goes',
       edge: {

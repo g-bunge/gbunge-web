@@ -82,7 +82,7 @@ export default function SponsorsPage() {
           partner={partners[shownPartner]}
           shown={open !== null}
           lang={lang}
-          labels={{ visit: copy.visit, about: copy.partnerAbout, support: copy.partnerSupport }}
+          labels={{ visit: copy.visit, support: copy.partnerSupport }}
           onClose={close}
         />
 
