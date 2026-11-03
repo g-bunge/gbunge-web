@@ -15,6 +15,10 @@ const specs = (given = {}) => ({ motor: '-', battery: '-', drivetrain: '-', weig
 /* who was behind a car that year; each part stays empty until filled in */
 const people = (given = {}) => ({ sponsors: [], advisor: null, members: [], ...given })
 
+/* faculty advisors, by car below */
+const jaewookLee = { name: { ko: '이재욱 교수님', en: 'Prof. Jaewook Lee' } }
+const kyunghwanChoi = { name: { ko: '최경환 교수님', en: 'Prof. Kyunghwan Choi' } }
+
 export const pastCars = [
   {
     id: 'mk5',
@@ -36,9 +40,9 @@ export const pastCars = [
       dimensions: '2420 × 1327 × 1478 mm',
       wheelbase: '1600 mm',
     }),
-    ...people(),
+    ...people({ advisor: jaewookLee }),
   },
-  { id: 'mk4', name: 'Mk.4', year: null, type: 'E-BAJA', specs: specs(), ...people() },
+  { id: 'mk4', name: 'Mk.4', year: null, type: 'E-BAJA', specs: specs(), ...people({ advisor: jaewookLee }) },
   {
     id: 'mk3',
     name: 'Mk.3',
@@ -57,9 +61,9 @@ export const pastCars = [
       dimensions: '2227 × 1488 × - mm',
       wheelbase: '859.8 mm',
     }),
-    ...people(),
+    ...people({ advisor: kyunghwanChoi }),
   },
-  { id: 'mk2', name: 'Mk.2', year: null, type: 'E-BAJA', specs: specs(), ...people() },
+  { id: 'mk2', name: 'Mk.2', year: null, type: 'E-BAJA', specs: specs(), ...people({ advisor: kyunghwanChoi }) },
   {
     id: 'mk1',
     name: 'Mk.1',
@@ -70,7 +74,7 @@ export const pastCars = [
       en: 'The very first G-BungE car. This is where it all started.',
     },
     specs: specs(),
-    ...people(),
+    ...people({ advisor: jaewookLee }),
   },
 ]
 
