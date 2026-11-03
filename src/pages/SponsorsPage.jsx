@@ -22,7 +22,7 @@ export default function SponsorsPage() {
 
   return (
     <>
-      <PageHero title="Our Sponsors" lead={copy.lead} img="/images/hero-3.jpg" focus="64% 35%" alt={copy.heroAlt} />
+      <PageHero title="Our Sponsors" img="/images/hero-3.jpg" focus="64% 35%" alt={copy.heroAlt} />
 
       <main>
         <section className="px-gutter pt-14 pb-28">

@@ -4,11 +4,11 @@ import useLang from '../../i18n/LanguageContext.js'
 import { currentPath, url } from '../../lib/url.js'
 
 /**
- * Photo banner for sub-pages: the title over the photo, the lead on the right of the same row,
- * and a breadcrumb tab (Home › page) cut into the banner's bottom-left corner.
+ * Photo banner for sub-pages: the title over the photo and a breadcrumb tab (Home › page)
+ * cut into the banner's bottom-left corner.
  * `title` may be a string or an array of lines. `focus` is the photo's object-position (e.g. '50% 75%').
  */
-export default function PageHero({ title, lead, img, alt, focus }) {
+export default function PageHero({ title, img, alt, focus }) {
   const { t } = useLang()
   const page = links.find(({ href }) => isCurrent(currentPath(), href))
 
@@ -20,12 +20,9 @@ export default function PageHero({ title, lead, img, alt, focus }) {
       {/* the ::after darkens the photo, more on the left behind the title */}
       <img className="size-full animate-page-hero-zoom object-cover" style={{ objectPosition: focus }} src={url(img)} alt={alt} />
 
-      <div className="absolute inset-x-gutter bottom-24 z-1 flex animate-page-hero-rise items-end justify-between gap-12 tablet:flex-col tablet:items-start tablet:gap-4 mobile:bottom-20">
-        <h1 className="font-display text-hero leading-[0.95] font-semibold tracking-tighter">
-          <Lines lines={title} />
-        </h1>
-        {lead && <p className="mb-1 max-w-100 text-16 leading-6.5 text-fg-body break-keep mobile:text-15">{lead}</p>}
-      </div>
+      <h1 className="absolute inset-x-gutter bottom-24 z-1 animate-page-hero-rise font-display text-hero leading-[0.95] font-semibold tracking-tighter mobile:bottom-20">
+        <Lines lines={title} />
+      </h1>
 
       {/* breadcrumb on a page-coloured tab whose right edge is cut on a slant */}
       <nav

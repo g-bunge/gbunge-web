@@ -30,7 +30,7 @@ export default function TeamPage() {
 
   return (
     <>
-      <PageHero title="Meet Our Team" lead={copy.teamLead} img="/images/team-award-2026.jpg" focus="50% 62%" alt={copy.heroAlt} />
+      <PageHero title="Meet Our Team" img="/images/team-award-2026.jpg" focus="50% 62%" alt={copy.heroAlt} />
 
       <main>
         <section id="sub-teams" className="px-gutter pt-24 pb-22 tablet:py-18">

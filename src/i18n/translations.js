@@ -18,8 +18,6 @@ export const translations = {
     },
     teamPage: {
       heroAlt: 'G-BungE 팀 단체 사진',
-      aboutLead: '5년 동안 다섯 대의 바하 차량을 만들었습니다. 이제 포뮬러라는 새 무대로 향합니다.',
-      teamLead: '서로 다른 전공, 하나의 차. 8개 조직의 사람들이 G-BungE를 만듭니다.',
       gallery: [
         { word: 'Build', alt: '프레임을 용접하는 팀원' },
         { word: 'Break', alt: '바하 차량 주행' },
@@ -47,7 +45,6 @@ export const translations = {
       showMore: '자세히 보기',
     },
     storiesPage: {
-      lead: '작업장에서, 트랙 위에서. G-BungE가 차를 만들며 겪는 모든 이야기를 기록합니다.',
       heroAlt: '프레임을 용접하는 팀원',
       all: '전체',
       filterLabel: '카테고리 필터',
@@ -74,7 +71,6 @@ export const translations = {
       again: '다른 문의 보내기',
     },
     sponsorsPage: {
-      lead: 'G-BungE의 차는 스폰서와 함께 달립니다. 우리를 믿고 함께해 주신 파트너들을 소개합니다.',
       heroAlt: '후원사 로고가 새겨진 팀 티셔츠 등판',
       visit: '웹사이트',
       exposure: ['차량 바디', '팀 유니폼', '대회 피트·부스', '웹사이트', '인스타그램', '홍보물'],
@@ -110,7 +106,6 @@ export const translations = {
       },
     },
     carsPage: {
-      lead: '5년, 다섯 대의 전기 바하. 트랙 위에 섰던 우리의 차들을 소개합니다.',
       heroAlt: '바하 차량 주행 중인 드라이버',
       specs: { motor: '모터', battery: '배터리', drivetrain: '구동계', weight: '공차 중량', dimensions: '전장 × 전폭 × 전고', wheelbase: '휠베이스' },
       descSoon: '차량 소개가 곧 업데이트됩니다.',
@@ -168,8 +163,6 @@ export const translations = {
     },
     teamPage: {
       heroAlt: 'G-BungE team group photo',
-      aboutLead: 'Five years, five Baja cars. Now we are heading for a new stage: Formula.',
-      teamLead: 'Different majors, one car. Meet the eight groups of people who make G-BungE.',
       gallery: [
         { word: 'Build', alt: 'A member welding the frame' },
         { word: 'Break', alt: 'Baja car on track' },
@@ -197,7 +190,6 @@ export const translations = {
       showMore: 'Show details',
     },
     storiesPage: {
-      lead: 'From the workshop to the track: every story from building our cars.',
       heroAlt: 'A member welding the frame',
       all: 'All',
       filterLabel: 'Filter by category',
@@ -224,7 +216,6 @@ export const translations = {
       again: 'Send another',
     },
     sponsorsPage: {
-      lead: 'Every G-BungE car races with our sponsors. Meet the partners who believe in us.',
       heroAlt: 'Sponsor logos on the back of a team shirt',
       visit: 'Website',
       exposure: ['Car bodywork', 'Team uniforms', 'Pit & booth', 'Website', 'Instagram', 'Print materials'],
@@ -260,7 +251,6 @@ export const translations = {
       },
     },
     carsPage: {
-      lead: 'Five years, five cars. Here are the machines that made it to the track.',
       heroAlt: 'Driver in a Baja car',
       specs: { motor: 'Motor', battery: 'Battery', drivetrain: 'Drivetrain', weight: 'Curb weight', dimensions: 'L × W × H', wheelbase: 'Wheelbase' },
       descSoon: 'Details coming soon.',
