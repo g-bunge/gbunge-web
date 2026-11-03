@@ -1,5 +1,6 @@
 import LangToggle from '../ui/LangToggle.jsx'
 import MobileMenu from './MobileMenu.jsx'
+import { ChevronDown } from '../ui/Icons.jsx'
 import { links, isCurrent } from './links.js'
 import useScrollY from '../../hooks/useScrollY.js'
 import useLang from '../../i18n/LanguageContext.js'
@@ -36,7 +37,7 @@ export default function Navbar({ alwaysVisible = false }) {
           <li key={id} className={cx(children && 'group/drop relative')}>
             <a
               className={cx(
-                'relative font-ui text-15 font-medium text-fg-body transition-colors duration-300 hover:text-fg aria-[current=page]:text-fg',
+                'relative inline-flex items-center gap-1.5 font-ui text-15 font-medium text-fg-body transition-colors duration-300 hover:text-fg aria-[current=page]:text-fg',
                 /* brand underline that grows from the left; stays on for the current page */
                 'after:absolute after:inset-x-0 after:-bottom-1.5 after:h-0.5 after:origin-left after:scale-x-0 after:bg-brand-gradient after:transition-transform after:duration-350 after:ease-out',
                 'hover:after:scale-x-100 aria-[current=page]:after:scale-x-100',
@@ -45,6 +46,8 @@ export default function Navbar({ alwaysVisible = false }) {
               aria-current={isCurrent(path, href) ? 'page' : undefined}
             >
               {t.nav[id]}
+              {/* marks a link with a drop-down; flips while it's open */}
+              {children && <ChevronDown className="h-1.5 w-2.5 transition-[rotate] duration-300 ease-out group-focus-within/drop:rotate-180 group-hover/drop:rotate-180" />}
             </a>
             {/* sub-pages drop down on hover or keyboard focus, one after another; the top padding bridges the gap to the link */}
             {children && (
