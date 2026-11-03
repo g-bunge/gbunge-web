@@ -5,12 +5,9 @@ import useLang from '../i18n/LanguageContext.js'
 import { url } from '../lib/url.js'
 
 /* overflow-x-clip: a photo sliding in from the side mustn't widen the page on a phone before it lands */
-const split = 'relative grid items-center overflow-x-clip tablet:grid-cols-1 tablet:gap-y-10 tablet:p-[60px_var(--spacing-gutter)]'
+const split = 'grid items-center overflow-x-clip tablet:grid-cols-1 tablet:gap-y-10 tablet:p-[60px_var(--spacing-gutter)]'
 const media = 'aspect-545/532 overflow-hidden'
-/* a black panel that overlaps the photo's edge; the /// mark heads it */
-const text =
-  'relative z-1 max-w-162.5 bg-bg p-12 tablet:max-w-none tablet:p-0 ' +
-  "before:mb-8 before:block before:font-display before:text-13 before:font-bold before:tracking-[0.3em] before:text-fg-muted before:content-['///'] tablet:before:hidden"
+const text = 'max-w-162.5 tablet:max-w-none'
 /* paragraphs 29px apart, 52px above the button */
 const body = 't-body mb-7.25 last-of-type:mb-13'
 
@@ -19,20 +16,19 @@ export default function About() {
 
   return (
     <>
-      <section id="about" className={`${split} grid-cols-[44vw_1fr] px-gutter pt-24`}>
+      <section id="about" className={`${split} grid-cols-[37.85vw_1fr] gap-x-[6.6vw] px-gutter pt-7.75`}>
         <Reveal className={media} variant="left">
           <img className="size-full object-cover" src={url('/images/who.jpg')} alt={t.about.whoAlt} />
         </Reveal>
-        <Reveal className={`${text} -ml-[6vw] tablet:ml-0`} delay={150}>
+        <Reveal className={text} delay={150}>
           <SectionHeading className="mb-6.5" title={['Sorry for driving too fast,', "We're new here."]} />
           <p className={body}>{t.about.who}</p>
           <Button href="/about">About Us</Button>
         </Reveal>
       </section>
 
-      <section className={`${split} grid-cols-[1fr_40vw] px-gutter pt-20 pb-24`}>
-        {/* wider than its column by 10vw so the panel runs over the photo's left edge; the text keeps its place */}
-        <Reveal className={`${text} -mr-[10vw] max-w-none py-10 pr-[calc(3rem+10vw)] tablet:mr-0 tablet:py-0 tablet:pr-0`} delay={150}>
+      <section className={`${split} grid-cols-[1fr_37.8vw] gap-x-[6.3vw] px-gutter pt-20 pb-10`}>
+        <Reveal className={text} delay={150}>
           <SectionHeading className="mb-6.5" title="Less talk, More torque" />
           {t.about.heritage.map((para, i) => (
             <p key={i} className={body}>
