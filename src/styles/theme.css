@@ -16,10 +16,10 @@
   --color-brand-hover-end: #ff4d52;
 
   /* surfaces, darkest to lightest */
-  --color-bg: #000000;
-  --color-raised: #131313;
-  --color-surface: #232323;
-  --color-surface-hover: #2a2a2a;
+  --color-bg: #121212;
+  --color-raised: #1a1a1a;
+  --color-surface: #242424;
+  --color-surface-hover: #2d2d2d;
 
   /* text */
   --color-fg: #ffffff;
