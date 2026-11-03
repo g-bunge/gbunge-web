@@ -17,6 +17,11 @@ import { SPONSOR_EMAIL } from '../data/site.js'
 const row = 'grid grid-cols-[1fr_2fr] gap-x-[6vw] gap-y-5 border-b border-line py-10 tablet:grid-cols-1'
 const rowLabel = 'font-ui text-13 font-semibold tracking-widest text-brand-end uppercase'
 
+/* a sponsor logo sits small and dim, and grows into full brightness on hover or keyboard focus */
+const grow =
+  'opacity-55 scale-92 [transition:opacity_0.35s,scale_0.5s_var(--ease-out)] ' +
+  'group-hover/partner:scale-110 group-hover/partner:opacity-100 group-focus-visible/partner:scale-110 group-focus-visible/partner:opacity-100'
+
 /** /sponsors: current partners, why to sponsor us, and an inquiry form. */
 export default function SponsorsPage() {
   const { lang, t } = useLang()
@@ -45,12 +50,12 @@ export default function SponsorsPage() {
                 >
                   {partner.logo ? (
                     <img
-                      className="size-full object-contain brightness-0 invert opacity-70 transition-opacity duration-300 group-hover/partner:opacity-100"
+                      className={grow + ' size-full object-contain brightness-0 invert'}
                       src={url(partner.logo)}
                       alt={partner.name}
                     />
                   ) : (
-                    <span className="font-display text-24 font-bold tracking-tight opacity-70 transition-opacity duration-300 group-hover/partner:opacity-100">
+                    <span className={grow + ' font-display text-24 font-bold tracking-tight'}>
                       {partner.name}
                     </span>
                   )}
