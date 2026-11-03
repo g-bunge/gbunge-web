@@ -63,12 +63,13 @@ export const pastCars = [
     }),
     ...people({ advisor: kyunghwanChoi }),
   },
-  { id: 'mk2', name: 'Mk.2', year: null, type: 'E-BAJA', specs: specs(), ...people({ advisor: kyunghwanChoi }) },
+  { id: 'mk2', name: 'Mk.2', year: null, type: 'E-BAJA', img: '/images/mk2.jpg', specs: specs(), ...people({ advisor: kyunghwanChoi }) },
   {
     id: 'mk1',
     name: 'Mk.1',
     year: '2021',
     type: 'E-BAJA',
+    img: '/images/mk1.jpg',
     desc: {
       ko: 'G-BungE의 첫 번째 차량. 모든 것이 여기서 시작됐습니다.',
       en: 'The very first G-BungE car. This is where it all started.',
