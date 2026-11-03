@@ -6,11 +6,12 @@ import cx from '../../lib/cx.js'
 import { url } from '../../lib/url.js'
 
 /**
- * A partner's details in a panel that slides in from the right over a dimmed page.
- * `partner` is null while closed; the last one stays rendered so the panel can slide out with it.
+ * A partner's details in a window centred over the dimmed page: logo, who they are and what they give the team.
+ * `partner` stays set while `shown` turns false, so the window can fade out with its content.
  * Closes on the ×, a click outside, or Escape. Portalled to <body> so no transformed parent boxes it in.
+ * labels: { visit, about, support }
  */
-export default function PartnerPanel({ partner, shown, lang, visitLabel, onClose }) {
+export default function PartnerPanel({ partner, shown, lang, labels, onClose }) {
   useEffect(() => {
     if (!shown) return
     const onKey = (e) => e.key === 'Escape' && onClose()
@@ -23,43 +24,62 @@ export default function PartnerPanel({ partner, shown, lang, visitLabel, onClose
   }, [shown, onClose])
 
   return createPortal(
-    <div className={cx('fixed inset-0 z-110 [transition:visibility_0.4s]', shown ? 'visible' : 'invisible')} inert={!shown}>
-      <div className={cx('absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-400', shown ? 'opacity-100' : 'opacity-0')} onClick={onClose} aria-hidden />
-      <aside
+    <div
+      className={cx('fixed inset-0 z-110 grid place-items-center p-gutter [transition:visibility_0.3s]', shown ? 'visible' : 'invisible')}
+      inert={!shown}
+    >
+      <div className={cx('absolute inset-0 bg-black/70 backdrop-blur-sm transition-opacity duration-300', shown ? 'opacity-100' : 'opacity-0')} onClick={onClose} aria-hidden />
+      <div
         className={cx(
-          'absolute inset-y-0 right-0 flex w-[min(480px,100%)] flex-col overflow-y-auto border-l border-line bg-raised px-10 pt-20 pb-10 mobile:px-gutter',
-          '[transition:translate_0.45s_var(--ease-out)]',
-          shown ? 'translate-x-0' : 'translate-x-full',
+          'relative max-h-full w-full max-w-140 overflow-y-auto border border-line bg-raised shadow-menu',
+          '[transition:opacity_0.3s,scale_0.35s_var(--ease-out)]',
+          shown ? 'scale-100 opacity-100' : 'scale-96 opacity-0',
         )}
         role="dialog"
         aria-modal="true"
         aria-labelledby="partner-panel-name"
       >
-        <button type="button" className="absolute top-5 right-5 grid size-10 place-items-center text-28 leading-none text-fg-muted transition-colors duration-200 hover:text-fg" onClick={onClose} aria-label="Close">
+        <button type="button" className="absolute top-3 right-3 z-1 grid size-10 place-items-center text-28 leading-none text-fg-muted transition-colors duration-200 hover:text-fg" onClick={onClose} aria-label="Close">
           ×
         </button>
         {partner && (
           <>
-            <div className="grid aspect-video place-items-center border border-line bg-surface p-[14%]">
+            <div className="grid aspect-2/1 place-items-center border-b border-line bg-surface px-[18%] py-[9%]">
               {partner.logo ? (
                 <img className="size-full object-contain brightness-0 invert" src={url(partner.logo)} alt="" />
               ) : (
-                <span className="font-display text-32 font-bold tracking-tight">{partner.name}</span>
+                <span className="font-display text-36 font-bold tracking-tight">{partner.name}</span>
               )}
             </div>
-            <h2 id="partner-panel-name" className="mt-8 font-display text-36 font-semibold tracking-tight">
-              {partner.name}
-            </h2>
-            <p className="mt-4 text-17 leading-7 break-keep text-fg-body">{partner.desc[lang]}</p>
-            {partner.url && (
-              <Button className="mt-8 self-start" href={partner.url} target="_blank" rel="noreferrer">
-                {visitLabel}
-                <ArrowUpRight className="ml-2 size-4" />
-              </Button>
-            )}
+            <div className="px-10 pt-8 pb-10 mobile:px-6">
+              <h2 id="partner-panel-name" className="font-display text-32 font-semibold tracking-tight">
+                {partner.name}
+              </h2>
+              {/* who they are, then what they give us, each under a small label */}
+              <dl className="mt-6 grid gap-6">
+                {partner.about && (
+                  <div>
+                    <dt className="font-ui text-12 font-semibold tracking-widest text-fg-muted uppercase">{labels.about}</dt>
+                    <dd className="mt-2 text-16 leading-7 break-keep text-fg-body">{partner.about[lang]}</dd>
+                  </div>
+                )}
+                {partner.support && (
+                  <div>
+                    <dt className="font-ui text-12 font-semibold tracking-widest text-brand-end uppercase">{labels.support}</dt>
+                    <dd className="mt-2 text-20 font-semibold break-keep">{partner.support[lang]}</dd>
+                  </div>
+                )}
+              </dl>
+              {partner.url && (
+                <Button className="mt-8" href={partner.url} target="_blank" rel="noreferrer">
+                  {labels.visit}
+                  <ArrowUpRight className="ml-2 size-4" />
+                </Button>
+              )}
+            </div>
           </>
         )}
-      </aside>
+      </div>
     </div>,
     document.body,
   )

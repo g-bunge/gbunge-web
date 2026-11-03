@@ -73,6 +73,8 @@ export const translations = {
     sponsorsPage: {
       heroAlt: '후원사 로고가 새겨진 팀 티셔츠 등판',
       visit: '웹사이트',
+      partnerAbout: '브랜드 소개',
+      partnerSupport: 'G-BungE에 지원한 것',
       exposure: ['차량 바디', '팀 유니폼', '대회 피트·부스', '웹사이트', '인스타그램', '홍보물'],
       exposureTitle: '로고가 들어가는 곳',
       edge: {
@@ -209,6 +211,8 @@ export const translations = {
     sponsorsPage: {
       heroAlt: 'Sponsor logos on the back of a team shirt',
       visit: 'Website',
+      partnerAbout: 'About',
+      partnerSupport: 'What they give G-BungE',
       exposure: ['Car bodywork', 'Team uniforms', 'Pit & booth', 'Website', 'Instagram', 'Print materials'],
       exposureTitle: 'Where your logo goes',
       edge: {

@@ -8,7 +8,8 @@ import data from './sponsors.json'
  *   logo: transparent PNG/SVG in /images/sponsors/, any colour (the site shows it in white),
  *         or null to show the name in type until a logo file is added
  *   url : optional; adds a "Website" link
- *   desc: { "ko": "…", "en": "…" }: who they are and what they support us with
+ *   about  : { "ko": "…", "en": "…" }: who they are, or null
+ *   support: { "ko": "…", "en": "…" }: what they give the team (e.g. "Welder", "Funding"), or null
  *
  * supporters: people who support us personally, by group: "ob" (alumni) and "individual".
  *   Each is a list of names as they'd like to be credited; an empty list shows an invitation instead.

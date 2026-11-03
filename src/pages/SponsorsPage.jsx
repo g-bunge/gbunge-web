@@ -13,9 +13,6 @@ import cx from '../lib/cx.js'
 import { url } from '../lib/url.js'
 import { SPONSOR_EMAIL } from '../data/site.js'
 
-/* logos rest dim and come up to full brightness while their cell is lifted */
-const grow = 'opacity-55 transition-opacity duration-300 group-hover/partner:opacity-100 group-focus-visible/partner:opacity-100'
-
 /** /sponsors: current partners, why to sponsor us, and an inquiry form. */
 export default function SponsorsPage() {
   const { lang, t } = useLang()
@@ -33,31 +30,25 @@ export default function SponsorsPage() {
       <PageHero title="Our Sponsors" img="/images/hero-3.jpg" focus="64% 35%" alt={copy.heroAlt} />
 
       <main>
-        {/* every partner's logo on a hairline grid; a click opens their details in the side panel */}
+        {/* every partner's logo on a hairline grid; a click opens their details in a window */}
         <section className="px-gutter pt-14 pb-28">
           <Reveal as="ul" className="grid grid-cols-4 border-t border-l border-line tablet:grid-cols-3 mobile:grid-cols-2">
             {partners.map((partner, i) => (
               <li key={partner.name} className="border-r border-b border-line">
                 <button
                   type="button"
-                  className={
-                    /* on hover the whole cell grows and lifts above its neighbours */
-                    'group/partner relative grid aspect-3/2 w-full place-items-center p-[20%] outline-1 outline-transparent ' +
-                    '[transition:scale_0.45s_var(--ease-out),background_0.3s,box-shadow_0.45s,outline-color_0.3s] ' +
-                    'hover:z-10 hover:scale-110 hover:bg-surface hover:shadow-[0_28px_60px_-18px_rgb(0_0_0/0.9)] hover:outline-white/14 ' +
-                    'focus-visible:z-10 focus-visible:scale-110 focus-visible:bg-surface'
-                  }
+                  className="grid aspect-3/2 w-full place-items-center p-[20%] transition-colors duration-300 hover:bg-surface focus-visible:bg-surface"
                   onClick={() => setOpen(i)}
                   aria-haspopup="dialog"
                 >
                   {partner.logo ? (
                     <img
-                      className={grow + ' size-full object-contain brightness-0 invert'}
+                      className="size-full object-contain brightness-0 invert opacity-85"
                       src={url(partner.logo)}
                       alt={partner.name}
                     />
                   ) : (
-                    <span className={grow + ' font-display text-24 font-bold tracking-tight'}>
+                    <span className="font-display text-24 font-bold tracking-tight opacity-85">
                       {partner.name}
                     </span>
                   )}
@@ -67,7 +58,13 @@ export default function SponsorsPage() {
           </Reveal>
         </section>
 
-        <PartnerPanel partner={partners[shownPartner]} shown={open !== null} lang={lang} visitLabel={copy.visit} onClose={close} />
+        <PartnerPanel
+          partner={partners[shownPartner]}
+          shown={open !== null}
+          lang={lang}
+          labels={{ visit: copy.visit, about: copy.partnerAbout, support: copy.partnerSupport }}
+          onClose={close}
+        />
 
         {/* why us: one big line with the answer in red, four big numbers, then where a sponsor's logo goes */}
         <section id="edge" className="px-gutter pt-6 pb-28 tablet:pb-18">
