@@ -88,9 +88,10 @@ export default function SponsorsPage() {
             <SectionHeading eyebrow="OUR EDGE" title="Why G-BungE" />
           </Reveal>
 
-          <ol className="mt-12 grid grid-cols-4 gap-4 laptop:grid-cols-2 mobile:grid-cols-1">
+          {/* the four points share hairlines, like the sponsor grid above: no fill, no gaps */}
+          <ol className="mt-12 grid grid-cols-4 border-t border-l border-line laptop:grid-cols-2 mobile:grid-cols-1">
             {copy.edge.pillars.map((pillar, i) => (
-              <Reveal as="li" key={pillar.title} className="bg-surface p-7 mobile:p-6" delay={i * 90}>
+              <Reveal as="li" key={pillar.title} className="border-r border-b border-line p-7 mobile:p-6" delay={i * 90}>
                 <div className="flex items-start justify-between">
                   <span className="font-display text-44 leading-none font-semibold tracking-tight">{String(i + 1).padStart(2, '0')}</span>
                   <ArrowUpRight className="mt-1 size-5 text-fg-muted" />
