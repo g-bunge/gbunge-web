@@ -44,7 +44,11 @@ export default function SponsorsPage() {
           rules go edge to edge (the last column's right rule falls just past the screen), and empty cells
           fill out a short last row so its rule still reaches the edge. A click opens the details window.
         */}
-        <section className="overflow-hidden pt-14 pb-28">
+        <section className="overflow-hidden pt-20 pb-28 tablet:pt-14">
+          <Reveal className="mb-12 px-gutter">
+            <SectionHeading title="26/27 Sponsors" />
+            <p className="mt-4 t-body break-keep text-fg-body">{copy.partnersLead}</p>
+          </Reveal>
           <Reveal as="ul" className="grid w-[calc(100%+1px)] grid-cols-5 border-t border-line tablet:grid-cols-3 mobile:grid-cols-2">
             {partners.map((partner, i) => (
               <li key={partner.name} className="border-r border-b border-line">
