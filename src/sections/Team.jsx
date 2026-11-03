@@ -31,7 +31,7 @@ export default function Team() {
   return (
     <section id="team" className="bg-raised px-6 pt-20.75 pb-20 tablet:px-gutter tablet:pt-18 tablet:pb-14">
       <Reveal>
-        <SectionHeading eyebrow="26/27 Team" title="Our Team" align="center" />
+        <SectionHeading title="Our Team" align="center" />
       </Reveal>
 
       <div className="mx-auto mt-17.5 flex max-w-218 flex-wrap justify-center gap-6 mobile:gap-3">
@@ -45,7 +45,7 @@ export default function Team() {
             >
               <button
                 className={cx(
-                  'group/card relative block size-full overflow-hidden text-center clip-notch transition-[scale] duration-500 ease-out hover:scale-104',
+                  'group/card relative block size-full overflow-hidden text-center clip-notch',
                   'after:absolute after:inset-0 after:transition-opacity after:duration-500 after:ease-out',
                   isOpen ? 'after:bg-black/72 after:opacity-100' : 'after:bg-[linear-gradient(transparent_55%,rgb(0_0_0/0.5))] after:opacity-60',
                 )}

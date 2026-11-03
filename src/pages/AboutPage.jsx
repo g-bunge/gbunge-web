@@ -35,7 +35,7 @@ export default function AboutPage() {
       <main>
         <section className="grid grid-cols-2 gap-x-[6vw] px-gutter pt-22 pb-18 tablet:grid-cols-1 tablet:gap-y-8 tablet:py-14">
           <Reveal>
-            <SectionHeading eyebrow="WHO WE ARE" title={['Sorry for driving too fast,', "We're new here."]} />
+            <SectionHeading title={['Sorry for driving too fast,', "We're new here."]} />
           </Reveal>
           <Reveal delay={150}>
             {copy.intro.map((para, i) => (
@@ -94,7 +94,7 @@ export default function AboutPage() {
 
         <section className="grid grid-cols-[1fr_2fr] items-start gap-x-[6vw] bg-raised p-[104px_var(--spacing-gutter)] tablet:grid-cols-1 tablet:gap-y-8 tablet:py-18">
           <Reveal>
-            <SectionHeading eyebrow="HOW WE WORK" title="Less talk, More torque" />
+            <SectionHeading title="Less talk, More torque" />
           </Reveal>
           <ol>
             {copy.values.map((value, i) => (
@@ -116,7 +116,7 @@ export default function AboutPage() {
 
         <section className="px-gutter pt-26 pb-24 tablet:py-18">
           <Reveal>
-            <SectionHeading eyebrow="HERITAGE" title="The Road So Far" />
+            <SectionHeading title="The Road So Far" />
           </Reveal>
           <ol className="mt-14 grid grid-cols-4 gap-8 tablet:grid-cols-2 tablet:gap-y-12 mobile:grid-cols-1 mobile:gap-y-10">
             {copy.milestones.map((item, i) => (
@@ -152,7 +152,6 @@ export default function AboutPage() {
           <img className="absolute inset-0 size-full object-cover object-[50%_78%] brightness-45 transition-[scale] duration-1000 ease-out group-hover/cta:scale-103" src={url('/images/team-award-2026.jpg')} alt="" />
           {/* copy lines up with the page gutter; text column stays as wide as before */}
           <div className="relative z-1 box-content max-w-98 px-gutter py-16 mobile:py-10">
-            <p className="t-eyebrow mb-3.5">26/27 TEAM</p>
             <h2 className="t-title">{copy.cta.title}</h2>
             <p className="t-body mt-4 mb-9">{copy.cta.body}</p>
             <Button href="/team">Meet Our Team</Button>

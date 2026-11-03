@@ -87,7 +87,7 @@ export default function CarPage({ car }) {
       <div className="px-gutter pb-28 mobile:pb-18">
         <section className={row}>
           <Reveal>
-            <SectionHeading eyebrow={[car.year, 'SPONSORS'].filter(Boolean).join(' ')} title={copy.sponsors.title} />
+            <SectionHeading title={copy.sponsors.title} />
           </Reveal>
           <Reveal delay={120}>
             {car.sponsors.length ? (
@@ -113,7 +113,7 @@ export default function CarPage({ car }) {
 
         <section className={row}>
           <Reveal>
-            <SectionHeading eyebrow={[car.year, 'ADVISOR'].filter(Boolean).join(' ')} title={copy.advisor.title} />
+            <SectionHeading title={copy.advisor.title} />
           </Reveal>
           <Reveal delay={120}>
             {car.advisor ? (
@@ -129,7 +129,7 @@ export default function CarPage({ car }) {
 
         <section className={row}>
           <Reveal>
-            <SectionHeading eyebrow={[car.year, 'MEMBERS'].filter(Boolean).join(' ')} title={copy.members.title} />
+            <SectionHeading title={copy.members.title} />
           </Reveal>
           <Reveal delay={120}>
             {car.members.length ? (

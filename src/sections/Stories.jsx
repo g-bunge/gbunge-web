@@ -18,7 +18,6 @@ export default function Stories() {
     <section id="stories" className="px-10 pt-22 pb-20 tablet:px-gutter tablet:py-20">
       {/* hashtag title, then a thin line dropping to a ringed Instagram button */}
       <Reveal className="flex flex-col items-center text-center">
-        <p className="t-eyebrow mb-3">SNS&Blog</p>
         <h2 className="t-title underline decoration-brand decoration-3 underline-offset-10">#Our Stories</h2>
         <span className="mt-7 h-12 w-px bg-white/25" aria-hidden />
         <a

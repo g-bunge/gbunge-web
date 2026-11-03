@@ -35,7 +35,7 @@ export default function TeamPage() {
       <main>
         <section id="sub-teams" className="px-gutter pt-24 pb-22 tablet:py-18">
           <Reveal>
-            <SectionHeading eyebrow="SUB-TEAMS" title="What We Do" />
+            <SectionHeading title="What We Do" />
           </Reveal>
           <div className="mt-12 grid grid-cols-2 gap-4 tablet:grid-cols-1">
             {teams.map((team, i) => (
@@ -50,7 +50,7 @@ export default function TeamPage() {
                       <span className="block size-full bg-placeholder" />
                     ) : (
                       <img
-                        className="size-full object-cover brightness-85 grayscale [transition:scale_0.6s_var(--ease-out),filter_0.6s] group-hover/sub:scale-106 group-hover/sub:brightness-100 group-hover/sub:grayscale-0"
+                        className="size-full object-cover brightness-85 grayscale transition-[filter] duration-600 group-hover/sub:brightness-100 group-hover/sub:grayscale-0"
                         src={url(`/images/team-${team.img}.jpg`)}
                         alt=""
                       />
@@ -150,7 +150,7 @@ function MemberCard({ member, groupId, lang, copy, isOpen, onToggle }) {
       )}
     >
       {member.photo && (
-        <img className="absolute inset-0 size-full object-cover transition-[scale] duration-600 ease-out group-hover/member:scale-104" src={url(member.photo)} alt="" />
+        <img className="absolute inset-0 size-full object-cover" src={url(member.photo)} alt="" />
       )}
       <button
         type="button"

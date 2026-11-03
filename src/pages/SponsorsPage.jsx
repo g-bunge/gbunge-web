@@ -85,7 +85,7 @@ export default function SponsorsPage() {
         {/* why us: the heading, four numbered points as cards, then a bar that leads to the inquiry form */}
         <section id="edge" className="px-gutter pt-6 pb-28 tablet:pb-18">
           <Reveal>
-            <SectionHeading eyebrow="OUR EDGE" title="Why G-BungE" />
+            <SectionHeading title="Why G-BungE" />
           </Reveal>
 
           {/* the four points share hairlines, like the sponsor grid above: no fill, no gaps */}
@@ -120,7 +120,7 @@ export default function SponsorsPage() {
         {/* credits roll: every individual supporter, grouped, centred like the end of a film */}
         <section id="supporters" className="px-gutter pt-26 pb-28 text-center tablet:py-18">
           <Reveal className="mx-auto flex max-w-150 flex-col items-center">
-            <SectionHeading eyebrow="SUPPORTERS" title="Thank You, Supporters" align="center" />
+            <SectionHeading title="Thank You, Supporters" align="center" />
             <p className="mt-5 text-16 leading-6.75 break-keep text-fg-body">{copy.supporters.lead}</p>
           </Reveal>
 
@@ -159,7 +159,6 @@ export default function SponsorsPage() {
           className="mx-gutter mb-30 grid grid-cols-[5fr_7fr] items-start gap-16 border border-brand/30 bg-raised px-16 py-20 tablet:grid-cols-1 tablet:gap-10 tablet:px-10 tablet:py-14 mobile:mx-0 mobile:mb-20 mobile:px-gutter"
         >
           <Reveal className="sticky top-30 tablet:static">
-            <p className="t-eyebrow mb-4 tracking-label">BECOME OUR SPONSOR</p>
             <h2 className="font-display text-cta-title leading-[1.15] font-semibold tracking-tight break-keep">{copy.cta.title}</h2>
             <p className="t-body mt-6 mb-8 break-keep">{copy.cta.body}</p>
             <a className="inline-flex items-center gap-2.5 font-ui text-16 font-medium text-fg-body transition-colors duration-300 hover:text-fg" href={`mailto:${SPONSOR_EMAIL}`}>
