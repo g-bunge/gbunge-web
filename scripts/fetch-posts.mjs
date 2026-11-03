@@ -89,16 +89,38 @@ const children = (id) => all((cursor) => notion(`blocks/${id}/children?page_size
 
 /* ---------- images ---------- */
 
+/*
+ * Where each saved image came from: { 'slug-1.png': '<path of the Notion file>' }, kept beside the images.
+ * A Notion file's path (its link minus the expiring signature) only changes when the file itself does,
+ * so an image already saved from the same path is copied instead of downloaded again. Downloading
+ * every image from Notion's US storage on each run was what made `npm run dev` take a minute or two.
+ */
+const SOURCES = '.sources.json'
+let savedFrom = {} // last run's record, read in main()
+const sources = {} // this run's record
+const staged = new Map() // Notion file path → name already saved in this run (the English page reuses the Korean images)
+
 /* Notion-hosted files expire, so they're saved under public/notion/; external links are kept as they are. */
 async function saveImage(file, name) {
   if (!file) return null
   if (file.type === 'external') return file.external.url
   const url = file.file.url
-  const ext = path.extname(new URL(url).pathname) || '.jpg'
-  const res = await fetch(url)
-  if (!res.ok) throw new Error(`image ${name}: ${res.status}`)
-  await fs.writeFile(path.join(STAGE_DIR, name + ext), Buffer.from(await res.arrayBuffer()))
-  return `/notion/${name}${ext}`
+  const source = new URL(url).pathname
+  const filename = name + (path.extname(source) || '.jpg')
+  const target = path.join(STAGE_DIR, filename)
+  const previous = Object.keys(savedFrom).find((saved) => savedFrom[saved] === source)
+  if (staged.has(source)) {
+    await fs.copyFile(path.join(STAGE_DIR, staged.get(source)), target)
+  } else if (previous && (await fs.copyFile(path.join(IMG_DIR, previous), target).then(() => true, () => false))) {
+    // reused last run's copy
+  } else {
+    const res = await fetch(url)
+    if (!res.ok) throw new Error(`image ${name}: ${res.status}`)
+    await fs.writeFile(target, Buffer.from(await res.arrayBuffer()))
+  }
+  staged.set(source, filename)
+  sources[filename] = source
+  return `/notion/${filename}`
 }
 
 /* ---------- properties ---------- */
@@ -218,6 +240,7 @@ async function main() {
 
   await fs.rm(STAGE_DIR, { recursive: true, force: true })
   await fs.mkdir(STAGE_DIR, { recursive: true })
+  savedFrom = await fs.readFile(path.join(IMG_DIR, SOURCES), 'utf8').then(JSON.parse, () => ({}))
 
   const posts = []
   for (const page of ko) {
@@ -249,6 +272,7 @@ async function main() {
     })
   }
 
+  await fs.writeFile(path.join(STAGE_DIR, SOURCES), `${JSON.stringify(sources, null, 2)}\n`)
   await fs.rm(IMG_DIR, { recursive: true, force: true })
   await fs.rename(STAGE_DIR, IMG_DIR)
   await fs.writeFile(OUT_JSON, `${JSON.stringify(posts, null, 2)}\n`)
