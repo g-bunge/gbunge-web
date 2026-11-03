@@ -32,8 +32,8 @@ export default function Navbar({ alwaysVisible = false }) {
         <img className="h-7 w-auto" src={url('/images/logo-footer.png')} alt="G-BungE" />
       </a>
       <ul className="ml-auto flex gap-9 mobile:hidden">
-        {links.map(({ id, href }) => (
-          <li key={id}>
+        {links.map(({ id, href, children }) => (
+          <li key={id} className={cx(children && 'group/drop relative')}>
             <a
               className={cx(
                 'relative font-ui text-15 font-medium text-fg-body transition-colors duration-300 hover:text-fg aria-[current=page]:text-fg',
@@ -46,6 +46,29 @@ export default function Navbar({ alwaysVisible = false }) {
             >
               {t.nav[id]}
             </a>
+            {/* sub-pages drop down on hover or keyboard focus, one after another; the top padding bridges the gap to the link */}
+            {children && (
+              <div className="invisible absolute top-full left-1/2 -translate-x-1/2 pt-5 opacity-0 [transition:opacity_0.25s,visibility_0.25s] group-focus-within/drop:visible group-focus-within/drop:opacity-100 group-hover/drop:visible group-hover/drop:opacity-100">
+                <ul className="min-w-44 border border-white/10 bg-raised/95 p-1.5 shadow-menu backdrop-blur-md">
+                  {children.map((child, i) => (
+                    <li
+                      key={child.href}
+                      className="-translate-y-2 opacity-0 [transition:opacity_0.3s,translate_0.35s_var(--ease-out)] group-focus-within/drop:translate-y-0 group-focus-within/drop:opacity-100 group-hover/drop:translate-y-0 group-hover/drop:opacity-100"
+                      style={{ transitionDelay: `${i * 45}ms` }}
+                    >
+                      <a
+                        className="flex items-baseline justify-between gap-6 px-3.5 py-2.5 font-ui text-15 font-medium text-fg-body transition-colors duration-200 hover:bg-surface hover:text-fg aria-[current=page]:text-brand-end"
+                        href={url(child.href)}
+                        aria-current={path === child.href ? 'page' : undefined}
+                      >
+                        {child.label}
+                        {child.note && <span className="text-12 text-fg-muted">{child.note}</span>}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </li>
         ))}
       </ul>

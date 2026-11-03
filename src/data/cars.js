@@ -1,12 +1,19 @@
 /*
- * Cars for the /past-cars page, newest first.
- * TODO: fill in the years, photos, descriptions and specs we don't have yet (specs show '-' until then).
- *   img : e.g. '/images/cars/mk5.jpg' (landscape, ~16:10); a grey placeholder shows until then
- *   desc : { ko, en }
- *   award: { ko, en }, optional; shown as a badge
+ * Cars, newest first: /past-cars lists them and each gets its own page at /past-cars/<id>.
+ * TODO: fill in the years, photos, descriptions and specs we don't have yet (specs show '-' until then),
+ * and each car's sponsors, advisor and members; a section with nothing in it says so instead.
+ *   img     : e.g. '/images/cars/mk5.jpg' (landscape, ~16:10); a grey placeholder shows until then
+ *   desc    : { ko, en }
+ *   award   : { ko, en }, optional; shown as a badge
+ *   sponsors: names of that year's sponsors; a name matching a partner in sponsors.json gets its logo
+ *   advisor : that year's faculty advisor, { name: { ko, en }, dept: { ko, en } }, or null
+ *   members : that year's team, [{ name, role }]; role is optional (e.g. 'Team Lead')
  */
 /* every car lists the same specs, in this order; anything not given shows '-' */
 const specs = (given = {}) => ({ motor: '-', battery: '-', drivetrain: '-', weight: '-', dimensions: '-', wheelbase: '-', ...given })
+
+/* who was behind a car that year; each part stays empty until filled in */
+const people = (given = {}) => ({ sponsors: [], advisor: null, members: [], ...given })
 
 export const pastCars = [
   {
@@ -29,8 +36,9 @@ export const pastCars = [
       dimensions: '2420 × 1327 × 1478 mm',
       wheelbase: '1600 mm',
     }),
+    ...people(),
   },
-  { id: 'mk4', name: 'Mk.4', year: null, type: 'E-BAJA', specs: specs() },
+  { id: 'mk4', name: 'Mk.4', year: null, type: 'E-BAJA', specs: specs(), ...people() },
   {
     id: 'mk3',
     name: 'Mk.3',
@@ -49,8 +57,9 @@ export const pastCars = [
       dimensions: '2227 × 1488 × - mm',
       wheelbase: '859.8 mm',
     }),
+    ...people(),
   },
-  { id: 'mk2', name: 'Mk.2', year: null, type: 'E-BAJA', specs: specs() },
+  { id: 'mk2', name: 'Mk.2', year: null, type: 'E-BAJA', specs: specs(), ...people() },
   {
     id: 'mk1',
     name: 'Mk.1',
@@ -61,6 +70,8 @@ export const pastCars = [
       en: 'The very first G-BungE car. This is where it all started.',
     },
     specs: specs(),
+    ...people(),
   },
 ]
 
+export const findCar = (id) => pastCars.find((car) => car.id === id)

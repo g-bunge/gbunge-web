@@ -116,6 +116,11 @@ export const translations = {
       descSoon: '차량 소개가 곧 업데이트됩니다.',
       photoSoon: '사진 준비 중',
       indexLabel: '차량 바로가기',
+      allCars: '전체 차량',
+      view: '자세히 보기',
+      sponsors: { title: '그해 함께한 후원사', soon: '이 해의 후원사 정보를 준비 중입니다.' },
+      advisor: { title: '지도교수', soon: '이 해의 지도교수 정보를 준비 중입니다.' },
+      members: { title: '함께 만든 사람들', soon: '이 해의 멤버 정보를 준비 중입니다.' },
     },
     cta: {
       body: ['G-BungE의 첫 Formula Student 여정에 함께해주세요.', '새로운 도전을 함께 만들어갈 파트너를 기다립니다.'],
@@ -261,6 +266,11 @@ export const translations = {
       descSoon: 'Details coming soon.',
       photoSoon: 'Photo coming soon',
       indexLabel: 'Jump to car',
+      allCars: 'All cars',
+      view: 'View car',
+      sponsors: { title: 'Sponsors that year', soon: 'Sponsor details for this year are coming soon.' },
+      advisor: { title: 'Faculty advisor', soon: 'Advisor details for this year are coming soon.' },
+      members: { title: 'The team behind it', soon: 'The member list for this year is coming soon.' },
     },
     cta: {
       body: ['Join us on G-BungE’s first Formula Student journey.', 'We are looking for partners to build this new challenge together.'],

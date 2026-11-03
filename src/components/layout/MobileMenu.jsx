@@ -70,7 +70,7 @@ export default function MobileMenu({ className = '' }) {
             </span>
           </button>
           <ul className="grid gap-2">
-            {links.map(({ id, href }, i) => (
+            {links.map(({ id, href, children }, i) => (
               <li
                 key={id}
                 className={cx('[transition:opacity_0.4s,translate_0.5s_var(--ease-out)]', open ? 'opacity-100' : 'translate-y-4 opacity-0')}
@@ -84,6 +84,22 @@ export default function MobileMenu({ className = '' }) {
                 >
                   {t.nav[id]}
                 </a>
+                {children && (
+                  <ul className="mb-2 flex flex-wrap gap-x-5 gap-y-1">
+                    {children.map((child) => (
+                      <li key={child.href}>
+                        <a
+                          className="block py-1 font-ui text-16 font-medium text-fg-muted transition-colors duration-200 hover:text-fg aria-[current=page]:text-brand-end"
+                          href={url(child.href)}
+                          aria-current={path === child.href ? 'page' : undefined}
+                          onClick={() => setOpen(false)}
+                        >
+                          {child.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </li>
             ))}
           </ul>
