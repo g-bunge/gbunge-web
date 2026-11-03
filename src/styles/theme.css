@@ -96,7 +96,8 @@
 
   /* ---------- layout ---------- */
   /* spacing stays on Tailwind's 4px scale (`p-6` = 24px); these are the named ones */
-  --spacing-gutter: 80px;
+  /* the page's side margin: 80px, growing on wide screens so the content stops at 1280px and the sides take the rest */
+  --spacing-gutter: max(80px, calc((100vw - 1280px) / 2));
   --spacing-nav: 72px;
   --spacing-button: 45px;
 

@@ -122,7 +122,7 @@
 
 | 토큰 | 값 | 클래스 예 | 용도 |
 |---|---|---|---|
-| `gutter` | 80px (태블릿 이하 24px) | `px-gutter` `mx-gutter` `inset-x-gutter` | 페이지 좌우 여백 |
+| `gutter` | 80px, 넓은 화면에서는 내용 폭이 1280px이 되도록 늘어남 (태블릿 이하 24px) | `px-gutter` `mx-gutter` `inset-x-gutter` | 페이지 좌우 여백 |
 | `nav` | 72px | `h-nav` `scroll-mt-nav` | 상단 메뉴 높이, 앵커 이동 시 가림 방지 |
 | `button` | 45px | `h-button` | 버튼 높이 |
 
