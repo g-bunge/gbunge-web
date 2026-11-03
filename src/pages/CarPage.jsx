@@ -16,9 +16,8 @@ const soon = 'text-17 leading-7 break-keep text-fg-muted'
 export default function CarPage({ car }) {
   const { lang, t } = useLang()
   const copy = t.carsPage
-  // a car raced in 2026 was built over the 2025/26 season
-  const raced = Number(car.year)
-  const season = raced ? { start: raced - 1, label: `${raced - 1}/${String(raced).slice(2)}` } : null
+  // a car raced in 2026 was built by the 2025 team
+  const season = Number(car.year) ? Number(car.year) - 1 : null
 
   return (
     <main className="overflow-x-clip pt-nav">
