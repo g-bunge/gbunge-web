@@ -17,7 +17,6 @@ export const teams = [
   {
     name: 'AERODYNAMICS',
     img: 'aerodynamics',
-    photo: false,
     desc: {
       ko: '차량의 공기역학적 성능 향상을 위한 공력 부품의 설계, 해석 및 제작을 담당합니다.',
       en: "We design, simulate and build the aero parts that improve the car's aerodynamic performance.",
@@ -38,7 +37,6 @@ export const teams = [
   {
     name: 'LOW VOLTAGE',
     img: 'low-voltage',
-    photo: false,
     desc: { ko: '센서, 제어기, 하네스 등 차량의 신경계를 만듭니다.', en: "Sensors, controllers and harnesses: we build the car's nervous system." },
   },
   {
