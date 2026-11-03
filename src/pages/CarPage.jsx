@@ -51,7 +51,7 @@ export default function CarPage({ car }) {
             <h1 className="mt-3 font-display text-car leading-[0.9] font-semibold tracking-tighter">{car.name}</h1>
           </div>
           {car.award && (
-            <p className="mb-2 shrink-0 bg-brand-gradient px-3.5 py-1.75 font-ui text-13 font-semibold text-fg before:content-['🏆_'] mobile:mb-0">{car.award[lang]}</p>
+            <p className="mb-2 shrink-0 bg-brand-gradient px-3.5 py-1.75 font-ui text-13 font-semibold text-fg mobile:mb-0">{car.award[lang]}</p>
           )}
         </div>
       </header>
