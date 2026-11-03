@@ -50,7 +50,7 @@ export default function TeamPage() {
                       <span className="block size-full bg-placeholder" />
                     ) : (
                       <img
-                        className="size-full object-cover brightness-85 [transition:scale_0.6s_var(--ease-out),filter_0.6s] group-hover/sub:scale-106 group-hover/sub:brightness-100"
+                        className="size-full object-cover brightness-85 grayscale [transition:scale_0.6s_var(--ease-out),filter_0.6s] group-hover/sub:scale-106 group-hover/sub:brightness-100 group-hover/sub:grayscale-0"
                         src={url(`/images/team-${team.img}.jpg`)}
                         alt=""
                       />

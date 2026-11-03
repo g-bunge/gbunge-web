@@ -55,7 +55,7 @@ export default function Team() {
                 {team.photo === false ? (
                   <span className="block size-full bg-placeholder" />
                 ) : (
-                  <img className="size-full object-cover brightness-75 transition-[filter] duration-500 group-hover/card:brightness-100" src={url(`/images/team-${team.img}.jpg`)} alt="" />
+                  <img className="size-full object-cover brightness-75 grayscale transition-[filter] duration-500 group-hover/card:brightness-100 group-hover/card:grayscale-0" src={url(`/images/team-${team.img}.jpg`)} alt="" />
                 )}
                 <span
                   className={cx(
