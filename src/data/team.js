@@ -30,7 +30,6 @@ export const teams = [
   {
     name: 'HIGH VOLTAGE',
     img: 'high-voltage',
-    photo: false,
     shock: true,
     desc: { ko: '배터리 팩과 고전압 시스템을 안전하게 설계합니다.', en: 'We safely design the battery pack and high-voltage system.' },
   },
