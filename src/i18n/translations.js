@@ -77,21 +77,12 @@ export const translations = {
       exposureTitle: '로고가 들어가는 곳',
       edge: {
         lead: '처음 나가는 팀의 무기는 경력이 아닙니다. 기술입니다.',
-        feature: {
-          kicker: 'Baja Student Korea 2026 · 기술부문 최우수 기술아이디어상',
-          title: '과학기술원의 설계를, 대회가 먼저 알아봤습니다.',
-          body: '실제 주행 로그로 트랙 전용 랩타임 최적화 모델을 만들고, 그 결과로 기어비와 토크맵을 정했습니다. 우리의 첫 수상은 기술부문에서 나왔습니다.',
-          alt: '2026 Baja Student Korea 수상 단체 사진',
-        },
         pillars: [
-          { stat: 'GIST', label: '과학기술원', title: '연구실의 방식 그대로', body: '해석하고, 검증하고, 만들고, 다시 측정합니다. 감이 아니라 데이터로 차를 설계합니다.' },
-          { stat: '최우수', label: '기술아이디어 부문', title: '기술로 먼저 증명', body: '첫 수상이 기술부문 최우수상입니다. 우리가 무엇을 잘하는지 대회가 먼저 말해줬습니다.' },
-          { stat: '{members}', label: '명, 8개 조직', title: '소수 정예', body: '적은 인원, 넓은 책임. 한 사람이 설계부터 제작까지 맡고, 결정은 빠릅니다.' },
-          { stat: '5대', label: '전기 바하 제작', title: '루키, 하지만 백지는 아닌', body: '포뮬러는 처음이지만 전기 파워트레인은 5년째입니다. 물려받은 설계 없이 처음부터 새로 그립니다.' },
+          { stat: 'GIST', label: '과학기술원', title: '연구실의 방식 그대로' },
+          { stat: '최우수', label: '기술아이디어 부문', title: '기술로 먼저 증명' },
+          { stat: '{members}', label: '명, 8개 조직', title: '소수 정예' },
+          { stat: '5대', label: '전기 바하 제작', title: '루키, 하지만 백지는 아닌' },
         ],
-        schoolLabel: 'GIST 광주과학기술원',
-        school:
-          'GIST는 국가 과학기술 인재를 키우기 위해 세워진 과학기술원입니다. 소수 정예로 선발된 학생들이 전공에 앞서 기초과학과 공학을 폭넓게 익히고, 연구실과 장비를 가까이 두고 공부합니다. G-BungE의 설계 방식은 이 환경에서 나옵니다.',
       },
       supporters: {
         lead: '회사가 아니어도 G-BungE와 함께 달릴 수 있습니다. 선배님들과 개인 후원자분들의 이름을 여기에 새깁니다.',
@@ -222,21 +213,12 @@ export const translations = {
       exposureTitle: 'Where your logo goes',
       edge: {
         lead: "A first-time team's weapon isn't experience. It's engineering.",
-        feature: {
-          kicker: 'Baja Student Korea 2026 · Technical Idea Award, top prize',
-          title: 'Engineering from a science institute. The judges noticed first.',
-          body: 'We built a lap-time optimisation model for the track from our own driving logs, and let it choose our gear ratio and torque map. Our first award came in the technical category.',
-          alt: 'The team with the award at Baja Student Korea 2026',
-        },
         pillars: [
-          { stat: 'GIST', label: 'Science institute', title: 'Built the lab way', body: 'Analyse, validate, build, measure again. We design the car on data, not hunches.' },
-          { stat: 'Top', label: 'Technical idea prize', title: 'Proven on engineering', body: 'Our first award was the top technical prize. The competition told us what we do best.' },
-          { stat: '{members}', label: 'members, 8 groups', title: 'Small and hand-picked', body: 'Few people, wide ownership. Each of us takes a part from design to build, and decisions are fast.' },
-          { stat: '5', label: 'electric Baja cars', title: 'Rookies, not beginners', body: "Formula is new to us; electric powertrains aren't. No inherited design: we start from a blank sheet." },
+          { stat: 'GIST', label: 'Science institute', title: 'Built the lab way' },
+          { stat: 'Top', label: 'Technical idea prize', title: 'Proven on engineering' },
+          { stat: '{members}', label: 'members, 8 groups', title: 'Small and hand-picked' },
+          { stat: '5', label: 'electric Baja cars', title: 'Rookies, not beginners' },
         ],
-        schoolLabel: 'GIST · Gwangju Institute of Science and Technology',
-        school:
-          "GIST is one of Korea's science and technology institutes, founded to train the country's next scientists and engineers. A small, selective intake builds a broad base in science and engineering before choosing a major, working right next to research labs and equipment. That is where G-BungE's way of designing comes from.",
       },
       supporters: {
         lead: "You don't need to be a company to race with us. Our alumni and individual supporters are credited here.",

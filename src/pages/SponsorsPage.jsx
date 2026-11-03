@@ -13,14 +13,8 @@ import cx from '../lib/cx.js'
 import { url } from '../lib/url.js'
 import { SPONSOR_EMAIL } from '../data/site.js'
 
-/* label | content rows at the bottom of OUR EDGE */
-const row = 'grid grid-cols-[1fr_2fr] gap-x-[6vw] gap-y-5 border-b border-line py-10 tablet:grid-cols-1'
-const rowLabel = 'font-ui text-13 font-semibold tracking-widest text-brand-end uppercase'
-
-/* a sponsor logo sits small and dim, and grows into full brightness on hover or keyboard focus */
-const grow =
-  'opacity-55 scale-92 [transition:opacity_0.35s,scale_0.5s_var(--ease-out)] ' +
-  'group-hover/partner:scale-110 group-hover/partner:opacity-100 group-focus-visible/partner:scale-110 group-focus-visible/partner:opacity-100'
+/* logos rest dim and come up to full brightness while their cell is lifted */
+const grow = 'opacity-55 transition-opacity duration-300 group-hover/partner:opacity-100 group-focus-visible/partner:opacity-100'
 
 /** /sponsors: current partners, why to sponsor us, and an inquiry form. */
 export default function SponsorsPage() {
@@ -31,6 +25,8 @@ export default function SponsorsPage() {
   const [shownPartner, setShownPartner] = useState(0)
   if (open !== null && open !== shownPartner) setShownPartner(open)
   const close = useCallback(() => setOpen(null), [])
+  // the edge line splits into the claim and its answer, which is set in red: '…경력이 아닙니다.' / '기술입니다.'
+  const [, claim, answer] = copy.edge.lead.match(/^(.*[.?!])\s+(\S.*)$/) ?? [null, copy.edge.lead, '']
 
   return (
     <>
@@ -44,7 +40,13 @@ export default function SponsorsPage() {
               <li key={partner.name} className="border-r border-b border-line">
                 <button
                   type="button"
-                  className="group/partner grid aspect-3/2 w-full place-items-center p-[20%] transition-colors duration-300 hover:bg-raised"
+                  className={
+                    /* on hover the whole cell grows and lifts above its neighbours */
+                    'group/partner relative grid aspect-3/2 w-full place-items-center p-[20%] outline-1 outline-transparent ' +
+                    '[transition:scale_0.45s_var(--ease-out),background_0.3s,box-shadow_0.45s,outline-color_0.3s] ' +
+                    'hover:z-10 hover:scale-110 hover:bg-surface hover:shadow-[0_28px_60px_-18px_rgb(0_0_0/0.9)] hover:outline-white/14 ' +
+                    'focus-visible:z-10 focus-visible:scale-110 focus-visible:bg-surface'
+                  }
                   onClick={() => setOpen(i)}
                   aria-haspopup="dialog"
                 >
@@ -67,64 +69,35 @@ export default function SponsorsPage() {
 
         <PartnerPanel partner={partners[shownPartner]} shown={open !== null} lang={lang} visitLabel={copy.visit} onClose={close} />
 
-        {/* why us: the award as the headline proof, four edges as big stats, then label | content rows */}
-        <section id="edge" className="px-gutter pb-28 tablet:pb-18">
-          <Reveal className="grid grid-cols-[1fr_1fr] items-end gap-x-[6vw] gap-y-5 tablet:grid-cols-1">
-            <SectionHeading eyebrow="OUR EDGE" title="Why G-BungE" />
-            <p className="font-display text-26 leading-[1.35] font-semibold break-keep text-fg mobile:text-20">{copy.edge.lead}</p>
+        {/* why us: one big line with the answer in red, four big numbers, then where a sponsor's logo goes */}
+        <section id="edge" className="px-gutter pt-6 pb-28 tablet:pb-18">
+          <Reveal>
+            <p className="t-eyebrow flex items-center gap-3 tracking-label before:h-0.5 before:w-8 before:bg-brand-gradient">WHY G-BUNGE</p>
+            <h2 className="mt-7 font-display text-[clamp(40px,5.4vw,84px)] leading-[1.04] font-semibold tracking-tighter break-keep">
+              {claim}
+              <br />
+              <span className="text-brand-gradient">{answer}</span>
+            </h2>
           </Reveal>
 
-          <Reveal as="figure" className="relative mt-12 aspect-3/1 overflow-hidden tablet:aspect-2/1 mobile:aspect-auto mobile:overflow-visible">
-            {/* on phones the photo sits above the text instead of under it */}
-            <img className="absolute inset-0 size-full object-cover object-[50%_72%] mobile:relative mobile:aspect-4/3 mobile:h-auto" src={url('/images/team-award-2026.jpg')} alt={copy.edge.feature.alt} />
-            <figcaption className="relative flex h-full flex-col justify-end bg-[linear-gradient(90deg,rgb(0_0_0/0.88),rgb(0_0_0/0.5)_50%,rgb(0_0_0/0.1))] p-12 mobile:bg-none mobile:px-0 mobile:pt-6 mobile:pb-2">
-              <span className="font-ui text-12 font-semibold tracking-widest text-brand-end uppercase">{copy.edge.feature.kicker}</span>
-              <span className="mt-4 max-w-150 font-display text-highlight leading-[1.2] font-semibold break-keep">{copy.edge.feature.title}</span>
-              <span className="mt-4 max-w-130 text-16 leading-6.75 break-keep text-fg-body">{copy.edge.feature.body}</span>
-            </figcaption>
-          </Reveal>
-
-          <ol className="grid grid-cols-4 border-b border-line tablet:grid-cols-2 mobile:grid-cols-1">
+          <ol className="mt-18 grid grid-cols-4 border-y border-line tablet:grid-cols-2 mobile:mt-12">
             {copy.edge.pillars.map((pillar, i) => (
               <Reveal
                 as="li"
                 key={pillar.title}
-                className={cx(
-                  'px-8 pt-10 pb-11 tablet:px-6',
-                  i === 0 ? 'pl-0' : 'border-l border-line',
-                  i % 2 === 0 && 'tablet:border-l-0 tablet:pl-0',
-                  i >= 2 && 'tablet:border-t tablet:border-line',
-                  'mobile:border-l-0 mobile:px-0 mobile:not-first:border-t mobile:not-first:border-line',
-                )}
+                className={cx('px-8 py-11 tablet:px-6 mobile:px-4 mobile:py-8', i % 4 !== 0 && 'border-l border-line', i >= 2 && 'tablet:border-t', i % 2 === 0 && 'tablet:border-l-0')}
                 delay={i * 90}
               >
-                <p className="flex items-baseline gap-2.5">
-                  <span className="w-fit font-display text-44 leading-none font-semibold tracking-tighter text-brand-gradient mobile:text-36">
-                    {pillar.stat.replace('{members}', memberCount)}
-                  </span>
-                  <span className="font-ui text-13 font-semibold text-fg-muted">{pillar.label}</span>
-                </p>
-                <h3 className="mt-6 text-20 font-semibold break-keep">{pillar.title}</h3>
-                <p className="mt-2.5 text-15 leading-6.25 break-keep text-fg-muted">{pillar.body}</p>
+                <p className="font-display text-stat leading-none font-semibold tracking-tighter">{pillar.stat.replace('{members}', memberCount)}</p>
+                <p className="mt-5 font-ui text-14 font-semibold text-fg-muted">{pillar.label}</p>
+                <p className="mt-1.5 text-17 font-semibold break-keep">{pillar.title}</p>
               </Reveal>
             ))}
           </ol>
 
-          {/* the rest reads as label | content rows between hairlines: the school, then where the logo goes */}
-          <Reveal className={row}>
-            <h3 className={rowLabel}>{copy.edge.schoolLabel}</h3>
-            <p className="max-w-190 text-16 leading-7 break-keep text-fg-body">{copy.edge.school}</p>
-          </Reveal>
-
-          <Reveal className={row}>
-            <h3 className={rowLabel}>{copy.exposureTitle}</h3>
-            <ul className="flex flex-wrap gap-2">
-              {copy.exposure.map((place) => (
-                <li key={place} className="rounded-full border border-white/16 px-4 py-2 text-14 font-medium">
-                  {place}
-                </li>
-              ))}
-            </ul>
+          <Reveal className="flex flex-wrap items-baseline gap-x-8 gap-y-3 border-b border-line py-7">
+            <h3 className="font-ui text-13 font-semibold tracking-widest text-brand-end uppercase">{copy.exposureTitle}</h3>
+            <p className="text-16 text-fg-body">{copy.exposure.join('  ·  ')}</p>
           </Reveal>
         </section>
 
