@@ -17,3 +17,6 @@ export const STORIES_ENABLED = true
  * whose cards then stop linking down to the roster. Set to true to bring them back.
  */
 export const ROSTER_ENABLED = false
+
+/* The Thank You, Supporters section on /sponsors is hidden for now. Set to true to bring it back. */
+export const SUPPORTERS_ENABLED = false

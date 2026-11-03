@@ -10,7 +10,7 @@ import { partners, supporterGroups } from '../data/sponsors.js'
 import useLang from '../i18n/LanguageContext.js'
 import cx from '../lib/cx.js'
 import { url } from '../lib/url.js'
-import { SPONSOR_EMAIL } from '../data/site.js'
+import { SPONSOR_EMAIL, SUPPORTERS_ENABLED } from '../data/site.js'
 
 /*
  * Empty cells that complete the partner grid's last row at each column count (5, 3 on tablets, 2 on phones),
@@ -45,8 +45,8 @@ export default function SponsorsPage() {
           fill out a short last row so its rule still reaches the edge. A click opens the details window.
         */}
         <section className="overflow-hidden pt-20 pb-28 tablet:pt-14">
-          <Reveal className="mb-12 px-gutter">
-            <SectionHeading title="26/27 Sponsors" />
+          <Reveal className="mb-12 px-gutter text-center">
+            <SectionHeading title="26/27 Sponsors" align="center" />
             <p className="mt-4 t-body break-keep text-fg-body">{copy.partnersLead}</p>
           </Reveal>
           <Reveal as="ul" className="grid w-[calc(100%+1px)] grid-cols-5 border-t border-line tablet:grid-cols-3 mobile:grid-cols-2">
@@ -121,42 +121,44 @@ export default function SponsorsPage() {
           </Reveal>
         </section>
 
-        {/* credits roll: every individual supporter, grouped, centred like the end of a film */}
-        <section id="supporters" className="px-gutter pt-26 pb-28 text-center tablet:py-18">
-          <Reveal className="mx-auto flex max-w-150 flex-col items-center">
-            <SectionHeading title="Thank You, Supporters" align="center" />
-            <p className="mt-5 text-16 leading-6.75 break-keep text-fg-body">{copy.supporters.lead}</p>
-          </Reveal>
-
-          {supporterGroups.map((group) => (
-            <Reveal key={group.id} className="mx-auto mt-16 max-w-240">
-              {/* group label between two hairlines */}
-              <h3 className="flex items-center gap-5 font-ui text-12 font-semibold tracking-label text-fg-muted uppercase before:h-px before:flex-1 before:bg-line after:h-px after:flex-1 after:bg-line">
-                {copy.supporters.groups[group.id]}
-                {group.names.length > 0 && <span className="text-brand-end">{String(group.names.length).padStart(2, '0')}</span>}
-              </h3>
-              {group.names.length > 0 ? (
-                <ul className="mt-8 flex flex-wrap justify-center gap-x-10 gap-y-4 mobile:gap-x-6">
-                  {group.names.map((name, j) => (
-                    <li key={j} className="font-display text-22 font-medium tracking-tight text-fg/85 transition-colors duration-300 hover:text-fg mobile:text-18">
-                      {name}
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <p className="mt-8 font-display text-22 font-medium tracking-tight text-fg-muted mobile:text-18">{copy.supporters.empty}</p>
-              )}
+        {/* credits roll: every individual supporter, grouped, centred like the end of a film (hidden while SUPPORTERS_ENABLED is false) */}
+        {SUPPORTERS_ENABLED && (
+          <section id="supporters" className="px-gutter pt-26 pb-28 text-center tablet:py-18">
+            <Reveal className="mx-auto flex max-w-150 flex-col items-center">
+              <SectionHeading title="Thank You, Supporters" align="center" />
+              <p className="mt-5 text-16 leading-6.75 break-keep text-fg-body">{copy.supporters.lead}</p>
             </Reveal>
-          ))}
-
-          <Reveal className="mt-20 flex flex-col items-center gap-6">
-            <p className="text-15 break-keep text-fg-muted">{copy.supporters.note}</p>
-            <Button variant="link" href="#contact">
-              {copy.supporters.cta}
-              <ArrowUpRight />
-            </Button>
-          </Reveal>
-        </section>
+  
+            {supporterGroups.map((group) => (
+              <Reveal key={group.id} className="mx-auto mt-16 max-w-240">
+                {/* group label between two hairlines */}
+                <h3 className="flex items-center gap-5 font-ui text-12 font-semibold tracking-label text-fg-muted uppercase before:h-px before:flex-1 before:bg-line after:h-px after:flex-1 after:bg-line">
+                  {copy.supporters.groups[group.id]}
+                  {group.names.length > 0 && <span className="text-brand-end">{String(group.names.length).padStart(2, '0')}</span>}
+                </h3>
+                {group.names.length > 0 ? (
+                  <ul className="mt-8 flex flex-wrap justify-center gap-x-10 gap-y-4 mobile:gap-x-6">
+                    {group.names.map((name, j) => (
+                      <li key={j} className="font-display text-22 font-medium tracking-tight text-fg/85 transition-colors duration-300 hover:text-fg mobile:text-18">
+                        {name}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="mt-8 font-display text-22 font-medium tracking-tight text-fg-muted mobile:text-18">{copy.supporters.empty}</p>
+                )}
+              </Reveal>
+            ))}
+  
+            <Reveal className="mt-20 flex flex-col items-center gap-6">
+              <p className="text-15 break-keep text-fg-muted">{copy.supporters.note}</p>
+              <Button variant="link" href="#contact">
+                {copy.supporters.cta}
+                <ArrowUpRight />
+              </Button>
+            </Reveal>
+          </section>
+        )}
 
         <section
           id="contact"

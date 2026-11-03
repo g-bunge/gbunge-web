@@ -12,6 +12,7 @@ export const translations = {
         '5년 동안 바하의 흙길을 달렸습니다. 그리고 올해, 포뮬러라는 새 무대에 섭니다. G-BungE는 한 번도 달려본 적 없는 서킷을 위해 레이싱카를 만들고 있습니다. 모든 것이 새롭지만 우리가 일하는 방식은 변하지 않습니다. 문제를 정의하고 답을 찾는 것. 가장 잘하는 방식으로, 가장 낯선 무대를 정복하러 갑니다.',
       heritageAlt: '바하 차량 주행 사진',
       heritage: [
+        '2021년 시작해 차량 다섯 대를 만들었습니다. G-BungE의 다섯 번째 차량 Mk.5는 올해 Baja Student Korea에서 기술아이디어상을 수상하며 우리에게 첫 수상의 영예를 안겨주었습니다.',
         'BAJA를 향한 G-BungE의 여정은 아직 끝나지 않았습니다. 군산의 배기음에 매료된 신입생들이 모여 C-BAJA팀을 꾸렸습니다. E-BAJA로 달려온 5년을 뒤로하고, 첫 엔진 차량에 도전합니다. 우리의 미션에 후진은 없습니다.',
       ],
     },
@@ -149,6 +150,7 @@ export const translations = {
         "Every champion starts as a rookie. So do we. 5 years of Baja taught us how to build, break, and rebuild. Now we're taking on Formula for the first time. From GIST, Korea's special-law institute for science and technology, we're building a car from scratch against teams with decades of experience. Watch us close the gap.",
       heritageAlt: 'Baja car on track',
       heritage: [
+        "We started in 2021 and have built five cars since. Our fifth, Mk.5, won the Technical Idea Award at Baja Student Korea this year, bringing home our first award.",
         "G-BungE's road on BAJA isn't over yet. Freshmen hooked on the roar of Gunsan have formed the C-BAJA team. Leaving five years of E-BAJA behind, they take on our first engine car. Our mission has no reverse gear.",
       ],
     },
