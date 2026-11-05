@@ -36,13 +36,17 @@ export default function PartnerPanel({ partner, shown, lang, labels, onClose }) 
 
   return createPortal(
     <div
-      className={cx('fixed inset-0 z-110 grid place-items-center p-gutter [transition:visibility_0.3s]', shown ? 'visible' : 'invisible')}
+      className={cx('fixed inset-0 z-110 grid place-items-center px-gutter py-6 [transition:visibility_0.3s]', shown ? 'visible' : 'invisible')}
       inert={!shown}
     >
       <div className={cx('absolute inset-0 bg-black/70 backdrop-blur-sm transition-opacity duration-300', shown ? 'opacity-100' : 'opacity-0')} onClick={onClose} aria-hidden />
       <div
         className={cx(
-          'relative max-h-full w-full max-w-180 overflow-y-auto border border-line bg-raised shadow-menu',
+          /*
+           * sized off its width alone: the width shrinks with a short window as well as a narrow one, and
+           * everything inside is in cqw, so the whole window scales as one piece instead of being cut off
+           */
+          'relative @container max-h-full w-[min(45rem,100%,(100svh-3rem)*1.15)] overflow-y-auto border border-line bg-raised shadow-menu',
           '[transition:opacity_0.3s,scale_0.35s_var(--ease-out)]',
           shown ? 'scale-100 opacity-100' : 'scale-96 opacity-0',
         )}
@@ -55,25 +59,25 @@ export default function PartnerPanel({ partner, shown, lang, labels, onClose }) 
         </button>
         {partner && (
           <>
-            <div className="grid aspect-5/2 place-items-center border-b border-line bg-surface px-[22%] py-[8%] mobile:aspect-2/1">
+            <div className="grid aspect-5/2 place-items-center border-b border-line bg-surface px-[22%] py-[8%]">
               {partner.logo ? (
                 <img className="size-full object-contain brightness-0 invert" src={url(partner.logo)} alt="" />
               ) : (
-                <span className="font-display text-36 font-bold tracking-tight">{partner.name}</span>
+                <span className="font-display text-[max(24px,5cqw)] font-bold tracking-tight">{partner.name}</span>
               )}
             </div>
-            <div className="px-12 pt-9 pb-11 mobile:px-6">
-              <h2 id="partner-panel-name" className="font-display text-32 font-semibold tracking-tight">
+            <div className="px-[8cqw] pt-[6cqw] pb-[7cqw]">
+              <h2 id="partner-panel-name" className="font-display text-[max(22px,4.4cqw)] font-semibold tracking-tight">
                 {partner.name}
               </h2>
               {/* who they are and what they give us, as one paragraph with the support item in red */}
-              <p className="mt-5 text-17 leading-7.5 break-keep text-fg-body">
+              <p className="mt-[3cqw] text-[max(14px,2.4cqw)] leading-[1.75] break-keep text-fg-body">
                 {partner.about?.[lang]}
                 {partner.about && partner.support && ' '}
                 {partner.support && <Support item={partner.support[lang]} sentence={labels.support} />}
               </p>
               {partner.url && (
-                <Button className="mt-8" href={partner.url} target="_blank" rel="noreferrer">
+                <Button className="mt-[5cqw]" href={partner.url} target="_blank" rel="noreferrer">
                   {labels.visit}
                   <ArrowUpRight className="ml-2 size-4" />
                 </Button>
