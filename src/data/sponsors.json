@@ -123,7 +123,7 @@
     },
     {
       "name": "서보레",
-      "logo": null,
+      "logo": "/images/sponsors/servore.png",
       "about": null,
       "support": {
         "ko": "용접면",
@@ -145,7 +145,7 @@
     },
     {
       "name": "NX",
-      "logo": null,
+      "logo": "/images/sponsors/nx.png",
       "about": null,
       "support": {
         "ko": "인버터 할인",
@@ -206,7 +206,7 @@
     },
     {
       "name": "GIST 발전재단",
-      "logo": null,
+      "logo": "/images/sponsors/gist-foundation.png",
       "about": {
         "ko": "GIST의 교육과 연구를 지원하는 재단입니다.",
         "en": "The foundation that supports education and research at GIST."
