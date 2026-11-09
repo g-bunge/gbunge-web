@@ -33,7 +33,7 @@ export default function Hero() {
         {/* the negative right margin cancels the trailing letter-space so the line stays centred */}
         <p
           className={cx(
-            'mt-9 animate-hero-in text-20 font-medium whitespace-nowrap text-white/92 mobile:text-13',
+            'mt-6 animate-hero-in text-20 font-medium whitespace-nowrap text-white/92 mobile:text-13',
             lang === 'en' ? '-mr-[0.2em] tracking-[0.2em]' : '-mr-[0.4em] tracking-[0.4em]',
           )}
         >
