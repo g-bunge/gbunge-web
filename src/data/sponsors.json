@@ -228,6 +228,19 @@
         "ko": "후원금과 컴퓨팅 자원",
         "en": "funding and computing resources"
       }
+    },
+    {
+      "name": "SCHURTER",
+      "logo": "/images/sponsors/schurter.svg",
+      "url": "https://www.schurter.com",
+      "about": {
+        "ko": "퓨즈와 커넥터 등 전자 부품을 만드는 스위스 기업입니다.",
+        "en": "A Swiss maker of fuses, connectors and other electronic components."
+      },
+      "support": {
+        "ko": "퓨즈 2개",
+        "en": "two fuses"
+      }
     }
   ],
   "supporters": {
