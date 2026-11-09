@@ -9,6 +9,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
     <title>G-BungE | GIST Formula Student Team</title>
+    <!-- Google Analytics, loaded only on the live site so local runs don't count as visits -->
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+      gtag('config', 'G-00J2Y3EQFW')
+      if (!['localhost', '127.0.0.1'].includes(location.hostname)) {
+        const script = document.createElement('script')
+        script.async = true
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-00J2Y3EQFW'
+        document.head.append(script)
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
