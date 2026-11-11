@@ -6,6 +6,8 @@ import { url } from '../../lib/url.js'
  * Endless horizontal ticker. Items are duplicated once so the loop is seamless.
  * Logos come in white, and each is sized to cover about the same area as a 3:1 logo `itemWidth` wide,
  * so a long wordmark doesn't shrink to a sliver next to a squarer one.
+ * The logos keep their full width in the track (no max-width: 100%, no shrinking): otherwise the track measures
+ * narrower than its logos, the -50% loop jumps back before the last ones scroll into view.
  */
 export default function Marquee({ items, duration = 28, gap = 106, itemWidth = 118, className = '' }) {
   const track = [...items, ...items]
@@ -28,7 +30,7 @@ function Logo({ item, clone, itemWidth }) {
   // no logo file yet: the name stands in, styled to sit with the logos
   if (!item.src) {
     return (
-      <span className="font-display text-24 font-bold tracking-tight whitespace-nowrap opacity-45 transition-opacity duration-300 hover:opacity-100" aria-hidden={clone}>
+      <span className="shrink-0 font-display text-24 font-bold tracking-tight whitespace-nowrap opacity-45 transition-opacity duration-300 hover:opacity-100" aria-hidden={clone}>
         {item.alt}
       </span>
     )
@@ -39,7 +41,7 @@ function Logo({ item, clone, itemWidth }) {
   }
   return (
     <img
-      className="h-auto brightness-0 invert opacity-45 [transition:opacity_0.3s,scale_0.3s_var(--ease-out)] hover:scale-108 hover:opacity-100"
+      className="h-auto max-w-none shrink-0 brightness-0 invert opacity-45 [transition:opacity_0.3s,scale_0.3s_var(--ease-out)] hover:scale-108 hover:opacity-100"
       src={url(item.src)}
       alt={clone ? '' : item.alt}
       aria-hidden={clone}

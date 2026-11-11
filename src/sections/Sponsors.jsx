@@ -4,7 +4,7 @@ import { sponsors } from '../data/sponsors.js'
 export default function Sponsors() {
   return (
     <section id="sponsors" aria-label="Sponsors">
-      <Marquee className="h-50" items={sponsors} duration={46} />
+      <Marquee className="h-50" items={sponsors} duration={106} />
     </section>
   )
 }
