@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Button from './Button.jsx'
 import useLang from '../../i18n/LanguageContext.js'
-import { SPONSOR_EMAIL } from '../../data/site.js'
+import { EMAIL } from '../../data/site.js'
 import cx from '../../lib/cx.js'
 
 /*
@@ -9,7 +9,7 @@ import cx from '../../lib/cx.js'
  *   VITE_SPONSOR_FORM_ENDPOINT: a form-backend URL that accepts a FormData POST and answers JSON,
  *                                e.g. https://formspree.io/f/xxxxxxx or https://api.web3forms.com/submit
  *   VITE_SPONSOR_FORM_KEY     : only for services that want an access key in the body (Web3Forms)
- * Without an endpoint the form falls back to opening a pre-filled email to SPONSOR_EMAIL (data/site.js).
+ * Without an endpoint the form falls back to opening a pre-filled email to EMAIL (data/site.js).
  */
 const ENDPOINT = import.meta.env.VITE_SPONSOR_FORM_ENDPOINT
 const ACCESS_KEY = import.meta.env.VITE_SPONSOR_FORM_KEY
@@ -40,7 +40,7 @@ export default function SponsorForm() {
 
     if (!ENDPOINT) {
       const body = [...data.entries()].map(([key, value]) => `${copy.fields[key] ?? key}: ${value}`).join('\n')
-      window.location.href = `mailto:${SPONSOR_EMAIL}?subject=${encodeURIComponent(`[Sponsorship] ${data.get('company')}`)}&body=${encodeURIComponent(body)}`
+      window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(`[Sponsorship] ${data.get('company')}`)}&body=${encodeURIComponent(body)}`
       return
     }
 
@@ -110,7 +110,7 @@ export default function SponsorForm() {
 
       <div className="mt-1 flex items-center justify-between gap-5 mobile:flex-col mobile:items-stretch">
         <p className={cx('text-13 leading-5', status === 'error' ? 'text-brand-end' : 'text-fg-muted')} role={status === 'error' ? 'alert' : undefined}>
-          {status === 'error' ? copy.error(SPONSOR_EMAIL) : copy.note}
+          {status === 'error' ? copy.error(EMAIL) : copy.note}
         </p>
         <Button type="submit" disabled={status === 'sending'}>
           {status === 'sending' ? copy.sending : copy.submit}

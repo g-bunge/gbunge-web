@@ -59,7 +59,8 @@ export default function PartnerPanel({ partner, shown, lang, labels, onClose }) 
         </button>
         {partner && (
           <>
-            <div className="grid aspect-5/2 place-items-center border-b border-line bg-surface px-[22%] py-[8%]">
+            {/* the main sponsor's logo sits larger in its band */}
+            <div className={cx('grid aspect-5/2 place-items-center border-b border-line bg-surface', partner.main ? 'px-[12%] py-[6%]' : 'px-[22%] py-[8%]')}>
               {partner.logo ? (
                 <img className="size-full object-contain brightness-0 invert" src={url(partner.logo)} alt="" />
               ) : (
@@ -70,12 +71,20 @@ export default function PartnerPanel({ partner, shown, lang, labels, onClose }) 
               <h2 id="partner-panel-name" className="font-display text-[max(22px,4.4cqw)] font-semibold tracking-tight">
                 {partner.name}
               </h2>
-              {/* who they are and what they give us, as one paragraph with the support item in red */}
+              {/*
+                who they are and what they give us, as one paragraph with the support item in red; a partner with
+                its own `supportLead` gets the support sentence as a paragraph of its own, opening with that lead
+              */}
               <p className="mt-[3cqw] text-[max(14px,2.4cqw)] leading-[1.75] break-keep text-fg-body">
                 {partner.about?.[lang]}
-                {partner.about && partner.support && ' '}
-                {partner.support && <Support item={partner.support[lang]} sentence={labels.support} />}
+                {partner.about && partner.support && !partner.supportLead && ' '}
+                {partner.support && !partner.supportLead && <Support item={partner.support[lang]} sentence={labels.support} />}
               </p>
+              {partner.support && partner.supportLead && (
+                <p className="mt-[2cqw] text-[max(14px,2.4cqw)] leading-[1.75] break-keep text-fg-body">
+                  <Support item={partner.support[lang]} sentence={labels.support} lead={partner.supportLead[lang]} />
+                </p>
+              )}
               {partner.url && (
                 <Button className="mt-[5cqw]" href={partner.url} target="_blank" rel="noreferrer">
                   {labels.visit}
@@ -91,12 +100,12 @@ export default function PartnerPanel({ partner, shown, lang, labels, onClose }) 
   )
 }
 
-/** "지붕이에 <item>을 후원해주셨습니다." with the item in red and the right 을/를. */
-function Support({ item, sentence }) {
+/** "지붕이에 <item>을 후원해주셨습니다." with the item in red and the right 을/를; `lead` replaces the opening. */
+function Support({ item, sentence, lead }) {
   const [before, after] = sentence(endsOnConsonant(item) ? '을' : '를')
   return (
     <>
-      {before}
+      {lead ?? before}
       <strong className="font-semibold text-brand-end">{item}</strong>
       {after}
     </>

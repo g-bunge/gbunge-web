@@ -206,14 +206,19 @@
     },
     {
       "name": "GIST 발전재단",
+      "main": true,
       "logo": "/images/sponsors/gist-foundation.png",
       "about": {
-        "ko": "GIST의 교육과 연구를 지원하는 재단입니다.",
-        "en": "The foundation that supports education and research at GIST."
+        "ko": "GIST 발전재단은 GIST의 교육과 연구가 더 멀리 나아갈 수 있도록 학생들을 지원해주시는 재단입니다. 도면 위의 아이디어를 실제 트랙을 달리는 차로 만들어내기까지, 재단이 보내주신 믿음은 G-BungE가 첫 Formula 시즌으로 내딛는 데 가장 큰 힘이 되었습니다. 그 믿음에 깊이 감사드리며, 결과로 보답하겠습니다.",
+        "en": "The GIST Development Foundation supports GIST's students so that teaching and research at GIST can reach further. From an idea on paper to a car running on a real track, the Foundation's trust has been the biggest push behind G-BungE's first step into Formula. We are deeply grateful for that trust, and we will repay it with results."
       },
       "support": {
         "ko": "팀 운영 자금",
         "en": "team funding"
+      },
+      "supportLead": {
+        "ko": "올해 GIST 발전재단은 지붕이에 ",
+        "en": "This year, the GIST Development Foundation sponsors G-BungE with "
       }
     },
     {
@@ -240,6 +245,20 @@
       "support": {
         "ko": "퓨즈 2개",
         "en": "two fuses"
+      }
+    },
+    {
+      "name": "Makita",
+      "main": true,
+      "logo": "/images/sponsors/makita.svg",
+      "url": "https://www.makita.co.kr",
+      "about": {
+        "ko": "전동공구를 만드는 일본 기업입니다.",
+        "en": "A Japanese maker of power tools."
+      },
+      "support": {
+        "ko": "각종 전동공구류",
+        "en": "a range of power tools"
       }
     }
   ],

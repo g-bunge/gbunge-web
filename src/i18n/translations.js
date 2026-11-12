@@ -4,7 +4,7 @@
  */
 export const translations = {
   ko: {
-    hero: { subtitle: 'GIST 자작자동차동아리' },
+    hero: { subtitle: 'GIST Racing Team' },
     nav: { about: 'About', team: 'Team', pastCars: 'Past Cars', stories: 'Stories', sponsors: 'Sponsors' },
     about: {
       whoAlt: 'G-BungE 팀 단체 사진',
@@ -142,7 +142,7 @@ export const translations = {
   },
 
   en: {
-    hero: { subtitle: 'GIST Student Formula & BAJA' },
+    hero: { subtitle: 'GIST Racing Team' },
     nav: { about: 'About', team: 'Team', pastCars: 'Past Cars', stories: 'Stories', sponsors: 'Sponsors' },
     about: {
       whoAlt: 'G-BungE team group photo',

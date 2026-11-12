@@ -10,14 +10,26 @@ import { partners, supporterGroups } from '../data/sponsors.js'
 import useLang from '../i18n/LanguageContext.js'
 import cx from '../lib/cx.js'
 import { url } from '../lib/url.js'
-import { SPONSOR_EMAIL, SUPPORTERS_ENABLED } from '../data/site.js'
+import { EMAIL, SUPPORTERS_ENABLED } from '../data/site.js'
+
+/*
+ * Main sponsors get big 2 × 2 tiles, in the order they're listed: the first in the grid's top-left corner, the
+ * second across from it on the diagonal, one row down at the right edge of the 5-column grid, and below it,
+ * shifted right, on tablets (stacked on phones).
+ */
+const MAIN_SLOTS = ['col-start-1 row-start-1', 'col-start-4 row-start-2 tablet:col-start-2 tablet:row-start-3 mobile:col-start-1']
+const mainSlot = Object.fromEntries(partners.filter((p) => p.main).map((p, k) => [p.name, MAIN_SLOTS[k]]))
+const mainCount = Object.keys(mainSlot).length
 
 /*
  * Empty cells that complete the partner grid's last row at each column count (5, 3 on tablets, 2 on phones),
  * as the visibility classes each one needs.
  */
 const fillers = (() => {
-  const missing = (cols) => (cols - (partners.length % cols)) % cols
+  const missing = (cols) => {
+    const cells = partners.length + mainCount * 3
+    return (cols - (cells % cols)) % cols
+  }
   const [desk, tab, phone] = [missing(5), missing(3), missing(2)]
   return Array.from({ length: Math.max(desk, tab, phone) }, (_, k) =>
     cx(k < desk ? 'block' : 'hidden', k < tab ? 'tablet:block' : 'tablet:hidden', k < phone ? 'mobile:block' : 'mobile:hidden'),
@@ -51,10 +63,19 @@ export default function SponsorsPage() {
           </Reveal>
           <Reveal as="ul" className="grid w-[calc(100%+1px)] grid-cols-5 border-t border-line tablet:grid-cols-3 mobile:grid-cols-2">
             {partners.map((partner, i) => (
-              <li key={partner.name} className="border-r border-b border-line">
+              <li
+                key={partner.name}
+                className={cx(
+                  'border-r border-b border-line',
+                  partner.main && cx('col-span-2 row-span-2', mainSlot[partner.name]),
+                )}
+              >
                 <button
                   type="button"
-                  className="group/logo relative grid aspect-3/2 w-full place-items-center p-[20%] transition-colors duration-300 hover:bg-surface focus-visible:bg-surface"
+                  className={cx(
+                    'group/logo relative grid w-full place-items-center transition-colors duration-300 hover:bg-surface focus-visible:bg-surface',
+                    partner.main ? 'h-full content-center gap-5 p-[8%]' : 'aspect-3/2 p-[20%]',
+                  )}
                   onClick={() => setOpen(i)}
                   aria-haspopup="dialog"
                 >
@@ -65,7 +86,7 @@ export default function SponsorsPage() {
                   />
                   {partner.logo ? (
                     <img
-                      className="size-full object-contain brightness-0 invert opacity-85"
+                      className={cx('object-contain brightness-0 invert opacity-85', partner.main ? 'w-[min(58%,440px)]' : 'size-full')}
                       src={url(partner.logo)}
                       alt={partner.name}
                     />
@@ -74,6 +95,7 @@ export default function SponsorsPage() {
                       {partner.name}
                     </span>
                   )}
+                  {partner.main && <span className="font-ui text-12 font-semibold tracking-widest text-fg-muted uppercase">Main Sponsor</span>}
                 </button>
               </li>
             ))}
@@ -118,7 +140,7 @@ export default function SponsorsPage() {
             <MailIcon className="size-6 shrink-0 text-brand-end tablet:hidden" />
             <div className="flex-1">
               <p className="text-17 font-semibold">{copy.cta.title}</p>
-              <p className="mt-1 text-15 break-keep text-fg-muted">{copy.reachUs(SPONSOR_EMAIL)}</p>
+              <p className="mt-1 text-15 break-keep text-fg-muted">{copy.reachUs(EMAIL)}</p>
             </div>
             <Button className="shrink-0" href="#contact">
               {copy.supporters.cta}
@@ -172,9 +194,9 @@ export default function SponsorsPage() {
           <Reveal className="sticky top-30 tablet:static">
             <h2 className="font-display text-cta-title leading-[1.15] font-semibold tracking-tight break-keep">{copy.cta.title}</h2>
             <p className="t-body mt-6 mb-8 break-keep">{copy.cta.body}</p>
-            <a className="inline-flex items-center gap-2.5 font-ui text-16 font-medium text-fg-body transition-colors duration-300 hover:text-fg" href={`mailto:${SPONSOR_EMAIL}`}>
+            <a className="inline-flex items-center gap-2.5 font-ui text-16 font-medium text-fg-body transition-colors duration-300 hover:text-fg" href={`mailto:${EMAIL}`}>
               <MailIcon className="size-5" />
-              {SPONSOR_EMAIL}
+              {EMAIL}
             </a>
           </Reveal>
           <Reveal delay={150}>

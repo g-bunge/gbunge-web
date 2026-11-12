@@ -1,7 +1,6 @@
 /* Team contact details used across the site: change them here only. */
-export const EMAIL = 'contact@gbunge.com'
-/* where every sponsorship inquiry goes: the contact buttons, the address on /sponsors and the inquiry form */
-export const SPONSOR_EMAIL = 'gbunge@gist.ac.kr'
+/* the one address for everything: the footer, the sponsor contact buttons, the address on /sponsors and the inquiry form */
+export const EMAIL = 'gbunge@gist.ac.kr'
 export const INSTAGRAM = 'https://www.instagram.com/gbunge_/'
 /* Behold JSON feed of that account: the home page carousel shows its latest posts (falls back to data/stories.js) */
 export const INSTAGRAM_FEED = 'https://feeds.behold.so/IVDwBYwCYYyMTL0LKQh6'

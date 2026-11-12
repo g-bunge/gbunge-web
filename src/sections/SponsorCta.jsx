@@ -2,7 +2,7 @@ import Reveal from '../components/ui/Reveal.jsx'
 import Button from '../components/ui/Button.jsx'
 import Lines from '../components/ui/Lines.jsx'
 import useLang from '../i18n/LanguageContext.js'
-import { SPONSOR_EMAIL } from '../data/site.js'
+import { EMAIL } from '../data/site.js'
 
 export default function SponsorCta() {
   const { t } = useLang()
@@ -15,7 +15,7 @@ export default function SponsorCta() {
         <p className="t-body mb-11 leading-7.5">
           <Lines lines={t.cta.body} />
         </p>
-        <Button className="w-37.5 px-0!" href={`mailto:${SPONSOR_EMAIL}`}>
+        <Button className="w-37.5 px-0!" href={`mailto:${EMAIL}`}>
           Contact Us
         </Button>
       </Reveal>
