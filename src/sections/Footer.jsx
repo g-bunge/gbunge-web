@@ -62,14 +62,8 @@ export default function Footer() {
       </div>
 
       <div className="mt-16 flex items-center justify-between gap-4 border-t border-line-soft pt-6 text-13 text-fg-muted mobile:mt-12">
-        {/* easter egg: the © opens the /race minigame; the handle goes to its author's GitHub */}
-        <p>
-          <a href={url('/race')}>© 2026</a>{' '}
-          <a className="transition-colors duration-250 hover:text-fg" href="https://github.com/7ewon" target="_blank" rel="noreferrer">
-            @7ewon
-          </a>
-          . All rights reserved.
-        </p>
+        {/* easter egg: the copyright line opens the /race minigame */}
+        <a href={url('/race')}>© 2026 @7ewon. All rights reserved.</a>
         <a className="inline-flex items-center gap-1.5 transition-colors duration-250 hover:text-fg" href="#top">
           Back to top
           <ArrowUp className="size-3.5" />
