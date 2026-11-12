@@ -68,6 +68,7 @@ export default function Footer() {
           <a className="transition-colors duration-250 hover:text-fg" href="https://github.com/7ewon" target="_blank" rel="noreferrer">
             @7ewon
           </a>
+          . All rights reserved.
         </p>
         <a className="inline-flex items-center gap-1.5 transition-colors duration-250 hover:text-fg" href="#top">
           Back to top
