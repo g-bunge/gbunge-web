@@ -25,6 +25,8 @@ export default function Hero() {
         {/* the ::after darkens the bottom edge so the next section blends in */}
         <Slideshow images={heroImages} />
       </div>
+      {/* the bottom fades into the page colour, so scrolling on runs straight into the sponsors below; it sits outside the parallax layer so the fade stays put */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-1 h-[18%] bg-[linear-gradient(transparent,rgb(11_11_11/0.15)_40%,rgb(11_11_11/0.55)_75%,var(--color-bg))]" aria-hidden />
 
       <div className="relative z-1 flex -translate-y-3.5 flex-col items-center" style={{ opacity: Math.max(0, 1 - scrollY / 600) }}>
         <h1>
