@@ -9,11 +9,11 @@
   /* ---------- color ---------- */
   --color-*: initial;
 
-  /* brand (orange-red); gradients are in index.css as `bg-brand-gradient` etc. */
-  --color-brand: #e1232b;
-  --color-brand-end: #f0393f;
-  --color-brand-hover: #ee2f37;
-  --color-brand-hover-end: #ff4d52;
+  /* brand (the logo red, #dc2314); gradients are in index.css as `bg-brand-gradient` etc. */
+  --color-brand: #dc2314;
+  --color-brand-end: #ea3422;
+  --color-brand-hover: #e62c1b;
+  --color-brand-hover-end: #f4462f;
 
   /* surfaces, darkest to lightest */
   --color-bg: #0b0b0b;
