@@ -14,15 +14,8 @@ import data from './sponsors.json'
  *            to read there: ko "후원금과 컴퓨팅 자원" (지붕이에 ~을 후원해주셨습니다), en "a welder" (They sponsor G-BungE with ~)
  *   supportLead: optional { "ko": "…", "en": "…" }: a different opening for that sentence, which then gets a
  *            paragraph of its own: ko "올해 GIST 발전재단은 지붕이에 " (~을 후원해주셨습니다)
- *
- * supporters: people who support us personally, by group: "ob" (alumni) and "individual".
- *   Each is a list of names as they'd like to be credited; an empty list shows an invitation instead.
- *   TODO: the OB names are placeholders.
  */
 export const partners = data.partners
 
 /* Logos for the marquee. */
 export const sponsors = partners.map((p) => ({ src: p.logo, alt: p.name }))
-
-/* Supporter groups in page order, as { id, names }. */
-export const supporterGroups = Object.entries(data.supporters).map(([id, names]) => ({ id, names }))

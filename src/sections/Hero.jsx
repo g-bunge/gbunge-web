@@ -26,17 +26,17 @@ export default function Hero() {
         <Slideshow images={heroImages} />
       </div>
       {/* the bottom fades into the page colour, so scrolling on runs straight into the sponsors below; it sits outside the parallax layer so the fade stays put */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-1 h-[18%] bg-[linear-gradient(transparent,rgb(11_11_11/0.15)_40%,rgb(11_11_11/0.55)_75%,var(--color-bg))]" aria-hidden />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-1 h-[18%] bg-[linear-gradient(transparent,rgb(11_11_11/0.04)_40%,rgb(11_11_11/0.18)_75%,rgb(11_11_11/0.6))]" aria-hidden />
 
       <div className="relative z-1 flex -translate-y-3.5 flex-col items-center" style={{ opacity: Math.max(0, 1 - scrollY / 600) }}>
         <h1>
-          <img className="w-[min(478px,78vw)] animate-hero-in" src={url('/images/logo-hero.png')} alt="G-BungE | GIST" />
+          <img className="w-[min(395px,69vw)] animate-hero-in" src={url('/images/logo-hero.png')} alt="G-BungE | GIST" />
         </h1>
         {/* the negative right margin cancels the trailing letter-space so the line stays centred */}
         <p
           className={cx(
             'mt-6 animate-hero-in text-20 font-medium whitespace-nowrap text-white/92 mobile:text-13',
-            lang === 'en' ? '-mr-[0.2em] tracking-[0.2em]' : '-mr-[0.4em] tracking-[0.4em]',
+            lang === 'en' ? '-mr-[0.12em] tracking-[0.12em]' : '-mr-[0.24em] tracking-[0.24em]',
           )}
         >
           {t.hero.subtitle}

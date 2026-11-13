@@ -86,13 +86,7 @@ export const translations = {
           { title: '소수 정예', body: '적은 인원이 설계부터 제작까지 폭넓게 참여합니다. 빠른 의사결정과 명확한 책임 분담을 바탕으로 후원사와 직접 소통합니다.' },
         ],
       },
-      supporters: {
-        lead: '회사가 아니어도 G-BungE와 함께 달릴 수 있습니다. 선배님들과 개인 후원자분들의 이름을 여기에 새깁니다.',
-        groups: { ob: 'OB', individual: '개인 후원' },
-        empty: '첫 주인공이 되세요',
-        note: '소액 후원도 큰 힘이 됩니다. 후원해 주신 분의 이름은 이곳에 기록됩니다.',
-        cta: '후원 문의하기',
-      },
+      inquire: '후원 문의하기',
       cta: {
         title: '우리의 스폰서가 되어주세요',
         body: '자금, 부품, 장비, 기술 지원 등 어떤 형태든 환영합니다. G-BungE와 함께 첫 포뮬러 시즌을 만들어 주세요.',
@@ -223,13 +217,7 @@ export const translations = {
           { title: 'Small and hand-picked', body: 'A small team, each taking part from design through to build. With fast decisions and clear responsibilities, we talk with sponsors directly.' },
         ],
       },
-      supporters: {
-        lead: "You don't need to be a company to race with us. Our alumni and individual supporters are credited here.",
-        groups: { ob: 'OB', individual: 'Individual supporters' },
-        empty: 'Be the first',
-        note: 'Every contribution counts, however small, and every supporter gets their name on this wall.',
-        cta: 'Ask about supporting',
-      },
+      inquire: 'Ask about supporting',
       cta: {
         title: 'Become Our Sponsor',
         body: 'Funding, parts, equipment, technical support: every kind of help counts. Help us build our first Formula season.',
